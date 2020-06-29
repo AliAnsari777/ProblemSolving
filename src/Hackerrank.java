@@ -1,8 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Hackerrank {
 
     public static void main(String[] args) {
+
+        // Simple Array Sum
         int[] simpleArray = {7,5,3,8,4,2,1};
         System.out.println(Hackerrank.simpleArraySum(simpleArray));
+
+        //############################################################//
+
+        // Compare the Triplets
+        List<Integer> A = new ArrayList<>();
+        List<Integer> B = new ArrayList<>();
+        A.add(10);
+        A.add(20);
+        A.add(30);
+        B.add(5);
+        B.add(15);
+        B.add(50);
+        List<Integer> triplets = compareTriplets(A, B);
+        for(int i : triplets) {
+            System.out.print(i + ", ");
+        }
 
         //############################################################//
 
@@ -19,6 +40,25 @@ public class Hackerrank {
             sum += value;
         }
         return sum;
+    }
+
+    /*******************************************************************/
+
+    // This is "Compare the Triplets" problem
+    // This method takes two list of integers and compare them and if first number of list "a" is bigger than
+    // first number of list "b" we add one score for first list in "result list".
+    // read full description in hackerrank.
+    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+        List<Integer> result = new ArrayList<Integer>();
+        result.add(0);
+        result.add(0);
+        for(int i=0; i<a.size(); i++){
+            if(a.get(i) > b.get(i))
+                result.set(0,result.get(0) + 1);
+            else if(a.get(i) < b.get(i))
+                result.set(1,result.get(1) + 1);
+        }
+        return result;
     }
 
     /*******************************************************************/
