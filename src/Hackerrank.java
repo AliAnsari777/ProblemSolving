@@ -7,7 +7,7 @@ public class Hackerrank {
 
         // Simple Array Sum
         int[] simpleArray = {7,5,3,8,4,2,1};
-        System.out.println(Hackerrank.simpleArraySum(simpleArray));
+        System.out.println("Simple Array Sum: " + Hackerrank.simpleArraySum(simpleArray));
 
         //############################################################//
 
@@ -21,6 +21,7 @@ public class Hackerrank {
         B.add(15);
         B.add(50);
         List<Integer> triplets = compareTriplets(A, B);
+        System.out.print("Compare The Triplets: ");
         for(int i : triplets) {
             System.out.print(i + ", ");
         }
@@ -30,7 +31,10 @@ public class Hackerrank {
 
        // A very big sum
         long[] bigArray = {1000000001, 1000000002, 1000000003, 1000000004, 1000000005};
-        System.out.println(Hackerrank.aVeryBigSum(bigArray));
+        System.out.println("Very Big Sum: " + Hackerrank.aVeryBigSum(bigArray));
+
+        //############################################################//
+
     }
 
 //==========================================================================//
@@ -76,4 +80,8 @@ public class Hackerrank {
         }
         return result;
     }
+
+    /*******************************************************************/
+
+
 }
