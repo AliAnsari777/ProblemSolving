@@ -35,6 +35,11 @@ public class Hackerrank {
 
         //############################################################//
 
+        // Diagonal Difference
+        List<List<Integer>> diagonal = new ArrayList<>();
+        ArrayList<Integer> one = new ArrayList<Integer>();
+
+        System.out.println("Diagonal Difference: " + Hackerrank.diagonalDifference(diagonal));
     }
 
 //==========================================================================//
@@ -83,5 +88,17 @@ public class Hackerrank {
 
     /*******************************************************************/
 
-
+    // This is the "Diagonal Difference"
+    // Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int arrSize = arr.size();
+        int leftSum =0,rightSum = 0;
+        for (int i = 0; i < arrSize; i++) {
+            leftSum += arr.get(i).get(i);
+        }
+        for (int i = 0; i < arrSize; i++) {
+            rightSum += arr.get(arrSize - i -1).get(i);
+        }
+        return Math.abs(leftSum - rightSum);
+    }
 }
