@@ -24,10 +24,13 @@ public class Hackerrank {
         for(int i : triplets) {
             System.out.print(i + ", ");
         }
+        System.out.println();
 
         //############################################################//
 
-
+       // A very big sum
+        long[] bigArray = {1000000001, 1000000002, 1000000003, 1000000004, 1000000005};
+        System.out.println(Hackerrank.aVeryBigSum(bigArray));
     }
 
 //==========================================================================//
@@ -63,5 +66,14 @@ public class Hackerrank {
 
     /*******************************************************************/
 
-
+    // this is the "very big sum" problem.
+    // Calculate and print the sum of the elements in an array,
+    // keeping in mind that some of those integers may be quite large.
+    static long aVeryBigSum(long[] ar) {
+        long result = 0;
+        for(int i = 0; i<ar.length; i++){
+            result += ar[i];
+        }
+        return result;
+    }
 }
