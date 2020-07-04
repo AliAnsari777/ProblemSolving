@@ -48,6 +48,10 @@ public class Hackerrank {
 
         //############################################################//
 
+        // Plus Minus
+        int[] plusMinus = {4, 7, -8, -2, 0};
+        System.out.println("Plus Minus: ");
+        Hackerrank.plusMinus(plusMinus);
 
     }
 
@@ -97,7 +101,7 @@ public class Hackerrank {
 
     /*******************************************************************/
 
-    // This is the "Diagonal Difference"
+    // This is the "Diagonal Difference" problem
     // Given a square matrix, calculate the absolute difference between the sums of its diagonals.
     public static int diagonalDifference(List<List<Integer>> arr) {
         int arrSize = arr.size();
@@ -109,5 +113,23 @@ public class Hackerrank {
             rightSum += arr.get(arrSize - i -1).get(i);
         }
         return Math.abs(leftSum - rightSum);
+    }
+
+    /*******************************************************************/
+
+    // This is "Plus Minus" problem
+    // Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros.
+    // Print the decimal value of each fraction on a new line.
+    static void plusMinus(int[] arr) {
+        float pos=0, neg=0, zero=0;
+        int size = arr.length;
+        for(int i = 0; i<size; i++){
+            if(arr[i] > 0) pos++;
+            else if(arr[i] < 0) neg++;
+            else zero++;
+        }
+        System.out.printf("%.6f %n",pos/size);
+        System.out.printf("%.6f %n",neg/size);
+        System.out.printf("%.6f %n",zero/size);
     }
 }
