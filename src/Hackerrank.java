@@ -53,7 +53,13 @@ public class Hackerrank {
         System.out.println("Plus Minus: ");
         Hackerrank.plusMinus(plusMinus);
 
+        //############################################################//
+
+        // Staircase
+        System.out.println("Staircase: ");
+        Hackerrank.staircase(5);
     }
+
 
 //==========================================================================//
 
@@ -131,5 +137,20 @@ public class Hackerrank {
         System.out.printf("%.6f %n",pos/size);
         System.out.printf("%.6f %n",neg/size);
         System.out.printf("%.6f %n",zero/size);
+    }
+
+    /*******************************************************************/
+
+    // This is "Staircase" Problem
+    static void staircase(int n) {
+        for(int i = 0, j = n - 1; i<n; i++, j--){
+            for(int a = 0; a < n; a++){
+                if(a < j)
+                    System.out.print(" ");
+                else
+                    System.out.print("#");
+            }
+            System.out.println();
+        }
     }
 }
