@@ -30,34 +30,34 @@ public class Hackerrank {
 
         //############################################################//
 
-        // A very big sum
-        long[] bigArray = {1000000001, 1000000002, 1000000003, 1000000004, 1000000005};
-        System.out.println("Very Big Sum: " + Hackerrank.aVeryBigSum(bigArray));
+//        // A very big sum
+//        long[] bigArray = {1000000001, 1000000002, 1000000003, 1000000004, 1000000005};
+//        System.out.println("Very Big Sum: " + Hackerrank.aVeryBigSum(bigArray));
 
         //############################################################//
 
-        // Diagonal Difference
-        List<List<Integer>> diagonal = new ArrayList<>();
-        List<Integer> one = Arrays.asList(11,2,4);
-        List<Integer> two = Arrays.asList(4,5,6);
-        List<Integer> three = Arrays.asList(10,8,-12);
-        diagonal.add(one);
-        diagonal.add(two);
-        diagonal.add(three);
-        System.out.println("Diagonal Difference: " + Hackerrank.diagonalDifference(diagonal));
+//        // Diagonal Difference
+//        List<List<Integer>> diagonal = new ArrayList<>();
+//        List<Integer> one = Arrays.asList(11,2,4);
+//        List<Integer> two = Arrays.asList(4,5,6);
+//        List<Integer> three = Arrays.asList(10,8,-12);
+//        diagonal.add(one);
+//        diagonal.add(two);
+//        diagonal.add(three);
+//        System.out.println("Diagonal Difference: " + Hackerrank.diagonalDifference(diagonal));
 
         //############################################################//
 
-        // Plus Minus
-        int[] plusMinus = {4, 7, -8, -2, 0};
-        System.out.println("Plus Minus: ");
-        Hackerrank.plusMinus(plusMinus);
+//        // Plus Minus
+//        int[] plusMinus = {4, 7, -8, -2, 0};
+//        System.out.println("Plus Minus: ");
+//        Hackerrank.plusMinus(plusMinus);
 
         //############################################################//
 
-        // Staircase
-        System.out.println("Staircase: ");
-        Hackerrank.staircase(5);
+//        // Staircase
+//        System.out.println("Staircase: ");
+//        Hackerrank.staircase(5);
     }
 
 
@@ -153,4 +153,8 @@ public class Hackerrank {
             System.out.println();
         }
     }
+
+    /*******************************************************************/
+
+
 }
