@@ -6,27 +6,27 @@ public class Hackerrank {
 
     public static void main(String[] args) {
 
-        // Simple Array Sum
-        int[] simpleArray = {7,5,3,8,4,2,1};
-        System.out.println("Simple Array Sum: " + Hackerrank.simpleArraySum(simpleArray));
+//        // Simple Array Sum
+//        int[] simpleArray = {7,5,3,8,4,2,1};
+//        System.out.println("Simple Array Sum: " + Hackerrank.simpleArraySum(simpleArray));
 
         //############################################################//
 
-        // Compare the Triplets
-        List<Integer> A = new ArrayList<>();
-        List<Integer> B = new ArrayList<>();
-        A.add(10);
-        A.add(20);
-        A.add(30);
-        B.add(5);
-        B.add(15);
-        B.add(50);
-        List<Integer> triplets = compareTriplets(A, B);
-        System.out.print("Compare The Triplets: ");
-        for(int i : triplets) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();
+//        // Compare the Triplets
+//        List<Integer> A = new ArrayList<>();
+//        List<Integer> B = new ArrayList<>();
+//        A.add(10);
+//        A.add(20);
+//        A.add(30);
+//        B.add(5);
+//        B.add(15);
+//        B.add(50);
+//        List<Integer> triplets = compareTriplets(A, B);
+//        System.out.print("Compare The Triplets: ");
+//        for(int i : triplets) {
+//            System.out.print(i + ", ");
+//        }
+//        System.out.println();
 
         //############################################################//
 
