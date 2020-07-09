@@ -62,16 +62,20 @@ public class Hackerrank {
 
         //############################################################//
 
-        // MinMaxSum
-        int[] minMax = {3,5, 8, 9, 2};
-        System.out.println("Min Max Sum: ");
-        Hackerrank.miniMaxSum(minMax);
+//        // MinMaxSum
+//        int[] minMax = {3,5, 8, 9, 2};
+//        System.out.println("Min Max Sum: ");
+//        Hackerrank.miniMaxSum(minMax);
 
         //############################################################//
 
-        // BirthdayCakeCandles
-        int[] candles = {4,7,3,7};
-        System.out.println(Hackerrank.birthdayCakeCandles(candles));
+//        // BirthdayCakeCandles
+//        int[] candles = {4,7,3,7};
+//        System.out.println(Hackerrank.birthdayCakeCandles(candles));
+
+        //############################################################//
+
+
     }
 
 
@@ -205,4 +209,22 @@ public class Hackerrank {
 
     /*******************************************************************/
 
+    // This is "Time Conversion" problem
+    //Given a time in -hour AM/PM format, convert it to military (24-hour) time.
+    //Note: Midnight is 12:00:00AM on a 12-hour clock, and 00:00:00 on a 24-hour clock. Noon is 12:00:00PM on a
+    // 12-hour clock, and 12:00:00 on a 24-hour clock
+    static String timeConversion(String s) {
+        String[] temp = s.split("(:|(?=P)|(?=A))");
+        int hour = Integer.parseInt(temp[0]);
+        if (temp[3].equals("PM")){
+            if(hour != 12)
+                hour += 12;
+            return hour + ":" + temp[1] + ":" + temp[2];
+        }else{
+            if(hour == 12){
+                return "00" + ":" + temp[1] + ":" +temp[2];
+            }
+            return temp[0] + ":" + temp[1] + ":" + temp[2];
+        }
+    }
 }
