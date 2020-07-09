@@ -71,7 +71,15 @@ public class Hackerrank {
 
 //        // BirthdayCakeCandles
 //        int[] candles = {4,7,3,7};
+//        System.out.println("Birthday Cake Candles: ");
 //        System.out.println(Hackerrank.birthdayCakeCandles(candles));
+
+        //############################################################//
+
+        // TimeConversion
+        String time = "07:05:45PM";
+        System.out.println("Time Conversion: ");
+        System.out.println(Hackerrank.timeConversion(time));
 
         //############################################################//
 
@@ -227,4 +235,8 @@ public class Hackerrank {
             return temp[0] + ":" + temp[1] + ":" + temp[2];
         }
     }
+
+    /*******************************************************************/
+
+
 }
