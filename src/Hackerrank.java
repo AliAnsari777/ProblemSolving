@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Hackerrank {
@@ -65,6 +66,12 @@ public class Hackerrank {
         int[] minMax = {3,5, 8, 9, 2};
         System.out.println("Min Max Sum: ");
         Hackerrank.miniMaxSum(minMax);
+
+        //############################################################//
+
+        // BirthdayCakeCandles
+        int[] candles = {4,7,3,7};
+        System.out.println(Hackerrank.birthdayCakeCandles(candles));
     }
 
 
@@ -180,4 +187,22 @@ public class Hackerrank {
 
         System.out.println(min + " " + max);
     }
+
+    /*******************************************************************/
+
+    // This is "Birthday Cake Candles" Problem
+    // In this method we find how many times the biggest number repeated in the given array.
+    static int birthdayCakeCandles(int[] ar) {
+        Arrays.sort(ar);
+        int tallest = ar[ar.length-1], count = 0;
+        for (int i = ar.length-1; i >= 0; i--) {
+            if(tallest == ar[i]){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    /*******************************************************************/
+
 }
