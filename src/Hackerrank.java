@@ -58,6 +58,13 @@ public class Hackerrank {
 //        // Staircase
 //        System.out.println("Staircase: ");
 //        Hackerrank.staircase(5);
+
+        //############################################################//
+
+        // MinMaxSum
+        int[] minMax = {3,5, 8, 9, 2};
+        System.out.println("Min Max Sum: ");
+        Hackerrank.miniMaxSum(minMax);
     }
 
 
@@ -156,6 +163,10 @@ public class Hackerrank {
 
     /*******************************************************************/
 
+    // This is "MinMaxSum" problem
+    // Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly
+    // four of the five integers. Then print the respective minimum and maximum values as a single line of two
+    // space-separated long integers.
     static void miniMaxSum(int[] arr) {
         Arrays.sort(arr);
         long min = 0, max = 0;
