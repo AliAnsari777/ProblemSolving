@@ -11,6 +11,11 @@ public class LeetCode {
 
         // Happy Number
         System.out.println("Happy Number: " + LeetCode.happyNumber(19));
+
+        //############################################################//
+
+        // Number of Steps to Reduce a Number to Zero
+        System.out.println("Number of Steps to Reduce a Number to Zero: " + LeetCode.numberOfSteps(23));
     }
 
 //==========================================================================//
@@ -53,5 +58,28 @@ public class LeetCode {
                 return happyNumber(result);
         }
     }
+
+    /*******************************************************************/
+
+    // This is "Number of Steps to Reduce a Number to Zero" Problem
+    // Given a non-negative integer num, return the number of steps to reduce it to zero. If the current number is even,
+    // you have to divide it by 2, otherwise, you have to subtract 1 from it.
+    static int numberOfSteps (int num) {
+        int temp, steps = 0;
+        while(num != 0){
+            temp = num % 2;
+            if(temp == 0){
+                num /= 2;
+            }
+            else{
+                num -= 1;
+            }
+            steps++;
+        }
+        return steps;
+    }
+
+    /*******************************************************************/
+
 
 }
