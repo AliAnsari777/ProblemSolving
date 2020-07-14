@@ -9,10 +9,13 @@ public class LeetCode {
 
         //############################################################//
 
+        // Happy Number
+        System.out.println("Happy Number: " + LeetCode.happyNumber(19));
     }
 
 //==========================================================================//
 
+    // This is "Single Number" Problem
     // Given a non-empty array of integers, every element appears twice except for one. Find that single one.
     static int singleNumber(int[] nums) {
         ArrayList<Integer> list = new ArrayList<>();
@@ -28,5 +31,27 @@ public class LeetCode {
 
     /*******************************************************************/
 
+    // This is "Happy Number" Problem
+    // Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat
+    // the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not
+    // include 1. Those numbers for which this process ends in 1 are happy numbers.
+    static boolean happyNumber(int num) {
+        int result = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            result += digit * digit;
+            num /= 10;
+        }
+
+        if (result == 1 || result == 7) {
+            return true;
+        } else {
+            if (result < 10 || result == 0)
+                return false;
+            else
+                return happyNumber(result);
+        }
+    }
 
 }
