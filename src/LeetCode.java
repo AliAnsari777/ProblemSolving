@@ -21,6 +21,8 @@ public class LeetCode {
         // Max Consecutive Ones
         int[] maxConsecutiveOnes = {1, 1, 1, 0, 1, 0, 1, 1, 0};
         System.out.println("Max Consecutive Ones: " + LeetCode.findMaxConsecutiveOnes(maxConsecutiveOnes));
+
+        System.out.println("Defanging an IP Address: " + LeetCode.defangIPaddr("255.100.50.0"));
     }
 
 //==========================================================================//
@@ -104,6 +106,16 @@ public class LeetCode {
                 count = 0;
             }
         }
+        return result;
+    }
+
+    /*******************************************************************/
+
+    // This is "Defanging an IP Address" Problem
+    // Given a valid (IPv4) IP address, return a defanged version of that IP address.
+    //A defanged IP address replaces every period "." with "[.]".
+    static String defangIPaddr(String address) {
+        String result = address.replace(".", "[.]");
         return result;
     }
 }
