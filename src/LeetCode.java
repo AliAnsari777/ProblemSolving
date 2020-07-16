@@ -16,6 +16,8 @@ public class LeetCode {
 
         // Number of Steps to Reduce a Number to Zero
         System.out.println("Number of Steps to Reduce a Number to Zero: " + LeetCode.numberOfSteps(23));
+
+
     }
 
 //==========================================================================//
@@ -81,5 +83,24 @@ public class LeetCode {
 
     /*******************************************************************/
 
+    // This is "Max Consecutive Ones" Problem
+    // Given a binary array, find the maximum number of consecutive 1s in this array.
+    // The input array will only contain 0 and 1.
+    // The length of input array is a positive integer and will not exceed 10,000
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int count = 0, result = 0;
 
+        for(int i = 0; i< nums.length; i++){
+            if(nums[i] == 1){
+                count++;
+                if(count > result){
+                    result = count;
+                }
+            }
+            else{
+                count = 0;
+            }
+        }
+        return result;
+    }
 }
