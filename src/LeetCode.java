@@ -33,6 +33,11 @@ public class LeetCode {
 
         // First unique character in string
         System.out.println("First unique character in string: " + LeetCode.firstUniqChar("this is for test"));
+
+        //############################################################//
+
+        // Reverse Integer
+        System.out.println("Reverse Integer: " + LeetCode.reverse(7841));
     }
 
 //==========================================================================//
@@ -144,5 +149,42 @@ public class LeetCode {
             }
         }
         return -1;
+    }
+
+    /*******************************************************************/
+
+    // This is "Reverse Integer" Problem
+    // Given a 32-bit signed integer, reverse digits of an integer.
+    // Input: -123
+    // Output: -321
+    // Input: 120
+    // Output: 21
+    static int reverse(int x) {
+        if(x == 0){
+            return 0;
+        }
+
+        long result = 0;
+        boolean neg = false;
+
+        if(x<0){
+            neg = true;
+            x = Math.abs(x);
+        }
+
+        while(x != 0){
+            result = result * 10 + (x%10);
+            x /= 10;
+        }
+
+        if(neg){
+            result *= -1;
+        }
+
+        if(result > Integer.MAX_VALUE || result <= Integer.MIN_VALUE){
+            return 0;
+        }
+
+        return (int)result;
     }
 }
