@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class LeetCode {
     public static void main(String[] args) {
@@ -18,11 +19,20 @@ public class LeetCode {
         System.out.println("Number of Steps to Reduce a Number to Zero: " + LeetCode.numberOfSteps(23));
 
         //############################################################//
+
         // Max Consecutive Ones
         int[] maxConsecutiveOnes = {1, 1, 1, 0, 1, 0, 1, 1, 0};
         System.out.println("Max Consecutive Ones: " + LeetCode.findMaxConsecutiveOnes(maxConsecutiveOnes));
 
+        //############################################################//
+
+        // Defanging an IP Address
         System.out.println("Defanging an IP Address: " + LeetCode.defangIPaddr("255.100.50.0"));
+
+        //############################################################//
+
+        // First unique character in string
+        System.out.println("First unique character in string: " + LeetCode.firstUniqChar("this is for test"));
     }
 
 //==========================================================================//
@@ -117,5 +127,22 @@ public class LeetCode {
     static String defangIPaddr(String address) {
         String result = address.replace(".", "[.]");
         return result;
+    }
+
+    /*******************************************************************/
+
+    // This is "First Unique Character in a String" Problem
+    // Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
+    static int firstUniqChar(String s) {
+        HashMap<Character, Integer> list = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            list.put(s.charAt(i), list.getOrDefault(s.charAt(i), 0)+1 );
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if(list.get(s.charAt(i)) == 1){
+                return i;
+            }
+        }
+        return -1;
     }
 }
