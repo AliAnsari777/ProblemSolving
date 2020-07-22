@@ -43,6 +43,17 @@ public class LeetCode {
         //############################################################//
         // Reverse Bits
         System.out.println("Reverse Bits: " + LeetCode.reverseBits(43261596));
+
+        //############################################################//
+
+        // Two Sum
+        int[] twoSum = {5, 8, 7, 6, 2, 4};
+        int[] result = LeetCode.twoSum(twoSum, 9);
+
+        if (result != null)
+            System.out.println("Two Sum: " + result[0] + ", " + result[1]);
+        else
+            System.out.println("Two Sum: This array doesn't have target number!" );
     }
 
 //==========================================================================//
@@ -206,7 +217,7 @@ public class LeetCode {
 
     // This is "Two Sum" Problem
     // Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-    public int[] twoSum(int[] nums, int target) {
+    static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> list = new HashMap<>();
         int res = 0;
         for(int i=0; i<nums.length; i++){
