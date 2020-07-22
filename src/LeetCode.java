@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.function.IntBinaryOperator;
 
 public class LeetCode {
     public static void main(String[] args) {
@@ -38,6 +39,10 @@ public class LeetCode {
 
         // Reverse Integer
         System.out.println("Reverse Integer: " + LeetCode.reverse(7841));
+
+        //############################################################//
+        // Reverse Bits
+        System.out.println("Reverse Bits: " + LeetCode.reverseBits(43261596));
     }
 
 //==========================================================================//
@@ -186,5 +191,14 @@ public class LeetCode {
         }
 
         return (int)result;
+    }
+
+    /*******************************************************************/
+
+    // This is "Reverse Bits" Problem
+    // Reverse bits of a given 32 bits unsigned integer.
+    // you need treat n as an unsigned value
+    static int reverseBits(int n) {
+        return Integer.reverse(n);
     }
 }
