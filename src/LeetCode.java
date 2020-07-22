@@ -201,4 +201,21 @@ public class LeetCode {
     static int reverseBits(int n) {
         return Integer.reverse(n);
     }
+
+    /*******************************************************************/
+
+    // This is "Two Sum" Problem
+    // Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> list = new HashMap<>();
+        int res = 0;
+        for(int i=0; i<nums.length; i++){
+            res = target - nums[i];
+            if(list.containsKey(res)){
+                return new int[]{list.get(res), i};
+            }
+            list.put(nums[i], i);
+        }
+        return null;
+    }
 }
