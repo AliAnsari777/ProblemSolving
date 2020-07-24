@@ -68,7 +68,11 @@ public class LeetCode {
         // Palindrome
         System.out.println("Is Palindrome: " + LeetCode.isPalindrome(787));
 
+        //############################################################//
 
+        // Longest Common Prefix
+        String[] values = {"flower","flow","flight"};
+        System.out.println("Longest Common Prefix: " + LeetCode.longestCommonPrefix(values));
     }
 
 //==========================================================================//
@@ -295,5 +299,21 @@ public class LeetCode {
             return true;
         else
             return false;
+    }
+
+    /*******************************************************************/
+
+    // This is "Longest Common Prefix" Problem
+    // find the longest common prefix string amongst an array of strings.
+    //If there is no common prefix, return an empty string "".
+    static String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++)
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        return prefix;
     }
 }
