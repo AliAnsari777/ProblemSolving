@@ -42,6 +42,7 @@ public class LeetCode {
         System.out.println("Reverse Integer: " + LeetCode.reverse(7841));
 
         //############################################################//
+
         // Reverse Bits
         System.out.println("Reverse Bits: " + LeetCode.reverseBits(43261596));
 
@@ -56,10 +57,18 @@ public class LeetCode {
         else
             System.out.println("Two Sum: This array doesn't have target number!" );
 
+        //############################################################//
 
         // Valid Parentheses
         String parenthese = "({)[]";
         System.out.println("Valid Parentheses: " + LeetCode.validParentheses(parenthese));
+
+        //############################################################//
+
+        // Palindrome
+        System.out.println("Is Palindrome: " + LeetCode.isPalindrome(787));
+
+
     }
 
 //==========================================================================//
@@ -263,6 +272,26 @@ public class LeetCode {
             }
         }
         if(check.empty())
+            return true;
+        else
+            return false;
+    }
+
+    /*******************************************************************/
+
+    // This is "Palindrome Number" Problem
+    // Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward
+    static boolean isPalindrome(int x) {
+        if(x < 0)
+            return false;
+
+        int temp = x, rev = 0;
+        while(temp > 0){
+            rev = rev * 10 + (temp%10);
+            temp /= 10;
+        }
+
+        if(rev == x)
             return true;
         else
             return false;
