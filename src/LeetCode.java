@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Stack;
 import java.util.function.IntBinaryOperator;
 
 public class LeetCode {
@@ -54,6 +55,11 @@ public class LeetCode {
             System.out.println("Two Sum: " + result[0] + ", " + result[1]);
         else
             System.out.println("Two Sum: This array doesn't have target number!" );
+
+
+        // Valid Parentheses
+        String parenthese = "({)[]";
+        System.out.println("Valid Parentheses: " + LeetCode.validParentheses(parenthese));
     }
 
 //==========================================================================//
@@ -228,5 +234,37 @@ public class LeetCode {
             list.put(nums[i], i);
         }
         return null;
+    }
+
+    /*******************************************************************/
+
+    // This is "Valid Parentheses" Problem
+    // An input string is valid if:
+    // Open brackets must be closed by the same type of brackets.
+    // Open brackets must be closed in the correct order.
+    static boolean validParentheses(String s) {
+        Stack<Character> check = new Stack<>();
+        char temp;
+
+        for(int i = 0; i<s.length(); i++){
+            temp = s.charAt(i);
+            if( temp == '(' || temp == '{' || temp == '['){
+                check.push(temp);
+            }else{
+                if(check.empty())
+                    return false;
+
+                temp = check.pop();
+                if(  ( temp == '(' && s.charAt(i) != ')' ) ||
+                        ( temp == '{' && s.charAt(i) != '}' ) ||
+                        ( temp == '[' && s.charAt(i) != ']' ) )
+                    return false;
+
+            }
+        }
+        if(check.empty())
+            return true;
+        else
+            return false;
     }
 }
