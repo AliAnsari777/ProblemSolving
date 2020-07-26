@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interview_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interview_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +41,16 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
-  <component name="RunManager" selected="Application.LeetCode">
+  <component name="RunManager" selected="Application.Interview_1">
     <configuration name="Hackerrank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Hackerrank" />
+      <module name="ProblemSolving" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Interview_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Interview_1" />
       <module name="ProblemSolving" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -57,6 +65,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Interview_1" />
         <item itemvalue="Application.LeetCode" />
         <item itemvalue="Application.Hackerrank" />
       </list>
@@ -93,6 +102,7 @@
       <workItem from="1595042342568" duration="539000" />
       <workItem from="1595390812499" duration="2960000" />
       <workItem from="1595592188975" duration="1209000" />
+      <workItem from="1595739054187" duration="367000" />
     </task>
     <servers />
   </component>
@@ -140,10 +150,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="252" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594256431876" />
-    <state x="465" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1595592190020">
+    <state x="465" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1595739054989">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595592190020" />
+    <state x="465" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1595739054989" />
     <state x="209" y="32" key="new project wizard" timestamp="1593854486778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
