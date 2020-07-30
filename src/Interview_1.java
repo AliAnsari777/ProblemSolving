@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class Interview_1 {
 
@@ -8,6 +11,8 @@ public class Interview_1 {
 
         //############################################################//
 
+        // Blanagrams
+        System.out.println("check Blanagrams: " + Interview_1.checkBlanagrams("alex", "flex"));
 
     }
 
@@ -36,5 +41,40 @@ public class Interview_1 {
     /*******************************************************************/
 
 
+    // this method will check if two given string different only in one character
+    // for example if we give "abc" and "dac" as input result will be true because they different only in one letter.
+    static boolean checkBlanagrams(String word1, String word2) {
+        List<Character> temp = new ArrayList<>();
+        char[] one = word1.toCharArray();
+        char[] two = word2.toCharArray();
+        int count = 0;
+        Arrays.sort(one);
+        Arrays.sort(two);
+
+        String first = new String(one);
+        String second = new String(two);
+
+        if(first.equals(second))
+            return false;
+
+        if(one.length != two.length)
+            return false;
+
+        for (char c : one) {
+            temp.add(c);
+        }
+
+        for(int i = 0; i < two.length; i++){
+            if(temp.contains(two[i]))
+                temp.remove((Object) two[i]);
+        }
+
+
+        if (temp.size() == 1)
+            return true;
+        else
+            return false;
+
+    }
 }
 
