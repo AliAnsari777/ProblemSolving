@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Interview_1 {
 
@@ -13,6 +10,12 @@ public class Interview_1 {
 
         // Blanagrams
         System.out.println("check Blanagrams: " + Interview_1.checkBlanagrams("alex", "flex"));
+
+        //############################################################//
+
+        // Average
+        int[] average = {2,5,3,2,6,8,6,2};
+        System.out.println("Majority number in array: " + Interview_1.average(average));
 
     }
 
@@ -39,7 +42,6 @@ public class Interview_1 {
     }
 
     /*******************************************************************/
-
 
     // this method will check if two given string different only in one character
     // for example if we give "abc" and "dac" as input result will be true because they different only in one letter.
@@ -75,6 +77,21 @@ public class Interview_1 {
         else
             return false;
 
+    }
+
+    /*******************************************************************/
+
+    // find a number which is in majority of array
+    static int average(int[] arr) {
+        HashMap<Integer, Integer> mylist = new HashMap<>();
+        for (int value : arr) {
+            if (mylist.containsKey(value)) {
+                mylist.put(value, mylist.get(value) + 1);
+            } else {
+                mylist.put(value, 1);
+            }
+        }
+        return Collections.max(mylist.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 }
 
