@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/KickStart/Round_D/RecordBreaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interview_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interview_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +35,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="S:/MUM Classes Code &amp; Projects/PM/Top-Shop-e-commerce/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
-  <component name="RunManager" selected="Application.Interview_1">
+  <component name="RunManager" selected="Application.RecordBreaker">
     <configuration name="Hackerrank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Hackerrank" />
       <module name="ProblemSolving" />
@@ -63,8 +63,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RecordBreaker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KickStart.Round_D.RecordBreaker" />
+      <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="KickStart.Round_D.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RecordBreaker" />
         <item itemvalue="Application.Interview_1" />
         <item itemvalue="Application.LeetCode" />
         <item itemvalue="Application.Hackerrank" />
@@ -105,7 +119,9 @@
       <workItem from="1595739054187" duration="367000" />
       <workItem from="1595890416437" duration="5716000" />
       <workItem from="1595966806534" duration="95000" />
-      <workItem from="1596084220516" duration="821000" />
+      <workItem from="1596084220516" duration="964000" />
+      <workItem from="1598148286383" duration="248000" />
+      <workItem from="1598148711674" duration="1775000" />
     </task>
     <servers />
   </component>
@@ -117,26 +133,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="488" y="100" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1593406826938" />
-    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1595966842140">
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1598148352363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595966842140" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1596084773636">
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598148352363" />
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1598214249651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596084773636" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1596084773635">
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598214249651" />
+    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1598214249651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596084773635" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1596084773635">
+    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598214249651" />
+    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1598214249650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596084773635" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1596084773636">
+    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598214249650" />
+    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1598214249651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596084773636" />
+    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598214249651" />
     <state width="1493" height="252" key="GridCell.Tab.1.bottom" timestamp="1594256431877">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
