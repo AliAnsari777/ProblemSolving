@@ -82,7 +82,10 @@ public class Hackerrank {
 
         //############################################################//
 
-
+        // Text Palandrom
+        String palindrome = "madam";
+        System.out.println("Is the text palindrome: " + palindrome);
+        System.out.println(Hackerrank.palindrome(palindrome));
     }
 
 
@@ -237,5 +240,13 @@ public class Hackerrank {
 
     /*******************************************************************/
 
-
+    // This is "Palandrom" problem for text
+    static boolean palindrome(String text){
+        for(int i = 0; i<text.length()/2; i++){
+            if(text.charAt(i) != text.charAt(text.length()-i -1)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
