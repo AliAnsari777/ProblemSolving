@@ -7,34 +7,34 @@ public class LeetCode {
     public static void main(String[] args) {
 
         // Single Number
-//        int[] singleNumber = {1, 5, 4, 7, 5, 4, 1, 7, 2};
-//        System.out.println("Single Number: " + LeetCode.singleNumber(singleNumber));
+        int[] singleNumber = {1, 5, 4, 7, 5, 4, 1, 7, 2};
+        System.out.println("Single Number: " + LeetCode.singleNumber(singleNumber));
 
         //############################################################//
 
         // Happy Number
-//        System.out.println("Happy Number: " + LeetCode.happyNumber(19));
+        System.out.println("Happy Number: " + LeetCode.happyNumber(19));
 
         //############################################################//
 
         // Number of Steps to Reduce a Number to Zero
-//        System.out.println("Number of Steps to Reduce a Number to Zero: " + LeetCode.numberOfSteps(23));
+        System.out.println("Number of Steps to Reduce a Number to Zero: " + LeetCode.numberOfSteps(23));
 
         //############################################################//
 
         // Max Consecutive Ones
-//        int[] maxConsecutiveOnes = {1, 1, 1, 0, 1, 0, 1, 1, 0};
-//        System.out.println("Max Consecutive Ones: " + LeetCode.findMaxConsecutiveOnes(maxConsecutiveOnes));
+        int[] maxConsecutiveOnes = {1, 1, 1, 0, 1, 0, 1, 1, 0};
+        System.out.println("Max Consecutive Ones: " + LeetCode.findMaxConsecutiveOnes(maxConsecutiveOnes));
 
         //############################################################//
 
         // Defanging an IP Address
-//        System.out.println("Defanging an IP Address: " + LeetCode.defangIPaddr("255.100.50.0"));
+        System.out.println("Defanging an IP Address: " + LeetCode.defangIPaddr("255.100.50.0"));
 
         //############################################################//
 
         // First unique character in string
-//        System.out.println("First unique character in string: " + LeetCode.firstUniqChar("this is for test"));
+        System.out.println("First unique character in string: " + LeetCode.firstUniqChar("this is for test"));
 
         //############################################################//
 
@@ -71,8 +71,8 @@ public class LeetCode {
         //############################################################//
 
         // Longest Common Prefix
-//        String[] values = {"flower","flow","flight"};
-//        System.out.println("Longest Common Prefix: " + LeetCode.longestCommonPrefix(values));
+        String[] values = {"flower","flow","flight"};
+        System.out.println("Longest Common Prefix: " + LeetCode.longestCommonPrefix(values));
     }
 
 //==========================================================================//

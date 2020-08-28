@@ -82,10 +82,18 @@ public class Hackerrank {
 
         //############################################################//
 
-        // Text Palandrom
+        // Text Palindrome
         String palindrome = "madam";
         System.out.println("Is the text palindrome: " + palindrome);
         System.out.println(Hackerrank.palindrome(palindrome));
+
+        //############################################################//
+
+        // Grading Students
+        List<Integer> grades = new ArrayList<>(Arrays.asList(73, 67, 38, 33));
+        System.out.println("Grading Students: ");
+        System.out.println(Hackerrank.gradingStudents(grades));
+
     }
 
 
@@ -248,5 +256,26 @@ public class Hackerrank {
             }
         }
         return true;
+    }
+
+    /*******************************************************************/
+
+    // This is "Grading Students" problem
+    static List<Integer> gradingStudents(List<Integer> grades) {
+        List<Integer> score = new ArrayList<>();
+        int temp = 0;
+        for(int g : grades){
+            if(g<38){
+                score.add(g);
+                continue;
+            }
+            temp = (g / 5 + 1) * 5;
+            if((temp - g) < 3){
+                score.add(temp);
+            }else{
+                score.add(g);
+            }
+        }
+        return score;
     }
 }
