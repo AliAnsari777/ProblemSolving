@@ -94,6 +94,12 @@ public class Hackerrank {
         System.out.println("Grading Students: ");
         System.out.println(Hackerrank.gradingStudents(grades));
 
+        //############################################################//
+
+        // kangaroo
+        System.out.println("Kangaroo: ");
+        System.out.println(Hackerrank.kangaroo(0, 3, 4, 2));
+
     }
 
 
