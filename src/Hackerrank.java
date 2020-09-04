@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Hackerrank {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 //        // Simple Array Sum
 //        int[] simpleArray = {7,5,3,8,4,2,1};
@@ -100,6 +100,16 @@ public class Hackerrank {
         System.out.println("Kangaroo: ");
         System.out.println(Hackerrank.kangaroo(0, 3, 4, 2));
 
+        //############################################################//
+
+        // ZigZagSequence
+        int[] list = {4,3,2,1,5,7};
+        System.out.println("Zig Zag Sequence: ");
+        try {
+            Hackerrank.findZigZagSequence(list, 6);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 
@@ -299,5 +309,34 @@ public class Hackerrank {
             return "NO";
         }
 
+    }
+
+    /*******************************************************************/
+
+    //
+    static void findZigZagSequence(int [] a, int n) throws Exception {
+        if (n > a.length)
+            throw new Exception("Number can't be bigger than array length");
+
+        Arrays.sort(a);
+        int mid = (n)/2;
+        int temp = a[mid];
+        a[mid] = a[n - 1];
+        a[n - 1] = temp;
+
+        int st = mid + 1;
+        int ed = mid + 2;
+        while(ed < n-1){
+            temp = a[st];
+            a[st] = a[ed];
+            a[ed] = temp;
+            st = st + 1;
+            ed = ed + 1;
+        }
+        for(int i = 0; i < n; i++){
+            if(i > 0) System.out.print(" ");
+            System.out.print(a[i]);
+        }
+        System.out.println();
     }
 }
