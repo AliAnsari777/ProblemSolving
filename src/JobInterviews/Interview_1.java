@@ -19,6 +19,12 @@ public class Interview_1 {
         int[] average = {2,5,3,2,6,8,6,2};
         System.out.println("Majority number in array: " + Interview_1.average(average));
 
+        //############################################################//
+
+        // K frequent element in array
+        int[] numbers = {3,3,3,5,5,7,7,7,7};
+        System.out.println("K frequent element in array");
+        Interview_1.kFrequentElement(numbers, 1);
     }
 
 //==========================================================================//
@@ -94,6 +100,49 @@ public class Interview_1 {
             }
         }
         return Collections.max(mylist.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+    /*******************************************************************/
+
+    // show K frequent element in an array
+    // this method show K number of elements in array according to how much they repeated in array.
+    static void kFrequentElement(int[] list, int k){
+        class ValueComparator implements Comparator<Integer> {
+            Map<Integer, Integer> base;
+
+            public ValueComparator(Map<Integer, Integer> base) {
+                this.base = base;
+            }
+
+            // Note: this comparator imposes orderings that are inconsistent with
+            // equals.
+            public int compare(Integer a, Integer b) {
+                if (base.get(a) >= base.get(b)) {
+                    return -1;
+                } else {
+                    return 1;
+                } // returning 0 would merge keys
+            }
+        }
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        ValueComparator comparator = new ValueComparator(map);
+        TreeMap<Integer,Integer> result = new TreeMap<>(comparator);
+
+        for (int i = 0; i < list.length; i++) {
+            if(!(map.containsKey(list[i]))){
+                map.put(list[i], 1);
+            }else {
+                map.put(list[i], map.get(list[i]) + 1 );
+            }
+        }
+
+        result.putAll(map);
+
+        for (int i = 0; i < k; i++) {
+            System.out.println(result.firstKey());
+            result.pollFirstEntry();
+        }
     }
 }
 
