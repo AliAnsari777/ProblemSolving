@@ -1,3 +1,5 @@
+package JobInterviews;
+
 import java.util.*;
 
 public class Interview_1 {
