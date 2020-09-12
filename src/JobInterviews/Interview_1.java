@@ -25,6 +25,16 @@ public class Interview_1 {
         int[] numbers = {3,3,3,5,5,7,7,7,7};
         System.out.println("K frequent element in array");
         Interview_1.kFrequentElement(numbers, 1);
+
+        //############################################################//
+
+        // Unique Number Collection
+        int[] uniqueNumbers = {1,2,2,3,5,5,7,7,7,7};
+        System.out.println("Unique Number Collection: ");
+        HashMap res = Interview_1.uniqueNumberCollection(uniqueNumbers);
+        for (Object a : res.entrySet()){
+            System.out.println(a);
+        }
     }
 
 //==========================================================================//
@@ -143,6 +153,28 @@ public class Interview_1 {
             System.out.println(result.firstKey());
             result.pollFirstEntry();
         }
+    }
+
+    /*******************************************************************/
+
+    // this method will count number of digits in an array and save number with its repeated count in a hasmap
+    public static HashMap uniqueNumberCollection(int[] numbers){
+        if (numbers == null)
+            return null;
+
+        if (numbers.length == 0)
+            return null;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int number : numbers) {
+            if (!(map.containsKey(number))) {
+                map.put(number, 1);
+            } else {
+                map.put(number, map.get(number) + 1);
+            }
+        }
+        return map;
     }
 }
 
