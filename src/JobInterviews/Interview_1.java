@@ -35,6 +35,21 @@ public class Interview_1 {
         for (Object a : res.entrySet()){
             System.out.println(a);
         }
+
+        //############################################################//
+
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(101, "Hemendra");
+        map.put(99, "Andrew");
+        map.put(103, "Anish");
+        map.put(18, "Mohan");
+        map.put(11, "Christine");
+        map.put(109, "Rebeca");
+        map.put(111, "David");
+        map.put(19, "Rahim");
+        map.put(10, "Krishna");
+        System.out.println("Sort Hash Map: ");
+        Interview_1.sortHashMap(map);
     }
 
 //==========================================================================//
@@ -175,6 +190,38 @@ public class Interview_1 {
             }
         }
         return map;
+    }
+
+    /*******************************************************************/
+
+    public static void sortHashMap(HashMap<Integer, String> map){
+
+        class compare implements Comparator<Integer>{
+            HashMap<Integer, String> temp;
+
+            public compare(HashMap<Integer, String> map){
+                temp = map;
+            }
+
+            public int compare(Integer o1, Integer o2){
+                return temp.get(o1).compareTo(temp.get(o2));
+            }
+        }
+
+        TreeMap<Integer, String> sortedByKey = new TreeMap<>(map);
+        System.out.println("Sorted by key: ");
+        for(Object obj : sortedByKey.entrySet()){
+            System.out.print(obj + ",  ");
+        }
+
+
+        compare myComparator = new compare(map);
+        TreeMap<Integer, String> sortedByValue = new TreeMap<>(myComparator);
+        sortedByValue.putAll(map);
+        System.out.println("\nSorted by value: ");
+        for(Object obj : sortedByValue.entrySet()){
+            System.out.print(obj + ",  ");
+        }
     }
 }
 
