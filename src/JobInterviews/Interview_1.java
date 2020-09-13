@@ -61,6 +61,14 @@ public class Interview_1 {
         for (List l : group){
             System.out.println(l);
         }
+
+        //############################################################//
+
+        // Find Pattern
+        String txt = "ABCEABCDABCEABCD";
+        String pat = "ABCD";
+        System.out.println("Find Pattern: ");
+        Interview_1.findPattern(txt, pat);
     }
 
 //==========================================================================//
@@ -262,6 +270,32 @@ public class Interview_1 {
             result.add(map.get(key));
         }
         return result;
+    }
+
+    /*******************************************************************/
+
+    //
+    public static void findPattern(String text, String pat){
+        int t = text.length();
+        int p = pat.length();
+        int i = 0;
+
+        while (i <= t - p){
+            int j;
+
+            for(j=0; j < p; j++) {
+                if (text.charAt(i + j) != pat.charAt(j))
+                    break;
+            }
+
+            if(j == p){
+                System.out.println(i);
+                i += p;
+            }else if(j == 0)
+                i++;
+            else
+                i += j;
+        }
     }
 }
 
