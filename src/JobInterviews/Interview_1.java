@@ -38,6 +38,7 @@ public class Interview_1 {
 
         //############################################################//
 
+        // Sorting Hash Map
         HashMap<Integer, String> map = new HashMap<>();
         map.put(101, "Hemendra");
         map.put(99, "Andrew");
@@ -50,6 +51,16 @@ public class Interview_1 {
         map.put(10, "Krishna");
         System.out.println("Sort Hash Map: ");
         Interview_1.sortHashMap(map);
+
+        //############################################################//
+
+        // Group Anagram
+        String[] text = {"hello", "olleh", "ali", "lia", "ial"};
+        System.out.println("\nGroup Anagram: ");
+        List<List<String>> group = Interview_1.groupAnagram(text);
+        for (List l : group){
+            System.out.println(l);
+        }
     }
 
 //==========================================================================//
@@ -194,6 +205,7 @@ public class Interview_1 {
 
     /*******************************************************************/
 
+    // this method will sort a hash map by value by implementing compare class and overriding compare method
     public static void sortHashMap(HashMap<Integer, String> map){
 
         class compare implements Comparator<Integer>{
@@ -222,6 +234,34 @@ public class Interview_1 {
         for(Object obj : sortedByValue.entrySet()){
             System.out.print(obj + ",  ");
         }
+    }
+
+    /*******************************************************************/
+
+    // this method will accept an array of strings and group all anagram words, those have same letters
+    // but in different order.
+    public static List<List<String>> groupAnagram(String[] text){
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        for (int i = 0; i < text.length; i++) {
+            char[] temp = text[i].toCharArray();
+            Arrays.sort(temp);
+            String vale = new String(temp);
+
+            if(!(map.containsKey(vale))){
+                List<String> list = new ArrayList<>();
+                list.add(text[i]);
+                map.put(vale, list);
+            }else {
+                map.get(vale).add(text[i]);
+            }
+        }
+
+        List<List<String>> result = new ArrayList<>();
+        for(String key : map.keySet()){
+            result.add(map.get(key));
+        }
+        return result;
     }
 }
 
