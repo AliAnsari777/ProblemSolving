@@ -72,12 +72,21 @@ public class Interview_1 {
 
         //############################################################//
 
-
+        // Replace word
         String SampleText = "GeeksforGeeks is a computer science portal for geeks. People who love computer and computer " +
                 "codes can contribute their valuables/ideas on computer codes/structures on here.";
         String word = "computer";
         System.out.println("Replace word with Star: ");
         Interview_1.replaceWord(SampleText, word);
+
+        //############################################################//
+
+        String value = "abc";
+        List<List> result = Interview_1.subSet(value);
+        System.out.println("\nSub Sets of " + value +": ");
+        for(List o : result){
+            System.out.println(o);
+        }
     }
 
 //==========================================================================//
@@ -327,6 +336,30 @@ public class Interview_1 {
             }
             System.out.print(split[i] + " ");
         }
+    }
+
+    /*******************************************************************/
+
+
+    public static List<List> subSet(String text){
+        List<List> result = new ArrayList<>();
+        List set = new ArrayList();
+        result.add(set);
+
+        char[] list = text.toCharArray();
+        char val;
+        for (int i = 0; i < list.length; i++) {
+            val = list[i];
+            List moreSet = new ArrayList();
+            for(List l : result){
+                List temp = new ArrayList();
+                temp.addAll(l);
+                temp.add(val);
+                moreSet.add(temp);
+            }
+            result.addAll(moreSet);
+        }
+        return result;
     }
 }
 
