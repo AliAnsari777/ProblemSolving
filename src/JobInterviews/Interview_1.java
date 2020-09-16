@@ -69,6 +69,15 @@ public class Interview_1 {
         String pat = "ABCD";
         System.out.println("Find Pattern: ");
         Interview_1.findPattern(txt, pat);
+
+        //############################################################//
+
+
+        String SampleText = "GeeksforGeeks is a computer science portal for geeks. People who love computer and computer " +
+                "codes can contribute their valuables/ideas on computer codes/structures on here.";
+        String word = "computer";
+        System.out.println("Replace word with Star: ");
+        Interview_1.replaceWord(SampleText, word);
     }
 
 //==========================================================================//
@@ -295,6 +304,28 @@ public class Interview_1 {
                 i++;
             else
                 i += j;
+        }
+    }
+
+    /*******************************************************************/
+
+    // This method will receive a text and a word and find that word inside the text and replace it with stars
+    public static void replaceWord(String text, String word){
+        int w = word.length();
+        String star = "";
+
+        for (int i = 0; i < w; i++) {
+            star += "*";
+        }
+
+        String[] split;
+        split = text.split(" ");
+
+        for (int i = 0; i < split.length; i++) {
+            if (split[i].equals(word)){
+                split[i] = star;
+            }
+            System.out.print(split[i] + " ");
         }
     }
 }
