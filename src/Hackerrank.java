@@ -119,6 +119,20 @@ public class Hackerrank {
         System.out.println("Count Apples and Oranges: ");
         Hackerrank.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
 
+        //############################################################//
+
+        // Breaking Record
+        int[] records = {10, 5, 20, 20, 4, 5, 2, 25, 1};
+        System.out.println("Breaking Record: ");
+        int[] result = Hackerrank.breakingRecords(records);
+        for(int r : result){
+            System.out.print(r + " ");
+        }
+        System.out.println();
+
+        //############################################################//
+
+
     }
 
 
@@ -369,5 +383,24 @@ public class Hackerrank {
 
         System.out.println(apple);
         System.out.println(orange);
+    }
+
+    /*******************************************************************/
+
+    //
+    static int[] breakingRecords(int[] scores) {
+        int max = scores[0], min = scores[0];
+        int[] result = new int[2];
+
+        for(int i = 1; i < scores.length; i++){
+            if(scores[i] > max){
+                max = scores[i];
+                result[0]++;
+            }else if(scores[i] < min){
+                min = scores[i];
+                result[1]++;
+            }
+        }
+        return result;
     }
 }
