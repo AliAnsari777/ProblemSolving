@@ -16,23 +16,23 @@ public class Interview_1 {
         //############################################################//
 
         // Average
-        int[] average = {2,5,3,2,6,8,6,2};
+        int[] average = {2, 5, 3, 2, 6, 8, 6, 2};
         System.out.println("Majority number in array: " + Interview_1.average(average));
 
         //############################################################//
 
         // K frequent element in array
-        int[] numbers = {3,3,3,5,5,7,7,7,7};
+        int[] numbers = {3, 3, 3, 5, 5, 7, 7, 7, 7};
         System.out.println("K frequent element in array");
         Interview_1.kFrequentElement(numbers, 1);
 
         //############################################################//
 
         // Unique Number Collection
-        int[] uniqueNumbers = {1,2,2,3,5,5,7,7,7,7};
+        int[] uniqueNumbers = {1, 2, 2, 3, 5, 5, 7, 7, 7, 7};
         System.out.println("Unique Number Collection: ");
         HashMap res = Interview_1.uniqueNumberCollection(uniqueNumbers);
-        for (Object a : res.entrySet()){
+        for (Object a : res.entrySet()) {
             System.out.println(a);
         }
 
@@ -58,7 +58,7 @@ public class Interview_1 {
         String[] text = {"hello", "olleh", "ali", "lia", "ial"};
         System.out.println("\nGroup Anagram: ");
         List<List<String>> group = Interview_1.groupAnagram(text);
-        for (List l : group){
+        for (List l : group) {
             System.out.println(l);
         }
 
@@ -83,8 +83,8 @@ public class Interview_1 {
 
         String value = "abc";
         List<List> result = Interview_1.subSet(value);
-        System.out.println("\nSub Sets of " + value +": ");
-        for(List o : result){
+        System.out.println("\nSub Sets of " + value + ": ");
+        for (List o : result) {
             System.out.println(o);
         }
 
@@ -93,25 +93,31 @@ public class Interview_1 {
         char[] per = {'a', 'b', 'c'};
         System.out.println("Permutations: ");
         Interview_1.permutations(per, per.length, per.length);
+
+        //############################################################//
+
+        String sample = "abcd";
+        System.out.println("String Permute: ");
+        Interview_1.stringPermute(sample, 0, sample.length() - 1);
     }
 
 //==========================================================================//
 
     // this method check that text in parameter has all the alphabet or not.
-    static boolean pangram(String text){
+    static boolean pangram(String text) {
         HashMap<Character, Integer> alpha = new HashMap<>();
-        for (int i = 0; i < 26 ; i++) {
-            alpha.put( (char) (97 + i), 0);
+        for (int i = 0; i < 26; i++) {
+            alpha.put((char) (97 + i), 0);
         }
 
         String temp = text.toLowerCase();
         for (int i = 0; i < temp.length(); i++) {
-            if(alpha.containsKey(temp.charAt(i))){
+            if (alpha.containsKey(temp.charAt(i))) {
                 alpha.put(temp.charAt(i), 1);
             }
         }
 
-        if (alpha.containsValue(0)){
+        if (alpha.containsValue(0)) {
             return false;
         }
         return true;
@@ -132,18 +138,18 @@ public class Interview_1 {
         String first = new String(one);
         String second = new String(two);
 
-        if(first.equals(second))
+        if (first.equals(second))
             return false;
 
-        if(one.length != two.length)
+        if (one.length != two.length)
             return false;
 
         for (char c : one) {
             temp.add(c);
         }
 
-        for(int i = 0; i < two.length; i++){
-            if(temp.contains(two[i]))
+        for (int i = 0; i < two.length; i++) {
+            if (temp.contains(two[i]))
                 temp.remove((Object) two[i]);
         }
 
@@ -174,7 +180,7 @@ public class Interview_1 {
 
     // show K frequent element in an array
     // this method show K number of elements in array according to how much they repeated in array.
-    static void kFrequentElement(int[] list, int k){
+    static void kFrequentElement(int[] list, int k) {
         class ValueComparator implements Comparator<Integer> {
             Map<Integer, Integer> base;
 
@@ -195,13 +201,13 @@ public class Interview_1 {
 
         HashMap<Integer, Integer> map = new HashMap<>();
         ValueComparator comparator = new ValueComparator(map);
-        TreeMap<Integer,Integer> result = new TreeMap<>(comparator);
+        TreeMap<Integer, Integer> result = new TreeMap<>(comparator);
 
         for (int i = 0; i < list.length; i++) {
-            if(!(map.containsKey(list[i]))){
+            if (!(map.containsKey(list[i]))) {
                 map.put(list[i], 1);
-            }else {
-                map.put(list[i], map.get(list[i]) + 1 );
+            } else {
+                map.put(list[i], map.get(list[i]) + 1);
             }
         }
 
@@ -216,7 +222,7 @@ public class Interview_1 {
     /*******************************************************************/
 
     // this method will count number of digits in an array and save number with its repeated count in a hasmap
-    public static HashMap uniqueNumberCollection(int[] numbers){
+    public static HashMap uniqueNumberCollection(int[] numbers) {
         if (numbers == null)
             return null;
 
@@ -238,23 +244,23 @@ public class Interview_1 {
     /*******************************************************************/
 
     // this method will sort a hash map by value by implementing compare class and overriding compare method
-    public static void sortHashMap(HashMap<Integer, String> map){
+    public static void sortHashMap(HashMap<Integer, String> map) {
 
-        class compare implements Comparator<Integer>{
+        class compare implements Comparator<Integer> {
             HashMap<Integer, String> temp;
 
-            public compare(HashMap<Integer, String> map){
+            public compare(HashMap<Integer, String> map) {
                 temp = map;
             }
 
-            public int compare(Integer o1, Integer o2){
+            public int compare(Integer o1, Integer o2) {
                 return temp.get(o1).compareTo(temp.get(o2));
             }
         }
 
         TreeMap<Integer, String> sortedByKey = new TreeMap<>(map);
         System.out.println("Sorted by key: ");
-        for(Object obj : sortedByKey.entrySet()){
+        for (Object obj : sortedByKey.entrySet()) {
             System.out.print(obj + ",  ");
         }
 
@@ -263,7 +269,7 @@ public class Interview_1 {
         TreeMap<Integer, String> sortedByValue = new TreeMap<>(myComparator);
         sortedByValue.putAll(map);
         System.out.println("\nSorted by value: ");
-        for(Object obj : sortedByValue.entrySet()){
+        for (Object obj : sortedByValue.entrySet()) {
             System.out.print(obj + ",  ");
         }
     }
@@ -272,7 +278,7 @@ public class Interview_1 {
 
     // this method will accept an array of strings and group all anagram words, those have same letters
     // but in different order.
-    public static List<List<String>> groupAnagram(String[] text){
+    public static List<List<String>> groupAnagram(String[] text) {
         HashMap<String, List<String>> map = new HashMap<>();
 
         for (int i = 0; i < text.length; i++) {
@@ -280,17 +286,17 @@ public class Interview_1 {
             Arrays.sort(temp);
             String vale = new String(temp);
 
-            if(!(map.containsKey(vale))){
+            if (!(map.containsKey(vale))) {
                 List<String> list = new ArrayList<>();
                 list.add(text[i]);
                 map.put(vale, list);
-            }else {
+            } else {
                 map.get(vale).add(text[i]);
             }
         }
 
         List<List<String>> result = new ArrayList<>();
-        for(String key : map.keySet()){
+        for (String key : map.keySet()) {
             result.add(map.get(key));
         }
         return result;
@@ -299,23 +305,23 @@ public class Interview_1 {
     /*******************************************************************/
 
     //
-    public static void findPattern(String text, String pat){
+    public static void findPattern(String text, String pat) {
         int t = text.length();
         int p = pat.length();
         int i = 0;
 
-        while (i <= t - p){
+        while (i <= t - p) {
             int j;
 
-            for(j=0; j < p; j++) {
+            for (j = 0; j < p; j++) {
                 if (text.charAt(i + j) != pat.charAt(j))
                     break;
             }
 
-            if(j == p){
+            if (j == p) {
                 System.out.println(i);
                 i += p;
-            }else if(j == 0)
+            } else if (j == 0)
                 i++;
             else
                 i += j;
@@ -325,7 +331,7 @@ public class Interview_1 {
     /*******************************************************************/
 
     // This method will receive a text and a word and find that word inside the text and replace it with stars
-    public static void replaceWord(String text, String word){
+    public static void replaceWord(String text, String word) {
         int w = word.length();
         String star = "";
 
@@ -337,7 +343,7 @@ public class Interview_1 {
         split = text.split(" ");
 
         for (int i = 0; i < split.length; i++) {
-            if (split[i].equals(word)){
+            if (split[i].equals(word)) {
                 split[i] = star;
             }
             System.out.print(split[i] + " ");
@@ -346,7 +352,7 @@ public class Interview_1 {
 
     /*******************************************************************/
 
-    public static List<List> subSet(String text){
+    public static List<List> subSet(String text) {
         List<List> result = new ArrayList<>();
         List set = new ArrayList();
         result.add(set);
@@ -356,7 +362,7 @@ public class Interview_1 {
         for (int i = 0; i < list.length; i++) {
             val = list[i];
             List moreSet = new ArrayList();
-            for(List l : result){
+            for (List l : result) {
                 List temp = new ArrayList();
                 temp.addAll(l);
                 temp.add(val);
@@ -369,7 +375,7 @@ public class Interview_1 {
 
     /*******************************************************************/
 
-    public static void permutations(char[] value, int size, int n){
+    public static void permutations(char[] value, int size, int n) {
         if (size == 1) {
             for (int i = 0; i < n; i++) {
                 System.out.print(value[i]);
@@ -380,18 +386,36 @@ public class Interview_1 {
         for (int i = 0; i < size; i++) {
             permutations(value, size - 1, n);
 
-            if (size%2 == 1){
+            if (size % 2 == 1) {
                 char temp = value[0];
-                value[0] = value[size-1];
-                value[size-1] = temp;
-            }
-            else {
+                value[0] = value[size - 1];
+                value[size - 1] = temp;
+            } else {
                 char temp = value[i];
-                value[i] = value[size-1];
-                value[size-1] = temp;
+                value[i] = value[size - 1];
+                value[size - 1] = temp;
             }
         }
     }
 
-}
+    /*******************************************************************/
 
+    public static void stringPermute(String text, int start, int end) {
+        if (start == end)
+            System.out.println(text);
+        else {
+            for (int i = start; i < end; i++) {
+                text = swap(text, start, i);
+                stringPermute(text, start + 1, end);
+            }
+        }
+    }
+    public static String swap(String s, int a, int b){
+        char temp;
+        char[] list = s.toCharArray();
+        temp = list[a];
+        list[a] = list[b];
+        list[b] = temp;
+        return String.valueOf(list);
+    }
+}
