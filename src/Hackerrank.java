@@ -110,6 +110,15 @@ public class Hackerrank {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
+        //############################################################//
+
+        // CountAppleAndOranges
+        int[] apples = {-2, 2, 1};
+        int[] oranges = {5, -6};
+        System.out.println("Count Apples and Oranges: ");
+        Hackerrank.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
+
     }
 
 
@@ -338,5 +347,27 @@ public class Hackerrank {
             System.out.print(a[i]);
         }
         System.out.println();
+    }
+
+    /*******************************************************************/
+
+    // 's' is start and 't' is end point of our range. 'a' is a point before start and 'b' is a point after end.
+    // we just check values in apples array by summing them with 'a' value to see are there in our rage or not.
+    // and do same with oranges array. and if they were in range we increase apple or orange counter.
+    static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges) {
+        int apple = 0, orange = 0;
+        for(int i=0; i<apples.length; i++){
+            apples[i] += a;
+            if(apples[i] >= s && apples[i] <= t)
+                apple++;
+        }
+        for(int j = 0; j < oranges.length; j++){
+            oranges[j] += b;
+            if(oranges[j] >= s && oranges[j] <= t)
+                orange++;
+        }
+
+        System.out.println(apple);
+        System.out.println(orange);
     }
 }
