@@ -1,3 +1,5 @@
+import sun.awt.util.IdentityLinkedList;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -75,64 +77,65 @@ public class Hackerrank {
 
         //############################################################//
 
-        // TimeConversion
-        String time = "07:05:45PM";
-        System.out.println("Time Conversion: ");
-        System.out.println(Hackerrank.timeConversion(time));
+//        // TimeConversion
+//        String time = "07:05:45PM";
+//        System.out.println("Time Conversion: ");
+//        System.out.println(Hackerrank.timeConversion(time));
 
         //############################################################//
 
-        // Text Palindrome
-        String palindrome = "madam";
-        System.out.println("Is the text palindrome: " + palindrome);
-        System.out.println(Hackerrank.palindrome(palindrome));
+//        // Text Palindrome
+//        String palindrome = "madam";
+//        System.out.println("Is the text palindrome: " + palindrome);
+//        System.out.println(Hackerrank.palindrome(palindrome));
 
         //############################################################//
 
-        // Grading Students
-        List<Integer> grades = new ArrayList<>(Arrays.asList(73, 67, 38, 33));
-        System.out.println("Grading Students: ");
-        System.out.println(Hackerrank.gradingStudents(grades));
+//        // Grading Students
+//        List<Integer> grades = new ArrayList<>(Arrays.asList(73, 67, 38, 33));
+//        System.out.println("Grading Students: ");
+//        System.out.println(Hackerrank.gradingStudents(grades));
 
         //############################################################//
 
-        // kangaroo
-        System.out.println("Kangaroo: ");
-        System.out.println(Hackerrank.kangaroo(0, 3, 4, 2));
+//        // kangaroo
+//        System.out.println("Kangaroo: ");
+//        System.out.println(Hackerrank.kangaroo(0, 3, 4, 2));
 
         //############################################################//
 
-        // ZigZagSequence
-        int[] list = {4,3,2,1,5,7};
-        System.out.println("Zig Zag Sequence: ");
-        try {
-            Hackerrank.findZigZagSequence(list, 6);
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+//        // ZigZagSequence
+//        int[] list = {4,3,2,1,5,7};
+//        System.out.println("Zig Zag Sequence: ");
+//        try {
+//            Hackerrank.findZigZagSequence(list, 6);
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
 
         //############################################################//
 
-        // CountAppleAndOranges
-        int[] apples = {-2, 2, 1};
-        int[] oranges = {5, -6};
-        System.out.println("Count Apples and Oranges: ");
-        Hackerrank.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
+//        // CountAppleAndOranges
+//        int[] apples = {-2, 2, 1};
+//        int[] oranges = {5, -6};
+//        System.out.println("Count Apples and Oranges: ");
+//        Hackerrank.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
 
         //############################################################//
 
-        // Breaking Record
-        int[] records = {10, 5, 20, 20, 4, 5, 2, 25, 1};
-        System.out.println("Breaking Record: ");
-        int[] result = Hackerrank.breakingRecords(records);
-        for(int r : result){
-            System.out.print(r + " ");
-        }
-        System.out.println();
+//        // Breaking Record
+//        int[] records = {10, 5, 20, 20, 4, 5, 2, 25, 1};
+//        System.out.println("Breaking Record: ");
+//        int[] result = Hackerrank.breakingRecords(records);
+//        for(int r : result){
+//            System.out.print(r + " ");
+//        }
+//        System.out.println();
 
         //############################################################//
 
-
+        List<Integer> cack = new ArrayList<>(Arrays.asList(1,2,1,3,5));
+        System.out.println(Hackerrank.birthday(cack,3, 2));
     }
 
 
@@ -402,5 +405,23 @@ public class Hackerrank {
             }
         }
         return result;
+    }
+
+    /*******************************************************************/
+
+    static int birthday(List<Integer> s, int d, int m) {
+        int count = 0, temp = 0;
+        for (int i = 0; i < m; i++) {
+            temp += s.get(i);
+        }
+        for (int i = 0; i < s.size() - m + 1; i++) {
+            if(temp == d)
+                count++;
+
+            if (i+m < s.size()){
+                temp = temp - s.get(i) + s.get(i+m);
+            }
+        }
+        return count;
     }
 }
