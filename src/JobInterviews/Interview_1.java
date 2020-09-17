@@ -87,6 +87,12 @@ public class Interview_1 {
         for(List o : result){
             System.out.println(o);
         }
+
+        //############################################################//
+
+        char[] per = {'a', 'b', 'c'};
+        System.out.println("Permutations: ");
+        Interview_1.permutations(per, per.length, per.length);
     }
 
 //==========================================================================//
@@ -340,7 +346,6 @@ public class Interview_1 {
 
     /*******************************************************************/
 
-
     public static List<List> subSet(String text){
         List<List> result = new ArrayList<>();
         List set = new ArrayList();
@@ -361,5 +366,32 @@ public class Interview_1 {
         }
         return result;
     }
+
+    /*******************************************************************/
+
+    public static void permutations(char[] value, int size, int n){
+        if (size == 1) {
+            for (int i = 0; i < n; i++) {
+                System.out.print(value[i]);
+            }
+            System.out.println();
+        }
+
+        for (int i = 0; i < size; i++) {
+            permutations(value, size - 1, n);
+
+            if (size%2 == 1){
+                char temp = value[0];
+                value[0] = value[size-1];
+                value[size-1] = temp;
+            }
+            else {
+                char temp = value[i];
+                value[i] = value[size-1];
+                value[size-1] = temp;
+            }
+        }
+    }
+
 }
 
