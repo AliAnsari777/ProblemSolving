@@ -2,36 +2,36 @@ package JobInterviews;
 
 import java.util.*;
 
-public class Interview_1 {
+public class Flexton_1 {
 
     public static void main(String[] args) {
         // Pangram
-        System.out.println("Pangram String: " + Interview_1.pangram("abcdefghijklmnopqrstuvwxyz"));
+        System.out.println("Pangram String: " + Flexton_1.pangram("abcdefghijklmnopqrstuvwxyz"));
 
         //############################################################//
 
         // Blanagrams
-        System.out.println("check Blanagrams: " + Interview_1.checkBlanagrams("alex", "flex"));
+        System.out.println("check Blanagrams: " + Flexton_1.checkBlanagrams("alex", "flex"));
 
         //############################################################//
 
         // Average
         int[] average = {2, 5, 3, 2, 6, 8, 6, 2};
-        System.out.println("Majority number in array: " + Interview_1.average(average));
+        System.out.println("Majority number in array: " + Flexton_1.average(average));
 
         //############################################################//
 
         // K frequent element in array
         int[] numbers = {3, 3, 3, 5, 5, 7, 7, 7, 7};
         System.out.println("K frequent element in array");
-        Interview_1.kFrequentElement(numbers, 1);
+        Flexton_1.kFrequentElement(numbers, 1);
 
         //############################################################//
 
         // Unique Number Collection
         int[] uniqueNumbers = {1, 2, 2, 3, 5, 5, 7, 7, 7, 7};
         System.out.println("Unique Number Collection: ");
-        HashMap res = Interview_1.uniqueNumberCollection(uniqueNumbers);
+        HashMap res = Flexton_1.uniqueNumberCollection(uniqueNumbers);
         for (Object a : res.entrySet()) {
             System.out.println(a);
         }
@@ -50,14 +50,14 @@ public class Interview_1 {
         map.put(19, "Rahim");
         map.put(10, "Krishna");
         System.out.println("Sort Hash Map: ");
-        Interview_1.sortHashMap(map);
+        Flexton_1.sortHashMap(map);
 
         //############################################################//
 
         // Group Anagram
         String[] text = {"hello", "olleh", "ali", "lia", "ial"};
         System.out.println("\nGroup Anagram: ");
-        List<List<String>> group = Interview_1.groupAnagram(text);
+        List<List<String>> group = Flexton_1.groupAnagram(text);
         for (List l : group) {
             System.out.println(l);
         }
@@ -68,7 +68,7 @@ public class Interview_1 {
         String txt = "ABCEABCDABCEABCD";
         String pat = "ABCD";
         System.out.println("Find Pattern: ");
-        Interview_1.findPattern(txt, pat);
+        Flexton_1.findPattern(txt, pat);
 
         //############################################################//
 
@@ -77,12 +77,12 @@ public class Interview_1 {
                 "codes can contribute their valuables/ideas on computer codes/structures on here.";
         String word = "computer";
         System.out.println("Replace word with Star: ");
-        Interview_1.replaceWord(SampleText, word);
+        Flexton_1.replaceWord(SampleText, word);
 
         //############################################################//
 
         String value = "abc";
-        List<List> result = Interview_1.subSet(value);
+        List<List> result = Flexton_1.subSet(value);
         System.out.println("\nSub Sets of " + value + ": ");
         for (List o : result) {
             System.out.println(o);
@@ -92,13 +92,13 @@ public class Interview_1 {
 
         char[] per = {'a', 'b', 'c'};
         System.out.println("Permutations: ");
-        Interview_1.permutations(per, per.length, per.length);
+        Flexton_1.permutations(per, per.length, per.length);
 
         //############################################################//
 
         String sample = "abcd";
         System.out.println("String Permute: ");
-        Interview_1.stringPermute(sample, 0, sample.length() - 1);
+        Flexton_1.stringPermute(sample, 0, sample.length() - 1);
     }
 
 //==========================================================================//
