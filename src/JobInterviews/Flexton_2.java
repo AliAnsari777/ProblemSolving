@@ -1,15 +1,26 @@
 package JobInterviews;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Flexton_2 {
     public static void main(String[] args) {
 
         // Find the longest Palindrome
         String res = Flexton_2.longestPalindrome("ugrecero");
+        System.out.println("Palindrome: ");
         System.out.println(res);
 
         //############################################################//
 
-
+        int[] numbers = {2,4,3,1,5,9,0};
+        int[] sum = Flexton_2.sumPair(numbers, 4);
+        System.out.println("Sum pairs of numbers: ");
+        if(sum != null)
+            System.out.println("Two number sum is: " + sum[0] + ", " + sum[1]);
+        else
+            System.out.println("No value pair");
     }
 
     //==========================================================================//
@@ -44,5 +55,28 @@ public class Flexton_2 {
 
     /*******************************************************************/
 
+// 1. find two numbers in an array that their sum is equal to the specific given value
+    public static int[] sumPair(int[] numbers, int k){
+        List<Integer> list = new ArrayList<>();
+        int[] result = new int[2];
+        int temp, value;
 
+        for(int i : numbers)
+            list.add(i);
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()){
+            temp = iterator.next();
+            iterator.remove();
+            value = k - temp;
+
+            if(list.contains(value)){
+                result[0] = temp;
+                result[1] = value;
+                return result;
+            }
+        }
+        return null;
+    }
 }
