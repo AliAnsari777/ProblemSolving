@@ -7,13 +7,14 @@ import java.util.List;
 public class Flexton_2 {
     public static void main(String[] args) {
 
-        // Find the longest Palindrome
+        // 0. Find the longest Palindrome
         String res = Flexton_2.longestPalindrome("ugrecero");
         System.out.println("Palindrome: ");
         System.out.println(res);
 
         //############################################################//
 
+        // 1. Sum two numbers in array that equal to target
         int[] numbers = {2,4,3,1,5,9,0};
         int[] sum = Flexton_2.sumPair(numbers, 4);
         int[] sum2 = Flexton_2.sumtwoNumber(numbers, 14);
@@ -23,11 +24,24 @@ public class Flexton_2 {
             System.out.println("Two number sum is: " + sum2[0] + ", " + sum2[1]);
         else
             System.out.println("No value pair");
+
+        //############################################################//
+
+        // 2. Merge Sort
+        int[] mergeSort = {2,4,3,1,5,9,0};
+        System.out.println("Merge Sort: ");
+        Flexton_2.mergeSort(mergeSort, 0, mergeSort.length-1);
+
+        System.out.println("sorted array");
+        for(int a : mergeSort){
+            System.out.print(a + ", ");
+        }
+        System.out.println();
     }
 
     //==========================================================================//
 
-    // find the longest palindrome in a text
+    // 0. find the longest palindrome in a text
     public static String longestPalindrome(String s) {
         if (s == null || s.length() < 1) return "";
         int start = 0;
@@ -97,5 +111,49 @@ public class Flexton_2 {
 
     /*******************************************************************/
 
+    // 2. merge sort with merge method
+    public static void mergeSort(int arr[], int left, int right){
+        if(left < right) {
+            int mid = (right + left) / 2;
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
 
+    public static void merge(int arr[], int left, int mid, int right){
+        int i = 0, j = 0, r = left;
+        int[] leftArr = new int[mid - left +1];
+        int[] rightArr = new int[right - mid];
+
+        for (int k = 0; k < leftArr.length; k++) {
+            leftArr[k] = arr[left+k];
+        }
+        for (int k = 0; k < rightArr.length; k++) {
+            rightArr[k] = arr[mid + 1 + k];
+        }
+
+        while (i < leftArr.length && j < rightArr.length){
+            if (leftArr[i] <= rightArr[j]){
+                arr[r] = leftArr[i];
+                i++;
+            }else {
+                arr[r] = rightArr[j];
+                j++;
+            }
+            r++;
+        }
+
+        while (i < leftArr.length){
+            arr[r] = leftArr[i];
+            i++;
+            r++;
+        }
+
+        while (j < rightArr.length){
+            arr[r] = rightArr[j];
+            j++;
+            r++;
+        }
+    }
 }
