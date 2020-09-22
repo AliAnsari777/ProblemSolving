@@ -16,9 +16,11 @@ public class Flexton_2 {
 
         int[] numbers = {2,4,3,1,5,9,0};
         int[] sum = Flexton_2.sumPair(numbers, 4);
+        int[] sum2 = Flexton_2.sumtwoNumber(numbers, 14);
+
         System.out.println("Sum pairs of numbers: ");
-        if(sum != null)
-            System.out.println("Two number sum is: " + sum[0] + ", " + sum[1]);
+        if(sum2 != null)
+            System.out.println("Two number sum is: " + sum2[0] + ", " + sum2[1]);
         else
             System.out.println("No value pair");
     }
@@ -55,7 +57,7 @@ public class Flexton_2 {
 
     /*******************************************************************/
 
-// 1. find two numbers in an array that their sum is equal to the specific given value
+    // 1. find two numbers in an array that their sum is equal to the specific given value
     public static int[] sumPair(int[] numbers, int k){
         List<Integer> list = new ArrayList<>();
         int[] result = new int[2];
@@ -79,4 +81,21 @@ public class Flexton_2 {
         }
         return null;
     }
+
+    // shorter method
+    public static int[] sumtwoNumber(int[] numbers, int t){
+        List<Integer> values = new ArrayList<>();
+        for (int num : numbers){
+            if(values.contains(t - num)){
+                return new int[] {num, t - num};
+            }else {
+                values.add(num);
+            }
+        }
+        return new int[] {};
+    }
+
+    /*******************************************************************/
+
+
 }
