@@ -1,8 +1,6 @@
 package JobInterviews;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Flexton_2 {
     public static void main(String[] args) {
@@ -29,7 +27,7 @@ public class Flexton_2 {
 
         // 2. Merge Sort
         int[] mergeSort = {2,4,3,1,5,9,0};
-        System.out.println("Merge Sort: ");
+        System.out.println("\nMerge Sort: ");
         Flexton_2.mergeSort(mergeSort, 0, mergeSort.length-1);
 
         System.out.println("sorted array");
@@ -37,6 +35,19 @@ public class Flexton_2 {
             System.out.print(a + ", ");
         }
         System.out.println();
+
+        //############################################################//
+
+        // Custom compare method
+        System.out.println("\nCustom Compare Method: ");
+        List<employee> emp = new ArrayList<>();
+        emp.add(new employee("ali", 90000));
+        emp.add(new employee("ahmed", 89000));
+        emp.add(new employee("vali", 60000));
+        emp.add(new employee("wahid", 70000));
+
+        employee maxEmp = Collections.max(emp, new compEmp());
+        System.out.println("max employee is " + maxEmp);
     }
 
     //==========================================================================//
@@ -156,4 +167,38 @@ public class Flexton_2 {
             r++;
         }
     }
+
+    /*******************************************************************/
+
+    // 3. creating a custom comparator to compare employees by their salary
+    static class employee{
+        String name;
+        Integer salary;
+
+        public employee(String name, int salary){
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public String toString(){
+            return "Name: " + name + ", Salary: " + salary;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Integer getSalary() {
+            return salary;
+        }
+    }
+
+    static class compEmp implements Comparator<employee> {
+
+        @Override
+        public int compare(employee o1, employee o2) {
+            return o1.getSalary().compareTo(o2.getSalary());
+        }
+    }
+
 }
