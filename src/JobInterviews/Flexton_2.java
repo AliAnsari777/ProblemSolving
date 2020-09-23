@@ -17,7 +17,7 @@ public class Flexton_2 {
         int[] sum = Flexton_2.sumPair(numbers, 4);
         int[] sum2 = Flexton_2.sumtwoNumber(numbers, 14);
 
-        System.out.println("Sum pairs of numbers: ");
+        System.out.println("\nSum pairs of numbers: ");
         if(sum2 != null)
             System.out.println("Two number sum is: " + sum2[0] + ", " + sum2[1]);
         else
@@ -48,6 +48,11 @@ public class Flexton_2 {
 
         employee maxEmp = Collections.max(emp, new compEmp());
         System.out.println("max employee is " + maxEmp);
+
+        //############################################################//
+
+        System.out.println("\nPower with recursive: ");
+        System.out.println(Flexton_2.power(2, 5));
     }
 
     //==========================================================================//
@@ -199,6 +204,21 @@ public class Flexton_2 {
         public int compare(employee o1, employee o2) {
             return o1.getSalary().compareTo(o2.getSalary());
         }
+    }
+
+    /*******************************************************************/
+
+    // 4. power function with recursion with O(logn) time complexity
+    static int power(int x, int n){
+        int sum;
+        if(n == 0)
+            return 1;
+        sum = power(x, n/2);
+        if(n%2 == 0)
+            return sum * sum;
+        else
+            return x * sum * sum;
+
     }
 
 }
