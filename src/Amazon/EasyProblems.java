@@ -1,6 +1,8 @@
 package Amazon;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EasyProblems {
     public static void main(String[] args) {
@@ -8,6 +10,7 @@ public class EasyProblems {
         // Two Number Sum
         int[] numbers = {5,3,-4,8,11,1,-1,6};
         System.out.println(Arrays.toString(SumOfTwoNumber(numbers, 10)));
+        System.out.println(Arrays.toString(sumTwoNumbersHashTable(numbers, 10)));
 
         //############################################################//
 
@@ -35,5 +38,17 @@ public class EasyProblems {
 
     /*******************************************************************/
 
+    static int[] sumTwoNumbersHashTable(int[] numbers, int target){
+        Map<Integer, Boolean> values = new HashMap<>();
+        int sum;
 
+        for(int val : numbers){
+            sum = target - val;
+            if (!values.containsKey(sum))
+                values.put(val, true);
+            else
+                return new int[]{val, sum};
+        }
+        return new int[]{};
+    }
 }
