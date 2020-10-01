@@ -7,8 +7,6 @@ public class BST {
 
     public static void main(String[] args) {
 
-        Node tree;
-
         //*******************************************************//
         insert(10);
         insert(5);
@@ -17,6 +15,7 @@ public class BST {
         insert(20);
         insert(25);
         insert(17);
+
         //*******************************************************//
         System.out.print("Does tree has number 7: ");
         System.out.println(search(7));
@@ -25,13 +24,25 @@ public class BST {
 //        remove(root,10, null);
 
         //*******************************************************//
-        System.out.print("Is this tree a valid BST: ");
+        System.out.print("\nIs this tree a valid BST: ");
         System.out.println(validateBST(root));
 
         //*******************************************************//
         List<Integer> result = new ArrayList<>();
-        System.out.println("Traversing tree in order: ");
+        System.out.println("\nTraversing tree in order: ");
         result = traversInOrder(root, result);
+        System.out.println(result.toString());
+
+        //*******************************************************//
+        System.out.println("\nTraversing tree pre order: ");
+        result.removeAll(result);
+        result = traversPreOrder(root, result);
+        System.out.println(result.toString());
+
+        //*******************************************************//
+        System.out.println("\nTraversing tree post order: ");
+        result.removeAll(result);
+        result = traversPostOrder(root, result);
         System.out.println(result.toString());
 
     }
@@ -212,4 +223,8 @@ public class BST {
         }
         return result;
     }
+
+    //############################################################//
+
+
 }
