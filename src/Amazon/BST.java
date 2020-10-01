@@ -5,17 +5,28 @@ public class BST {
     public static void main(String[] args) {
 
         Node tree;
+
+        //*******************************************************//
         insert(10);
         insert(5);
         insert(7);
         insert(3);
-        tree = insert(20);
-//        System.out.println(tree.value);
+        insert(20);
 
+        //*******************************************************//
+        System.out.print("Does tree has number 7: ");
         System.out.println(search(7));
-        remove(root,10, null);
+
+        //*******************************************************//
+//        remove(root,10, null);
+
+        //*******************************************************//
+        System.out.print("Is this tree a valid BST: ");
+        System.out.println(validateBST(root));
 
     }
+
+    //############################################################//
 
     // helper class for saving value and link to child nodes
     static class Node{
@@ -31,6 +42,8 @@ public class BST {
     }
 
     static Node root = new Node();
+
+    //############################################################//
 
     // Average: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
@@ -62,6 +75,7 @@ public class BST {
         return temp;
     }
 
+    //############################################################//
 
     // Average: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
@@ -82,6 +96,7 @@ public class BST {
         return false;
     }
 
+    //############################################################//
 
     static void remove(Node currentNode, int value, Node parent){
         Node temp = currentNode;
@@ -134,4 +149,22 @@ public class BST {
         return right.value;
     }
 
+    //############################################################//
+
+    static boolean validateBST(Node tree){
+        return helperValidator(tree, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private static boolean helperValidator(Node tree, int minValue, int maxValue) {
+        if (tree == null)
+            return true;
+
+        if (tree.value < minValue || tree.value > maxValue)
+            return false;
+
+        boolean leftValid = helperValidator(tree.left, minValue, tree.value);
+        boolean rightValid = helperValidator(tree.right, tree.value, maxValue);
+
+        return  leftValid && rightValid;
+    }
 }
