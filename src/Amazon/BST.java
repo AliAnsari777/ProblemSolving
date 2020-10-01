@@ -1,5 +1,8 @@
 package Amazon;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BST {
 
     public static void main(String[] args) {
@@ -12,7 +15,8 @@ public class BST {
         insert(7);
         insert(3);
         insert(20);
-
+        insert(25);
+        insert(17);
         //*******************************************************//
         System.out.print("Does tree has number 7: ");
         System.out.println(search(7));
@@ -23,6 +27,12 @@ public class BST {
         //*******************************************************//
         System.out.print("Is this tree a valid BST: ");
         System.out.println(validateBST(root));
+
+        //*******************************************************//
+        List<Integer> result = new ArrayList<>();
+        System.out.println("Traversing tree in order: ");
+        result = traversInOrder(root, result);
+        System.out.println(result.toString());
 
     }
 
@@ -98,6 +108,8 @@ public class BST {
 
     //############################################################//
 
+    // Average: time O(log(n)) | space O(1)
+    // Worst:   time O(n) | space O(1)
     static void remove(Node currentNode, int value, Node parent){
         Node temp = currentNode;
 
@@ -151,6 +163,7 @@ public class BST {
 
     //############################################################//
 
+    // time O(n) | space O(d)
     static boolean validateBST(Node tree){
         return helperValidator(tree, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
@@ -166,5 +179,37 @@ public class BST {
         boolean rightValid = helperValidator(tree.right, tree.value, maxValue);
 
         return  leftValid && rightValid;
+    }
+
+    //############################################################//
+
+    // Time O(n) | space O(n)/O(d)
+    // if we just display the result and don't save it in an array then the space will be O(d) which is depth of the
+    // tree and it is because we put that much callback in callback stack.
+    static List<Integer> traversInOrder(Node tree, List<Integer> result){
+        if (tree != null){
+            traversInOrder(tree.left, result);
+            result.add(tree.value);
+            traversInOrder(tree.right, result);
+        }
+        return result;
+    }
+
+    static List<Integer> traversPreOrder(Node tree, List<Integer> result){
+        if (tree != null){
+            result.add(tree.value);
+            traversPreOrder(tree.left,result);
+            traversPreOrder(tree.right, result);
+        }
+        return result;
+    }
+
+    static List<Integer> traversPostOrder(Node tree, List<Integer> result){
+        if (tree != null){
+            traversPostOrder(tree.left, result);
+            traversPostOrder(tree.right, result);
+            result.add(tree.value);
+        }
+        return result;
     }
 }
