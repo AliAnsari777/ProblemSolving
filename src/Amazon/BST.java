@@ -29,21 +29,30 @@ public class BST {
 
         //*******************************************************//
         List<Integer> result = new ArrayList<>();
-        System.out.println("\nTraversing tree in order: ");
-        result = traversInOrder(root, result);
+        System.out.println("\nTrmidrsing tree in order: ");
+        result = traverseInOrder(root, result);
         System.out.println(result.toString());
 
         //*******************************************************//
-        System.out.println("\nTraversing tree pre order: ");
+        System.out.println("\nTrmidrsing tree pre order: ");
         result.removeAll(result);
-        result = traversPreOrder(root, result);
+        result = traversePreOrder(root, result);
         System.out.println(result.toString());
 
         //*******************************************************//
-        System.out.println("\nTraversing tree post order: ");
+        System.out.println("\nTrmidrsing tree post order: ");
         result.removeAll(result);
-        result = traversPostOrder(root, result);
+        result = traversePostOrder(root, result);
         System.out.println(result.toString());
+
+        //*******************************************************//
+        System.out.println("\nMin Height BST: ");
+        int[] numbers = {1, 2, 5, 7, 10, 12, 15, 17};
+        Node MinBST = minHeightBST(numbers);
+
+        List printTree = new ArrayList();
+        printTree = traverseInOrder(MinBST, printTree);
+        System.out.println(printTree.toString());
 
     }
 
@@ -62,43 +71,55 @@ public class BST {
         }
     }
 
-    static Node root = new Node();
-
+    static Node root;
+    public BST(){
+        root = null;
+    }
     //############################################################//
 
-    // Average: time O(log(n)) | space O(1)
+    static void insert(int value){
+        root = insertNode(root, value);
+    }
+    // average: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
-    static Node insert(int value){
-        if(root.value == 0) {
-            root = new Node(value);
-            return root;
+    static Node insertNode(Node node, int value){
+        if(node == null) {
+            node = new Node(value);
+            return node;
         }
 
-        Node temp = root;
-        while (true){
-            if(value < temp.value){
-                if (temp.left == null){
-                    temp.left = new Node(value);
-                    break;
-                }else {
-                    temp = temp.left;
-                }
-            }else {
-                if(temp.right == null){
-                    temp.right = new Node(value);
-                    break;
-                }else {
-                    temp = temp.right;
-                }
-            }
-        }
+        if (value < node.value)
+            node.left = insertNode(node.left, value);
+        else if(value > node.value)
+            node.right = insertNode(node.right, value);
 
-        return temp;
+        return node;
+        // when we do insert without Node as parameter
+//        Node temp = root;
+//        while (true){
+//            if(value < temp.value){
+//                if (temp.left == null){
+//                    temp.left = new Node(value);
+//                    break;
+//                }else {
+//                    temp = temp.left;
+//                }
+//            }else {
+//                if(temp.right == null){
+//                    temp.right = new Node(value);
+//                    break;
+//                }else {
+//                    temp = temp.right;
+//                }
+//            }
+//        }
+//
+//        return temp;
     }
 
     //############################################################//
 
-    // Average: time O(log(n)) | space O(1)
+    // midrage: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
     static boolean search(int value){
         if (root.value == 0)
@@ -119,7 +140,7 @@ public class BST {
 
     //############################################################//
 
-    // Average: time O(log(n)) | space O(1)
+    // midrage: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
     static void remove(Node currentNode, int value, Node parent){
         Node temp = currentNode;
@@ -197,28 +218,28 @@ public class BST {
     // Time O(n) | space O(n)/O(d)
     // if we just display the result and don't save it in an array then the space will be O(d) which is depth of the
     // tree and it is because we put that much callback in callback stack.
-    static List<Integer> traversInOrder(Node tree, List<Integer> result){
+    static List<Integer> traverseInOrder(Node tree, List<Integer> result){
         if (tree != null){
-            traversInOrder(tree.left, result);
+            traverseInOrder(tree.left, result);
             result.add(tree.value);
-            traversInOrder(tree.right, result);
+            traverseInOrder(tree.right, result);
         }
         return result;
     }
 
-    static List<Integer> traversPreOrder(Node tree, List<Integer> result){
+    static List<Integer> traversePreOrder(Node tree, List<Integer> result){
         if (tree != null){
             result.add(tree.value);
-            traversPreOrder(tree.left,result);
-            traversPreOrder(tree.right, result);
+            traversePreOrder(tree.left,result);
+            traversePreOrder(tree.right, result);
         }
         return result;
     }
 
-    static List<Integer> traversPostOrder(Node tree, List<Integer> result){
+    static List<Integer> traversePostOrder(Node tree, List<Integer> result){
         if (tree != null){
-            traversPostOrder(tree.left, result);
-            traversPostOrder(tree.right, result);
+            traversePostOrder(tree.left, result);
+            traversePostOrder(tree.right, result);
             result.add(tree.value);
         }
         return result;
@@ -226,5 +247,21 @@ public class BST {
 
     //############################################################//
 
+    // Time O(n) | space O(n)
+    static Node minHeightBST(int[] numbers){
+        return constructMinHeightBST(numbers, 0, numbers.length-1);
+    }
 
+    static Node constructMinHeightBST(int[] arr, int start, int end){
+        if (start > end)
+            return null;
+
+        int mid = Math.floorDiv(start+end, 2);
+        Node node = new Node(arr[mid]);
+
+        node.left = constructMinHeightBST(arr, start, mid-1);
+        node.right = constructMinHeightBST(arr, mid+1, end);
+
+        return node;
+    }
 }
