@@ -1,5 +1,7 @@
 package Amazon;
 
+import sun.rmi.server.InactiveGroupException;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -57,22 +59,26 @@ public class BST {
         System.out.println(printTree.toString());
 
         //*******************************************************//
-        System.out.println("\nInverse BST: ");
-        System.out.println("\tBefore Inversion");
-        List inverted = new ArrayList();
-        traverseInOrder(root, inverted);
-        System.out.println(inverted.toString());
-
-        Node check = invertBSTRecursive(root);
-
-        System.out.println("\tAfter Inversion");
-        inverted.removeAll(inverted);
-        traverseInOrder(check, inverted);
-        System.out.println(inverted.toString());
+//        System.out.println("\nInverse BST: ");
+//        System.out.println("\tBefore Inversion");
+//        List inverted = new ArrayList();
+//        traverseInOrder(root, inverted);
+//        System.out.println(inverted.toString());
+//
+//        Node check = invertBSTRecursive(root);
+//
+//        System.out.println("\tAfter Inversion");
+//        inverted.removeAll(inverted);
+//        traverseInOrder(check, inverted);
+//        System.out.println(inverted.toString());
 
         //*******************************************************//
-        System.out.println("\nFind Closest Value in BST: ");
+        System.out.println("\nFind Closest Value in BST Iteratively: ");
         System.out.println(findClosestValueInBSTIterative(root, 8));
+
+        //*******************************************************//
+        System.out.println("\nFind Closest Value in BST Recursively: ");
+        System.out.println(findClosestValueInBSTRecursive(root, 20));
 
     }
 
@@ -326,15 +332,18 @@ public class BST {
 
     //############################################################//
 
+
     static int findClosestValueInBSTIterative(Node tree, int target){
         return helperFindClosestValueInBSTIterative(tree, target, Integer.MAX_VALUE);
     }
 
+    // Average: Time O(log(n)) | Space O(1)
+    // Worst:   Time O(n) | Space O(1)
     static int helperFindClosestValueInBSTIterative(Node tree, int target, int closest){
         Node current = tree;
 
         while(current != null){
-            if (Math.abs(target - current.value) < Math.abs(target -closest) ){
+            if (Math.abs(target - current.value) < Math.abs(target - closest) ){
                 closest = current.value;
             }
 
@@ -347,5 +356,28 @@ public class BST {
             }
         }
         return closest;
+    }
+
+
+    static int findClosestValueInBSTRecursive(Node tree, int target){
+        return helperFindClosestValueInBSTRecursive(tree, target, Integer.MAX_VALUE);
+    }
+
+    // Average: Time O(log(n)) | Space O(d) / O(log(n))
+    // Worst:   Time O(n) | Space O(n)
+    static int helperFindClosestValueInBSTRecursive(Node tree, int target, int closest){
+        if (tree == null)
+            return closest;
+
+        if (Math.abs(target - tree.value) < Math.abs(target - closest)){
+            closest = tree.value;
+        }
+
+        if (target < tree.value)
+            return helperFindClosestValueInBSTRecursive(tree.left, target, closest);
+        else if(target > tree.value)
+            return helperFindClosestValueInBSTRecursive(tree.right, target, closest);
+        else
+            return closest;
     }
 }
