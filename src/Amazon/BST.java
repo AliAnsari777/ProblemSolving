@@ -1,7 +1,9 @@
 package Amazon;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BST {
 
@@ -54,6 +56,19 @@ public class BST {
         printTree = traverseInOrder(MinBST, printTree);
         System.out.println(printTree.toString());
 
+        //*******************************************************//
+        System.out.println("\nInverse BST: ");
+        System.out.println("\tBefore Inversion");
+        List inverted = new ArrayList();
+        traverseInOrder(root, inverted);
+        System.out.println(inverted.toString());
+
+        Node check = invertBSTRecursive(root);
+
+        System.out.println("\tAfter Inversion");
+        inverted.removeAll(inverted);
+        traverseInOrder(check, inverted);
+        System.out.println(inverted.toString());
     }
 
     //############################################################//
@@ -119,7 +134,7 @@ public class BST {
 
     //############################################################//
 
-    // midrage: time O(log(n)) | space O(1)
+    // Average: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
     static boolean search(int value){
         if (root.value == 0)
@@ -140,7 +155,7 @@ public class BST {
 
     //############################################################//
 
-    // midrage: time O(log(n)) | space O(1)
+    // Average: time O(log(n)) | space O(1)
     // Worst:   time O(n) | space O(1)
     static void remove(Node currentNode, int value, Node parent){
         Node temp = currentNode;
@@ -263,5 +278,44 @@ public class BST {
         node.right = constructMinHeightBST(arr, mid+1, end);
 
         return node;
+    }
+
+    //############################################################//
+
+    // Time = O(n) | Space = O(n)
+    static Node invertBSTIterative(Node tree){
+        Queue<Node> queue = new LinkedList<>();
+
+        queue.add(tree);
+        while (!queue.isEmpty()){
+            Node temp = queue.poll();
+            if (temp == null)
+                continue;
+
+            swapNode(temp);
+            queue.add(temp.left);
+            queue.add(temp.right);
+        }
+        return tree;
+    }
+
+
+    // Time = O(n) | Space O(d)
+    static Node invertBSTRecursive(Node tree){
+        if (tree == null)
+            return null;
+
+        swapNode(tree);
+        invertBSTRecursive(tree.left);
+        invertBSTRecursive(tree.right);
+
+        return tree;
+    }
+
+    static void swapNode(Node tree){
+        Node temp;
+        temp = tree.left;
+        tree.left = tree.right;
+        tree.right = temp;
     }
 }
