@@ -15,7 +15,7 @@ public class EasyProblems {
 
         //############################################################//
 
-        // Time O(n) | space O(1)
+        // Validate Subsequence Array
         int[] array = {4, 6, 8, 2, 5, 0, 9};
         int[] subsequence = {4, 2, 9};
         System.out.println("\nValidate Subsequence Array");
@@ -62,6 +62,7 @@ public class EasyProblems {
 
     /*******************************************************************/
 
+    // Time O(n) | space O(1)
     static boolean validateSubsequenceArray(int[] oreginal, int[] subsequnce){
         int oreInd = 0, subInd = 0;
 
