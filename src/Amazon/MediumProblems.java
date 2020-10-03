@@ -15,7 +15,13 @@ public class MediumProblems {
 
         //############################################################//
 
+        int[] one = {10 ,5, 8, 15, 9, 12};
+        int[] two = {2, 7, 3, 19, 20, 17};
 
+        System.out.println("\nSmallest Difference: ");
+        int[] smallest = smallestDifference(one, two);
+        for (int a : smallest)
+            System.out.print(a + " ");
 
     }
 
@@ -53,5 +59,34 @@ public class MediumProblems {
 
     /*******************************************************************/
 
+    // Time = O(n log(n) + m log(m)) | space O(1)
+    static int[] smallestDifference(int[] one, int[] two){
+        int[] result = new int[2];
+        int current = Integer.MAX_VALUE, smallest = Integer.MAX_VALUE, oneIndex = 0, twoIndex = 0;
 
+        Arrays.sort(one);
+        Arrays.sort(two);
+
+        while (oneIndex < one.length && twoIndex < two.length){
+            int firstNum = one[oneIndex];
+            int secondNum = two[twoIndex];
+
+            if( firstNum < secondNum ){
+                current = secondNum - firstNum;
+                oneIndex++;
+            }else if (secondNum < firstNum){
+                current = firstNum - secondNum;
+                twoIndex++;
+            }else{
+                return new int[]{firstNum, secondNum};
+            }
+
+            if (current < smallest){
+                smallest = current;
+                result[0] = firstNum;
+                result[1] = secondNum;
+            }
+        }
+        return result;
+    }
 }
