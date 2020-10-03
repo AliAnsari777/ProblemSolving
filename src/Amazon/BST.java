@@ -33,18 +33,18 @@ public class BST {
 
         //*******************************************************//
         List<Integer> result = new ArrayList<>();
-        System.out.println("\nTrmidrsing tree in order: ");
+        System.out.println("\nTraversing tree in order: ");
         result = traverseInOrder(root, result);
         System.out.println(result.toString());
 
         //*******************************************************//
-        System.out.println("\nTrmidrsing tree pre order: ");
+        System.out.println("\nTraversing tree pre order: ");
         result.removeAll(result);
         result = traversePreOrder(root, result);
         System.out.println(result.toString());
 
         //*******************************************************//
-        System.out.println("\nTrmidrsing tree post order: ");
+        System.out.println("\nTraversing tree post order: ");
         result.removeAll(result);
         result = traversePostOrder(root, result);
         System.out.println(result.toString());
@@ -79,6 +79,10 @@ public class BST {
         //*******************************************************//
         System.out.println("\nFind Closest Value in BST Recursively: ");
         System.out.println(findClosestValueInBSTRecursive(root, 20));
+
+        //*******************************************************//
+        System.out.println("\nBranch Sum: ");
+        System.out.println(branchSum(MinBST).toString());
 
     }
 
@@ -380,4 +384,28 @@ public class BST {
         else
             return closest;
     }
+
+    //############################################################//
+
+    // Time = O(n) | Space O(n)
+    static List<Integer> branchSum(Node bst){
+        List<Integer> sums = new ArrayList<>();
+        branchSumTotal(bst, sums, 0);
+        return sums;
+    }
+
+    private static void branchSumTotal(Node bst, List<Integer> sums, int currentSum) {
+        if (bst == null)
+            return;
+
+        currentSum += bst.value;
+        if (bst.left == null && bst.right == null) {
+            sums.add(currentSum);
+            return;
+        }
+
+        branchSumTotal(bst.left, sums, currentSum);
+        branchSumTotal(bst.right, sums, currentSum);
+    }
+
 }
