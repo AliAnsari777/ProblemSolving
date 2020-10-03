@@ -69,6 +69,11 @@ public class BST {
         inverted.removeAll(inverted);
         traverseInOrder(check, inverted);
         System.out.println(inverted.toString());
+
+        //*******************************************************//
+        System.out.println("\nFind Closest Value in BST: ");
+        System.out.println(findClosestValueInBSTIterative(root, 8));
+
     }
 
     //############################################################//
@@ -317,5 +322,30 @@ public class BST {
         temp = tree.left;
         tree.left = tree.right;
         tree.right = temp;
+    }
+
+    //############################################################//
+
+    static int findClosestValueInBSTIterative(Node tree, int target){
+        return helperFindClosestValueInBSTIterative(tree, target, Integer.MAX_VALUE);
+    }
+
+    static int helperFindClosestValueInBSTIterative(Node tree, int target, int closest){
+        Node current = tree;
+
+        while(current != null){
+            if (Math.abs(target - current.value) < Math.abs(target -closest) ){
+                closest = current.value;
+            }
+
+            if(target < current.value){
+                current = current.left;
+            }else if(target > current.value){
+                current = current.right;
+            }else {
+                break;
+            }
+        }
+        return closest;
     }
 }
