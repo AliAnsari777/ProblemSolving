@@ -2,10 +2,7 @@ package Amazon;
 
 import sun.rmi.server.InactiveGroupException;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BST {
 
@@ -83,6 +80,10 @@ public class BST {
         //*******************************************************//
         System.out.println("\nBranch Sum: ");
         System.out.println(branchSum(MinBST).toString());
+
+        //*******************************************************//
+        System.out.println("\nNode Depth Sum: ");
+        System.out.println(nodeDepthSumRecursive(root,0));
 
     }
 
@@ -408,4 +409,13 @@ public class BST {
         branchSumTotal(bst.right, sums, currentSum);
     }
 
+    //############################################################//
+
+    // Time = O(n) | Space = O(n)
+    static int nodeDepthSumRecursive(Node tree, int depth){
+        if (tree == null)
+            return 0;
+
+        return depth + nodeDepthSumRecursive(tree.left, depth+1) + nodeDepthSumRecursive(tree.right, depth+1);
+    }
 }
