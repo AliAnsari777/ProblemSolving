@@ -56,6 +56,13 @@ public class MediumProblems {
         List<Integer> recursiveSpiral = recursiveSpiral2DArrayTraversing(spiral);
         System.out.println("\nRecursive Spiral Array Traversing: ");
         System.out.println(recursiveSpiral.toString());
+
+        //############################################################//
+
+        int[] peak = {1, 3, 3, 4, 2, 1, 0, 10, 7, 5, 3, 1, 5};
+        System.out.println("\nLongest Peak: ");
+        int longestPeak = longestPeak(peak);
+        System.out.println(longestPeak);
     }
 
     //==========================================================================//
@@ -222,4 +229,39 @@ public class MediumProblems {
 
         fillList(array, startRow+1, endRow-1, startCol+1, endCol-1, result);
     }
+
+    /*******************************************************************/
+
+    // Time = O(n) | Space = O(1)
+    static int longestPeak(int[] array){
+        int longestPeakSize = 0;
+        int i = 1;
+
+        while (i < array.length-1){
+            boolean isPeak = array[i-1] < array[i] && array[i] > array[i+1];
+            if (!isPeak){
+                i++;
+                continue;
+            }
+
+            int idxLeft = i-2;
+            while (idxLeft >= 0 && array[idxLeft] < array[idxLeft + 1]){
+                idxLeft--;
+            }
+            int idxRight = i+2;
+            while (idxRight < array.length-1 && array[idxRight] > array[idxRight+1]){
+                idxRight++;
+            }
+
+            int currentPeakSize = idxRight - idxLeft;
+            longestPeakSize = Math.max(currentPeakSize, longestPeakSize);
+
+            i = idxRight;
+        }
+        return longestPeakSize;
+    }
+
+    /*******************************************************************/
+
+
 }
