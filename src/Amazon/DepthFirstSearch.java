@@ -6,7 +6,6 @@ import java.util.List;
 public class DepthFirstSearch {
     public static void main(String[] args) {
         Vertix graph = new Vertix('A');
-        Vertix newGraph = new Vertix();
 
         graph.add(graph, 'B');
         graph.add(graph, 'C');
@@ -19,6 +18,7 @@ public class DepthFirstSearch {
 
         List<Character> result = new ArrayList<>();
         result = DFS(graph, result);
+        System.out.println("\nDeep First Search:");
         System.out.println(result.toString());
     }
 

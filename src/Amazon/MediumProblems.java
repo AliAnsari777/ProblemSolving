@@ -1,8 +1,6 @@
 package Amazon;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class MediumProblems {
     public static void main(String[] args) {
@@ -63,6 +61,23 @@ public class MediumProblems {
         System.out.println("\nLongest Peak: ");
         int longestPeak = longestPeak(peak);
         System.out.println(longestPeak);
+
+        //############################################################//
+
+        Vertix graph = new Vertix('A');
+
+        graph.add(graph, 'B');
+        graph.add(graph, 'C');
+        graph.add(graph, 'D');
+
+        graph.add(graph.children.get(0), 'E');
+        graph.add(graph.children.get(0), 'F');
+        graph.add(graph.children.get(2), 'G');
+        graph.add(graph.children.get(2), 'H');
+
+        List<Character> BFS = BFS(graph);
+        System.out.println("\nBreadth Fist Search: ");
+        System.out.println(BFS.toString());
     }
 
     //==========================================================================//
@@ -259,6 +274,42 @@ public class MediumProblems {
             i = idxRight;
         }
         return longestPeakSize;
+    }
+
+    /*******************************************************************/
+
+    // Time = O(v+e) v: Vertices & e: Edges | Space = O(v)
+    static class Vertix{
+        List<Vertix> children;
+        char valeu;
+
+        public Vertix(){
+            children = new ArrayList<>();
+        }
+        public Vertix(char val){
+            valeu = val;
+            children = new ArrayList<>();
+        }
+
+        public void add(Vertix graph, char value){
+            graph.children.add(new Vertix(value));
+        }
+    }
+
+    static List<Character> BFS(Vertix graph){
+        List<Character> result = new ArrayList<>();
+        Queue<Vertix> queue = new LinkedList<>();
+
+        queue.add(graph);
+        while (!queue.isEmpty()){
+            Vertix temp = queue.poll();
+            result.add(temp.valeu);
+            for (Vertix v : temp.children){
+                if(v != null)
+                    queue.add(v);
+            }
+        }
+        return result;
     }
 
     /*******************************************************************/
