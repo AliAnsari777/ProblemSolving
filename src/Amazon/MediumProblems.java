@@ -39,6 +39,23 @@ public class MediumProblems {
         int[] monotonic = {7, 6, 5, 4, 3, 2};
         System.out.println("\n\nIs Array Monotonic: " );
         System.out.println(monotonicArray(monotonic));
+
+        //############################################################//
+
+        int[][] spiral = {
+            {1, 2, 3, 4},
+            {12, 13, 14, 5},
+            {11, 16, 15, 6},
+            {10, 9, 8, 7}
+        };
+        List<Integer> spiralArray;
+        spiralArray = spiral2DArrayTraverse(spiral);
+        System.out.println("\nSpiral Array Traversing: ");
+        System.out.println(spiralArray.toString());
+
+        List<Integer> recursiveSpiral = recursiveSpiral2DArrayTraversing(spiral);
+        System.out.println("\nRecursive Spiral Array Traversing: ");
+        System.out.println(recursiveSpiral.toString());
     }
 
     //==========================================================================//
@@ -145,5 +162,64 @@ public class MediumProblems {
         }
 
         return isNonDecreasing || isNonIncreasing;
+    }
+
+    /*******************************************************************/
+
+    // Time = O(n) | Space = O(n)
+    static List<Integer> spiral2DArrayTraverse(int[][] array){
+        List<Integer> result = new ArrayList<>();
+        int startRow = 0, endRow = array.length -1;
+        int startCol = 0, endCol = array[0].length -1 ;
+
+        while (startRow <= endRow && startCol <= endCol){
+            for (int i = startCol; i < endCol+1; i++) {
+                result.add(array[startRow][i]);
+            }
+
+            for (int i = startRow+1; i < endRow+1; i++) {
+                result.add(array[i][endCol]);
+            }
+
+            for (int i = endCol-1; i >= startCol  ; i--) {
+                result.add(array[endRow][i]);
+            }
+
+            for (int i = endRow-1; i > startRow  ; i--) {
+                result.add(array[i][startCol]);
+            }
+            startRow++;
+            endRow--;
+            startCol++;
+            endCol--;
+        }
+        return result;
+    }
+
+    static List<Integer> recursiveSpiral2DArrayTraversing(int[][] array){
+        List<Integer> result = new ArrayList<>();
+        fillList(array, 0, array.length-1, 0, array[0].length -1, result);
+        return result;
+    }
+
+    private static void fillList(int[][] array, int startRow, int endRow, int startCol, int endCol, List<Integer> result){
+        if (startRow > endRow || startCol > endCol){
+            return;
+        }
+
+        for (int i = startCol; i < endCol+1; i++) {
+            result.add(array[startRow][i]);
+        }
+        for (int i = startRow+1; i < endRow+1 ; i++) {
+            result.add(array[i][endCol]);
+        }
+        for (int i = endCol-1; i >= startCol ; i--) {
+            result.add(array[endRow][i]);
+        }
+        for (int i = endRow-1; i > startRow ; i--) {
+            result.add(array[i][startCol]);
+        }
+
+        fillList(array, startRow+1, endRow-1, startCol+1, endCol-1, result);
     }
 }
