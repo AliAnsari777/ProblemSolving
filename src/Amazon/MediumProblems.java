@@ -20,9 +20,25 @@ public class MediumProblems {
 
         System.out.println("\nSmallest Difference: ");
         int[] smallest = smallestDifference(one, two);
-        for (int a : smallest)
+        for (int a : smallest) {
             System.out.print(a + " ");
+        }
 
+        //############################################################//
+
+        int[] list = {3, 5, 6, 2, 3, 4, 9, 3};
+        int[] list2 = {2, 1, 2, 2, 2, 3, 4, 2};
+
+        System.out.println("\nMove Element To End Of Array: ");
+        moveElementToEnd(list2, 2);
+        for (int a : list2)
+            System.out.print(a + ", ");
+
+        //############################################################//
+
+        int[] monotonic = {7, 6, 5, 4, 3, 2};
+        System.out.println("\n\nIs Array Monotonic: " );
+        System.out.println(monotonicArray(monotonic));
     }
 
     //==========================================================================//
@@ -88,5 +104,46 @@ public class MediumProblems {
             }
         }
         return result;
+    }
+
+    /*******************************************************************/
+
+    // Time = O(n) | space O(1)
+    static void moveElementToEnd(int[] array, int target){
+        int start = 0, end = array.length-1;
+
+        while (start < end){
+            if (array[end] == target)
+                end--;
+            else if (array[start] == target) {
+                swap(array, start, end);
+                start++;
+                end--;
+            }else
+                start++;
+        }
+    }
+
+    private static void swap(int[] arr, int a, int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    /*******************************************************************/
+
+    // Time = O(n) | Space = O(1)
+    static boolean monotonicArray(int[] array){
+        boolean isNonIncreasing = true, isNonDecreasing = true;
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[i-1])
+                isNonDecreasing = false;
+            else if (array[i] > array[i - 1])
+                isNonIncreasing = false;
+
+        }
+
+        return isNonDecreasing || isNonIncreasing;
     }
 }
