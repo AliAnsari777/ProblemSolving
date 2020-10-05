@@ -12,10 +12,12 @@ public class BST {
         insert(10);
         insert(5);
         insert(7);
-        insert(3);
+//        insert(3);
         insert(20);
         insert(25);
-        insert(17);
+//        insert(17);
+        insert(30);
+        insert(32);
 
         //*******************************************************//
         System.out.print("Does tree has number 7: ");
@@ -84,6 +86,11 @@ public class BST {
         //*******************************************************//
         System.out.println("\nNode Depth Sum: ");
         System.out.println(nodeDepthSumRecursive(root,0));
+
+        //*******************************************************//
+        System.out.println("\nTree Height: ");
+        System.out.println(height(root));
+        System.out.println(height2(root));
 
     }
 
@@ -417,5 +424,46 @@ public class BST {
             return 0;
 
         return depth + nodeDepthSumRecursive(tree.left, depth+1) + nodeDepthSumRecursive(tree.right, depth+1);
+    }
+
+    //############################################################//
+
+
+    // Time = O(n) | Space = O(1)
+    public static int height(Node root) {
+        int height = 0;
+        return helper(root, height);
+    }
+
+    public static int helper(Node root, int height){
+        if(root.left == null && root.right == null){
+            return height;
+        }
+
+        int result, left = 0, right = 0;
+
+        if(root.left != null)
+           left = helper(root.left, height+1);
+        if (root.right != null)
+            right = helper(root.right, height+1);
+
+        result = Math.max(left, right);
+        return result;
+    }
+
+    static int height2(Node root) {
+
+        int leftHeight = 0;
+        int rightHeight = 0;
+
+        if (root.left != null) {
+            leftHeight = 1 + height2(root.left);
+        }
+
+        if (root.right != null) {
+            rightHeight = 1 + height2(root.right);
+        }
+
+        return leftHeight > rightHeight ? leftHeight : rightHeight;
     }
 }
