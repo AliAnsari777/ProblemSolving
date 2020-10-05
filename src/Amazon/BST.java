@@ -8,7 +8,7 @@ public class BST {
 
     public static void main(String[] args) {
 
-        //*******************************************************//
+
         insert(10);
         insert(5);
         insert(7);
@@ -90,7 +90,6 @@ public class BST {
         //*******************************************************//
         System.out.println("\nTree Height: ");
         System.out.println(height(root));
-        System.out.println(height2(root));
 
     }
 
@@ -128,7 +127,7 @@ public class BST {
 
         if (value < node.value)
             node.left = insertNode(node.left, value);
-        else if(value > node.value)
+        else if(value >= node.value)
             node.right = insertNode(node.right, value);
 
         return node;
@@ -428,7 +427,6 @@ public class BST {
 
     //############################################################//
 
-
     // Time = O(n) | Space = O(1)
     public static int height(Node root) {
         int height = 0;
@@ -451,19 +449,7 @@ public class BST {
         return result;
     }
 
-    static int height2(Node root) {
+    //############################################################//
 
-        int leftHeight = 0;
-        int rightHeight = 0;
 
-        if (root.left != null) {
-            leftHeight = 1 + height2(root.left);
-        }
-
-        if (root.right != null) {
-            rightHeight = 1 + height2(root.right);
-        }
-
-        return leftHeight > rightHeight ? leftHeight : rightHeight;
-    }
 }
