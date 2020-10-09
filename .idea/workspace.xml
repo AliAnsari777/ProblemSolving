@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JobInterviews/Flexton_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JobInterviews/Flexton_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +51,7 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HackerRankTree">
+  <component name="RunManager" selected="Application.Flexton_2">
     <configuration name="BST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Amazon.BST" />
       <module name="ProblemSolving" />
@@ -80,22 +78,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HackerRankTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HackerRankTree" />
+    <configuration name="Flexton_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JobInterviews.Flexton_2" />
       <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JobInterviews.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LargestPalindrome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Amazon.ProjectEuler.LargestPalindrome" />
+    <configuration name="HackerRankTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HackerRankTree" />
       <module name="ProblemSolving" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Amazon.ProjectEuler.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Flexton_2" />
         <item itemvalue="Application.HackerRankTree" />
         <item itemvalue="Application.BST" />
         <item itemvalue="Application.DepthFirstSearch" />
         <item itemvalue="Application.MediumProblems" />
-        <item itemvalue="Application.LargestPalindrome" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +176,7 @@
       <workItem from="1601442298557" duration="38417000" />
       <workItem from="1601595627500" duration="11225000" />
       <workItem from="1601687249041" duration="34429000" />
-      <workItem from="1601849200879" duration="19408000" />
+      <workItem from="1601849200879" duration="19602000" />
     </task>
     <servers />
   </component>

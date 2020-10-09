@@ -54,6 +54,14 @@ public class Flexton_2 {
         System.out.println("\nPower with recursive: ");
         System.out.println(Flexton_2.power(2, 5));
 
+        //############################################################//
+
+        System.out.println("\nReverse a Sentence: ");
+        System.out.println(Flexton_2.reverseString("this is for test"));
+
+        //############################################################//
+        System.out.println("\nFind Duplicate letters in a text: ");
+        Flexton_2.duplicateChars("This is a practice file for problem solving.");
 
     }
 
@@ -226,7 +234,7 @@ public class Flexton_2 {
     /*******************************************************************/
 
     // 5. Reversing a string text word by word.
-    String reverseString(String txt){
+    static String reverseString(String txt){
         String[] temp = txt.split(" ");
         Stack<String> value = new Stack<>();
         StringBuilder result = new StringBuilder();
@@ -243,7 +251,7 @@ public class Flexton_2 {
     /*******************************************************************/
 
     // 6. Given string only letters, print out the duplicate characters in string ignore case
-    void duplicateChars(String text){
+    static void duplicateChars(String text){
         HashMap<Character, Integer> list = new HashMap<>();
         text = text.toLowerCase();
 
