@@ -53,6 +53,8 @@ public class Flexton_2 {
 
         System.out.println("\nPower with recursive: ");
         System.out.println(Flexton_2.power(2, 5));
+
+
     }
 
     //==========================================================================//
@@ -236,5 +238,28 @@ public class Flexton_2 {
             result.append(value.pop()).append(" ");
 
         return result.toString();
+    }
+
+    /*******************************************************************/
+
+    // 6. Given string only letters, print out the duplicate characters in string ignore case
+    void duplicateChars(String text){
+        HashMap<Character, Integer> list = new HashMap<>();
+        text = text.toLowerCase();
+
+        for (int i = 0; i < text.length(); i++) {
+            if(!(list.containsKey(text.charAt(i))) && text.charAt(i) != ' '){
+                list.put(text.charAt(i), 1);
+            }else if(text.charAt(i) != ' '){
+                list.put(text.charAt(i), list.get(text.charAt(i)) + 1);
+            }
+        }
+
+        // by using (Map.Entry) we can access to key and value of each element in hashMap
+        for(Map.Entry<Character, Integer> a : list.entrySet()){
+            if(a.getValue()>1){
+                System.out.print(a.getKey() + ", ");
+            }
+        }
     }
 }
