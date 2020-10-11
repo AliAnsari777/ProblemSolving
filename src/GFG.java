@@ -9,11 +9,10 @@ public class GFG {
         graph.add(1, 2);
         graph.add(2, 0);
         graph.add(2, 3);
-        graph.add(3, 2);
+        graph.add(3, 3);
 
         graph.BFS(2);
-        graph.BFS(3);
-
+        graph.DFS(2);
         //*******************************************************//
 
 
@@ -49,7 +48,7 @@ public class GFG {
             checked[startPoint] = true;
             queue.add(startPoint);
 
-            System.out.println("\nGraph Traversing start from: " + startPoint);
+            System.out.println("\nBreadth First Search in Graph, Start Point: " + startPoint);
             while (!queue.isEmpty()){
                 startPoint = queue.poll();
                 System.out.print(startPoint + " ");
@@ -59,6 +58,36 @@ public class GFG {
                         checked[no] = true;
                         queue.add(no);
                     }
+                }
+            }
+        }
+
+        /*
+        Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+        Space Complexity: O(V).
+        Since, an extra visited array is needed of size V.
+         */
+        public void DFS(int startPoint){
+            boolean[] checked = new boolean[vertices];
+            System.out.println("\nDepth First Search in Graph, Start Point: " + startPoint);
+
+            // for disconnected graphs
+//            for (int i = 0; i < vertices; i++) {
+//                if(!checked[i])
+//                    DFSUtil(i, checked);
+//            }
+
+            // for connected graphs with starting point
+            DFSUtil(startPoint, checked);
+        }
+
+        private void DFSUtil(int vertices, boolean[] check){
+            check[vertices] = true;
+            System.out.print(vertices + " ");
+
+            for (int no : graph[vertices]){
+                if(!check[no]){
+                    DFSUtil(no, check);
                 }
             }
         }
