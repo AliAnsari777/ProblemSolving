@@ -34,6 +34,28 @@ public class LinkList{
         delete = head;
         llist.deleteNode(head, delete);
         llist.printList();
+
+
+
+
+        LinkList list = new LinkList();
+
+        list.a = new CharNode('g');
+        list.a.next = new CharNode('e');
+        list.a.next.next = new CharNode('e');
+        list.a.next.next.next = new CharNode('k');
+        list.a.next.next.next.next = new CharNode('s');
+        list.a.next.next.next.next.next = new CharNode('b');
+
+        list.b = new CharNode('g');
+        list.b.next = new CharNode('e');
+        list.b.next.next = new CharNode('e');
+        list.b.next.next.next = new CharNode('k');
+        list.b.next.next.next.next = new CharNode('s');
+        list.b.next.next.next.next.next = new CharNode('c');
+
+        System.out.println("\nCompare two list: ");
+        System.out.println(list.compare(list.a, list.b));
     }
 
     //=================================================================//
@@ -51,6 +73,18 @@ public class LinkList{
             next = null;
         }
     }
+
+    /* Character Linked list Node*/
+    static class CharNode{
+        char data;
+        CharNode next;
+        CharNode(char c){
+            data = c;
+            next = null;
+        }
+    }
+    CharNode a, b;
+
 
     /*Utility functions*/
 
@@ -130,6 +164,30 @@ public class LinkList{
 
         return;
     }
+
+    //########################################################################//
+
+    // Time O(n) | Space O(1)
+    int compare(CharNode one, CharNode two){
+        while (one != null && two != null){
+            if (one.data > two.data)
+                return 1;
+            else if (one.data < two.data)
+                return -1;
+
+            one = one.next;
+            two = two.next;
+        }
+
+        if (one == null && two != null)
+            return -1;
+        else if(one != null)
+            return 1;
+        else
+            return 0;
+    }
+
+    //########################################################################//
 
 
 }
