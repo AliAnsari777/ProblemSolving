@@ -1,12 +1,13 @@
 package GFG;
 
+import com.sun.xml.internal.bind.marshaller.NoEscapeHandler;
+
 import java.util.LinkedList;
 
 public class LinkList{
 
     /* Driver function to test above methods */
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         LinkList llist = new LinkList();
         Node new_node;
         new_node = llist.newNode(5);
@@ -35,8 +36,7 @@ public class LinkList{
         llist.deleteNode(head, delete);
         llist.printList();
 
-
-
+        //*******************************************************//
 
         LinkList list = new LinkList();
 
@@ -56,6 +56,27 @@ public class LinkList{
 
         System.out.println("\nCompare two list: ");
         System.out.println(list.compare(list.a, list.b));
+
+        //*******************************************************//
+
+        Node one = new Node();
+        Node two = new Node();
+        Node result;
+        one.data = 9;
+        one.next = new Node(9);
+        one.next.next = new Node(9);
+
+        two.data = 1;
+        two.next = new Node(8);
+//        two.next.next = new Node(8);
+//        two.next.next.next = new Node(5);
+
+        result = list.sumTwoList(one, two);
+        System.out.println("\nSum of two list: ");
+        while (result != null){
+            System.out.print(result.data);
+            result = result.next;
+        }
     }
 
     //=================================================================//
@@ -64,13 +85,15 @@ public class LinkList{
     static Node head; // head of list
 
     /* Linked list Node*/
-    class Node {
+    static class Node {
         int data;
         Node next;
         Node(int d)
         {
             data = d;
             next = null;
+        }
+        Node(){
         }
     }
 
@@ -190,4 +213,37 @@ public class LinkList{
     //########################################################################//
 
 
+    Node sumTwoList(Node a, Node b){
+        int one, two;
+        one = makeNumber(a, 0);
+        two = makeNumber(b, 0);
+
+        Node result = new Node();
+        return createList(one+two, result);
+
+    }
+
+    // converting numbers in the list into a whole number
+    int makeNumber(Node number, int val){
+        if (number == null){
+            return val;
+        }
+
+        val = val * 10 + number.data;
+        return makeNumber(number.next, val);
+    }
+
+    // sum two numbers
+    Node createList(int number, Node result){
+        result.data = number%10;
+        number /= 10;
+
+        if (number <= 0 )
+            return result;
+
+        Node r = new Node();
+        r.next = result;
+
+        return createList(number, r);
+    }
 }
