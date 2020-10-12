@@ -1,6 +1,8 @@
+package GFG;
+
 import java.util.*;
 
-public class GFG {
+public class Graphs {
     public static void main(String[] args) {
 
         Graph graph = new Graph(4);
@@ -26,7 +28,6 @@ public class GFG {
         int vertices;
         // this is our graph an array of LinkedList because graph can has circle
         LinkedList<Integer>[] graph;
-
         public Graph(int v){
             vertices = v;
             graph = new LinkedList[v];
