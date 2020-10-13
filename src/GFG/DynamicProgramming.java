@@ -14,6 +14,12 @@ public class DynamicProgramming {
 
         System.out.println("\nLongest Common Subsequence:");
         System.out.println(result);
+
+        //*******************************************************//
+
+        int[] numbers = {1, 7, 3, 12, 5, 30, 32, 220};
+        System.out.println("\nLongest Increasing Subsequence:");
+        System.out.println(lis(numbers, numbers.length));
     }
 
     //=================================================================//
@@ -58,5 +64,32 @@ public class DynamicProgramming {
         }
         return result[row][n];
 
+    }
+
+    //########################################################################//
+
+    // Time = O(n^2) | Space = O(n)
+    static int lis(int[] numbers, int len){
+        int[] longest = new int[len];
+        int max = 0;
+
+        for (int i = 0; i < len; i++) {
+            longest[i] = 1;
+        }
+
+        for (int i = 1; i < len; i++) {
+            for (int j = 0; j < i; j++) {
+                if (numbers[i] > numbers[j] && longest[i] < longest[j]+1){
+                    longest[i] = longest[j] + 1;
+                }
+            }
+        }
+
+        for (int a : longest){
+            if (a > max)
+                max = a;
+        }
+
+        return max;
     }
 }
