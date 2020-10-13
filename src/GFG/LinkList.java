@@ -234,6 +234,7 @@ public class LinkList{
     }
 
     // sum two numbers
+    // in here we add number from right to left to the result list
     Node createList(int number, Node result){
         result.data = number%10;
         number /= 10;
@@ -241,6 +242,7 @@ public class LinkList{
         if (number <= 0 )
             return result;
 
+        // create a new node and put it before the result node
         Node r = new Node();
         r.next = result;
 
