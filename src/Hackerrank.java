@@ -1,8 +1,6 @@
 import sun.awt.util.IdentityLinkedList;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Hackerrank {
 
@@ -136,6 +134,12 @@ public class Hackerrank {
 
         List<Integer> cack = new ArrayList<>(Arrays.asList(1,2,1,3,5));
         System.out.println(Hackerrank.birthday(cack,3, 2));
+
+        //############################################################//
+
+        int[] socks = {1, 3, 2, 1, 5, 5, 2, 7, 4};
+        System.out.println("Matching Pair of Numbers in an array: ");
+        System.out.println(Hackerrank.sockMerchant(socks.length, socks));
     }
 
 
@@ -423,5 +427,23 @@ public class Hackerrank {
             }
         }
         return count;
+    }
+
+    /*******************************************************************/
+
+    static int sockMerchant(int n, int[] ar) {
+        Map<Integer, Integer> check = new HashMap<>();
+        int pairs = 0;
+
+        for(int i =0; i<ar.length; i++){
+            if(!check.containsKey(ar[i])){
+                check.put(ar[i], i);
+            }else{
+                pairs++;
+                check.remove(ar[i]);
+            }
+        }
+
+        return pairs;
     }
 }
