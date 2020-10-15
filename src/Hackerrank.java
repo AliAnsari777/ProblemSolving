@@ -140,6 +140,12 @@ public class Hackerrank {
         int[] socks = {1, 3, 2, 1, 5, 5, 2, 7, 4};
         System.out.println("Matching Pair of Numbers in an array: ");
         System.out.println(Hackerrank.sockMerchant(socks.length, socks));
+
+        //############################################################//
+
+        String path = "UDDDUDUU";
+        System.out.println("\nCounting Valleys: ");
+        System.out.println(Hackerrank.countingValleys(8, path));
     }
 
 
@@ -445,5 +451,24 @@ public class Hackerrank {
         }
 
         return pairs;
+    }
+
+    /*******************************************************************/
+
+    // count the numbers of up +1 and down -1 and if sum of up and down in sequence equals to zero it
+    // means we passed one valley.
+    public static int countingValleys(int steps, String path) {
+        int count = 0, valley = 0;
+        for(int i = 0; i < steps; i++){
+            if(path.charAt(i) == 'U')
+                count++;
+            else
+                count--;
+
+            if(count == 0 && path.charAt(i) == 'U')
+                valley++;
+
+        }
+        return valley;
     }
 }
