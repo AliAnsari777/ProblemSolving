@@ -132,13 +132,14 @@ public class Hackerrank {
 
         //############################################################//
 
-        List<Integer> cack = new ArrayList<>(Arrays.asList(1,2,1,3,5));
-        System.out.println(Hackerrank.birthday(cack,3, 2));
+        List<Integer> cake = new ArrayList<>(Arrays.asList(1,2,1,3,5));
+        System.out.println("\nBirth Day Cake: ");
+        System.out.println(Hackerrank.birthday(cake,3, 2));
 
         //############################################################//
 
         int[] socks = {1, 3, 2, 1, 5, 5, 2, 7, 4};
-        System.out.println("Matching Pair of Numbers in an array: ");
+        System.out.println("\nMatching Pair of Numbers in an array: ");
         System.out.println(Hackerrank.sockMerchant(socks.length, socks));
 
         //############################################################//
@@ -146,6 +147,12 @@ public class Hackerrank {
         String path = "UDDDUDUU";
         System.out.println("\nCounting Valleys: ");
         System.out.println(Hackerrank.countingValleys(8, path));
+
+        //############################################################//
+
+        int[] cloude = {0, 0, 1, 0, 0, 1, 0};
+        System.out.println("\nJump on cloud: ");
+        System.out.println(Hackerrank.jumpingOnClouds(cloude));
     }
 
 
@@ -470,5 +477,24 @@ public class Hackerrank {
 
         }
         return valley;
+    }
+
+    /*******************************************************************/
+
+    // jumpingOnClouds function.
+    static int jumpingOnClouds(int[] c) {
+        int count = 0, i = 0;
+
+        while(i < c.length-1){
+            if(c[i] == 0){
+                if(i+2 <= c.length -1 && c[i+2] == 0)
+                    i += 2;
+                else
+                    i++;
+            }
+            count++;
+        }
+
+        return count;
     }
 }
