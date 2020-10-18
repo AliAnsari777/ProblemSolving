@@ -132,33 +132,47 @@ public class Hackerrank {
 
         //############################################################//
 
-        List<Integer> cake = new ArrayList<>(Arrays.asList(1,2,1,3,5));
-        System.out.println("\nBirth Day Cake: ");
-        System.out.println(Hackerrank.birthday(cake,3, 2));
+//        List<Integer> cake = new ArrayList<>(Arrays.asList(1,2,1,3,5));
+//        System.out.println("\nBirth Day Cake: ");
+//        System.out.println(Hackerrank.birthday(cake,3, 2));
 
         //############################################################//
 
-        int[] socks = {1, 3, 2, 1, 5, 5, 2, 7, 4};
-        System.out.println("\nMatching Pair of Numbers in an array: ");
-        System.out.println(Hackerrank.sockMerchant(socks.length, socks));
+//        int[] socks = {1, 3, 2, 1, 5, 5, 2, 7, 4};
+//        System.out.println("\nMatching Pair of Numbers in an array: ");
+//        System.out.println(Hackerrank.sockMerchant(socks.length, socks));
 
         //############################################################//
 
-        String path = "UDDDUDUU";
-        System.out.println("\nCounting Valleys: ");
-        System.out.println(Hackerrank.countingValleys(8, path));
+//        String path = "UDDDUDUU";
+//        System.out.println("\nCounting Valleys: ");
+//        System.out.println(Hackerrank.countingValleys(8, path));
 
         //############################################################//
 
-        int[] cloude = {0, 0, 1, 0, 0, 1, 0};
-        System.out.println("\nJump on cloud: ");
-        System.out.println(Hackerrank.jumpingOnClouds(cloude));
+//        int[] cloude = {0, 0, 1, 0, 0, 1, 0};
+//        System.out.println("\nJump on cloud: ");
+//        System.out.println(Hackerrank.jumpingOnClouds(cloude));
 
         //############################################################//
 
-        String text = "aba";
-        System.out.println("\nRepeated String: ");
-        System.out.println(Hackerrank.repeatedString(text, 10));
+//        String text = "aba";
+//        System.out.println("\nRepeated String: ");
+//        System.out.println(Hackerrank.repeatedString(text, 10));
+
+        //############################################################//
+
+        int[][] glass = new int[][]{
+                {1, 1, 1, 0, 0, 0},
+                {0, 1, 0, 0, 0, 0},
+                {1, 1, 1, 0, 0, 0},
+                {0, 0, 2, 4, 4, 0},
+                {0, 0, 0, 2, 0, 0},
+                {0, 0, 1, 2, 4, 0}
+        };
+        System.out.println("\n2D Array - Hours Glass Sum: ");
+        System.out.println(Hackerrank.hourglassSum(glass));
+        System.out.println(Hackerrank.hourGlassSum2(glass));
 
     }
 
@@ -524,6 +538,56 @@ public class Hackerrank {
                 result++;
         }
 
+        return result;
+    }
+
+    /*******************************************************************/
+
+    // Complete the hourglassSum function below.
+    static int hourglassSum(int[][] arr) {
+        int rs = 0, re = 2, cs = 0, ce = 2, total=0, result = Integer.MIN_VALUE;
+
+        while(re < 6) {
+            total += arr[rs+1][cs+1];
+            for (int i = rs; i <= re; i += 2) {
+                for (int j = cs; j <= ce; j++) {
+                    total += arr[i][j];
+                }
+            }
+
+            if (total > result) {
+                result = total;
+            }
+
+            if (ce < 5) {
+                cs++;
+                ce++;
+            }else{
+                cs = 0;
+                ce = 2;
+                rs++;
+                re++;
+            }
+            total = 0;
+        }
+        return result;
+    }
+
+    static int hourGlassSum2(int[][] arr){
+        int total = 0, result = Integer.MIN_VALUE;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                total = arr[i][j] + arr[i][j+1] + arr[i][j+2]
+                        + arr[i+1][j+1]
+                        + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
+
+                if (total > result)
+                    result = total;
+
+                total = 0;
+            }
+        }
         return result;
     }
 }
