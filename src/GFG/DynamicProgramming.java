@@ -69,6 +69,7 @@ public class DynamicProgramming {
     //########################################################################//
 
     // Time = O(n^2) | Space = O(n)
+    // Longest Increasing Subsequence 
     static int lis(int[] numbers, int len){
         int[] longest = new int[len];
         int max = 0;

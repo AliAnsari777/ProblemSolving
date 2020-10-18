@@ -153,6 +153,13 @@ public class Hackerrank {
         int[] cloude = {0, 0, 1, 0, 0, 1, 0};
         System.out.println("\nJump on cloud: ");
         System.out.println(Hackerrank.jumpingOnClouds(cloude));
+
+        //############################################################//
+
+        String text = "aba";
+        System.out.println("\nRepeated String: ");
+        System.out.println(Hackerrank.repeatedString(text, 10));
+
     }
 
 
@@ -496,5 +503,27 @@ public class Hackerrank {
         }
 
         return count;
+    }
+
+    /*******************************************************************/
+
+    // Complete the repeatedString function below.
+    static long repeatedString(String s, long n) {
+        int countA = 0;
+        long divide, module, result;
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == 'a')
+                countA++;
+        }
+        divide = n/s.length();
+        module = n%s.length();
+        result = divide * countA;
+        s = s.substring(0, (int)module);
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'a')
+                result++;
+        }
+
+        return result;
     }
 }
