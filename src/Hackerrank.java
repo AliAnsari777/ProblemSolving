@@ -174,6 +174,13 @@ public class Hackerrank {
         System.out.println(Hackerrank.hourglassSum(glass));
         System.out.println(Hackerrank.hourGlassSum2(glass));
 
+        //############################################################//
+
+        int[] numbers = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
+        System.out.println("\nArrays: Left Rotation");
+        int[] rotatedArray = Hackerrank.rotLeft(numbers, 13);
+        for (int a : rotatedArray)
+            System.out.print(a + " ");
     }
 
 
@@ -588,6 +595,23 @@ public class Hackerrank {
                 total = 0;
             }
         }
+        return result;
+    }
+
+    /*******************************************************************/
+
+
+    // Complete the rotLeft function below.
+    static int[] rotLeft(int[] a, int d) {
+        int[] result = new int[a.length];
+        int i;
+        for(i = 0; i < a.length - d; i++){
+            result[i] = a[i+d];
+        }
+        for(int j = 0; j < d; j++, i++){
+            result[i] = a[j];
+        }
+
         return result;
     }
 }
