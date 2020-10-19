@@ -162,25 +162,31 @@ public class Hackerrank {
 
         //############################################################//
 
-        int[][] glass = new int[][]{
-                {1, 1, 1, 0, 0, 0},
-                {0, 1, 0, 0, 0, 0},
-                {1, 1, 1, 0, 0, 0},
-                {0, 0, 2, 4, 4, 0},
-                {0, 0, 0, 2, 0, 0},
-                {0, 0, 1, 2, 4, 0}
-        };
-        System.out.println("\n2D Array - Hours Glass Sum: ");
-        System.out.println(Hackerrank.hourglassSum(glass));
-        System.out.println(Hackerrank.hourGlassSum2(glass));
+//        int[][] glass = new int[][]{
+//                {1, 1, 1, 0, 0, 0},
+//                {0, 1, 0, 0, 0, 0},
+//                {1, 1, 1, 0, 0, 0},
+//                {0, 0, 2, 4, 4, 0},
+//                {0, 0, 0, 2, 0, 0},
+//                {0, 0, 1, 2, 4, 0}
+//        };
+//        System.out.println("\n2D Array - Hours Glass Sum: ");
+//        System.out.println(Hackerrank.hourglassSum(glass));
+//        System.out.println(Hackerrank.hourGlassSum2(glass));
 
         //############################################################//
 
-        int[] numbers = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
-        System.out.println("\nArrays: Left Rotation");
-        int[] rotatedArray = Hackerrank.rotLeft(numbers, 13);
-        for (int a : rotatedArray)
-            System.out.print(a + " ");
+//        int[] numbers = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
+//        System.out.println("\nArrays: Left Rotation");
+//        int[] rotatedArray = Hackerrank.rotLeft(numbers, 13);
+//        for (int a : rotatedArray)
+//            System.out.print(a + " ");
+
+        //############################################################//
+
+        int[] line = {1, 2, 5, 3, 4, 7, 8, 6};
+        System.out.println("\nNew Year Chaos: ");
+        Hackerrank.minimumBribes(line);
     }
 
 
@@ -603,15 +609,39 @@ public class Hackerrank {
 
     // Complete the rotLeft function below.
     static int[] rotLeft(int[] a, int d) {
-        int[] result = new int[a.length];
-        int i;
-        for(i = 0; i < a.length - d; i++){
-            result[i] = a[i+d];
-        }
-        for(int j = 0; j < d; j++, i++){
-            result[i] = a[j];
-        }
+        int size = a.length;
+        int[] result = new int[size];
+//        int i;
+//        for(i = 0; i < a.length - d; i++){
+//            result[i] = a[i+d];
+//        }
+//        for(int j = 0; j < d; j++, i++){
+//            result[i] = a[j];
+//        }
 
+        for (int j = 0; j < size; j++) {
+            int loc = (j + (size - d) ) % size;
+            result[loc] = a[j];
+        }
         return result;
+    }
+
+    /*******************************************************************/
+
+    // Complete the minimumBribes function below.
+    static void minimumBribes(int[] q) {
+        int bribes = 0;
+
+        for (int i = q.length - 1; i >= 0 ; i--) {
+            if (q[i] - (i + 1) > 2){
+                System.out.println("Too chaotic");
+                return;
+            }
+            for (int j = Math.max(0, q[i] - 2); j < i; j++) {
+                if (q[j] > q[i])
+                    bribes++;
+            }
+        }
+        System.out.println(bribes);
     }
 }
