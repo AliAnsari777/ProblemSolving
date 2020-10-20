@@ -184,9 +184,16 @@ public class Hackerrank {
 
         //############################################################//
 
-        int[] line = {1, 2, 5, 3, 4, 7, 8, 6};
-        System.out.println("\nNew Year Chaos: ");
-        Hackerrank.minimumBribes(line);
+//        int[] line = {1, 2, 5, 3, 4, 7, 8, 6};
+//        System.out.println("\nNew Year Chaos: ");
+//        Hackerrank.minimumBribes(line);
+
+        List val = new ArrayList();
+        val.add(2);
+        val.add(3);
+        Hackerrank.sumOfTheDigits(val);
+
+//        System.out.println(Hackerrank.gameWinner("wwwbbbbwww"));
     }
 
 
@@ -644,4 +651,90 @@ public class Hackerrank {
         }
         System.out.println(bribes);
     }
+
+    /*******************************************************************/
+
+    public static List<Integer> sumOfTheDigits(List<Integer> q) {
+        // Write your code here
+        List<Integer> result = new ArrayList<Integer>();
+        String temp;
+        for (int a : q){
+            temp = generateNumber(a);
+            System.out.println(temp);
+        }
+
+        return null;
+    }
+
+    static String generateNumber(int number){
+        StringBuilder init = new StringBuilder("1");
+
+
+        for (int j = 0; j < number; j++) {
+            int countOne = 0, countTwo = 0, countThree = 0;
+            for (int i = 0; i < init.length(); i++) {
+                switch (init.charAt(i)){
+                    case '1':
+                        countOne++;
+                        break;
+                    case '2':
+                        countTwo++;
+                        break;
+                    case '3':
+                        countThree++;
+                        break;
+                }
+            }
+            String temp = init.toString();
+            init = new StringBuilder();
+            for (int i = 0; i < temp.length(); i++) {
+                switch (temp.charAt(i)){
+                    case '1':
+                        init.append(countOne).append("1");
+                        break;
+                    case '2':
+                        init.append(countTwo).append("2");
+                        break;
+                    case '3':
+                        init.append(countThree).append("3");
+                        break;
+                }
+            }
+
+//            if (countOne != 0)
+//                init.append(countOne).append("1");
+//            if(countTwo != 0)
+//                init.append(countTwo).append("2");
+//            if (countThree != 0)
+//                init.append(countThree).append("3");
+        }
+
+
+        return init.toString();
+    }
+
+    public static String gameWinner(String colors){
+        String[] wendy = colors.split("b");
+        String[] bob = colors.trim().split("w");
+        int wen = 0;
+        int bo = 0;
+
+        for (String w : wendy){
+            if(!w.equals(""))
+                wen += w.length()-2;
+        }
+        for (String b : bob){
+            if(!b.equals(""))
+                bo += b.length() - 2;
+        }
+
+        if (wen < bo){
+            return "Bob";
+        }else if(wen > bo){
+            return "Wendy";
+        }else {
+            return "Bob";
+        }
+    }
+
 }
