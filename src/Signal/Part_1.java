@@ -14,6 +14,10 @@ public class Part_1 {
 
         //############################################################//
 
+        System.out.println("\nCount numbers: ");
+        System.out.println(Part_1.countOccurences(10));
+
+
     }
 
     //==========================================================================//
@@ -56,5 +60,20 @@ public class Part_1 {
                 return false;
         }
         return true;
+    }
+
+    /*******************************************************************/
+
+    public static int countOccurences(int n){
+        int count = 0;
+        for(int i=0; i<=n; i++){
+            int a =i;
+            do{
+                int b= a%10;
+                if(b==0 || b==2 || b==4) count++;
+                a=a/10;
+            }while(a>0);
+        }
+        return count;
     }
 }
