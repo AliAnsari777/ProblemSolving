@@ -1,5 +1,8 @@
 package Signal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Part_1 {
 
     public static void main(String[] args) {
@@ -17,6 +20,17 @@ public class Part_1 {
         System.out.println("\nCount numbers: ");
         System.out.println(Part_1.countOccurences(10));
 
+        List<Integer> some = new ArrayList<>();
+        some.add(1);
+        some.add(2);
+        System.out.println(Part_1.some(some));
+
+        int[] c = {1, 2 };
+        int[] b = {3, 4, 5};
+        int[] val = Part_1.something(c, b);
+        for (int v : val){
+            System.out.println(v);
+        }
 
     }
 
@@ -75,5 +89,25 @@ public class Part_1 {
             }while(a>0);
         }
         return count;
+    }
+
+    /*******************************************************************/
+
+    static List<Integer> some(final List<Integer> a){
+        List<Integer> result = new ArrayList<>();
+        for (int i = a.size()-1; i >= 0 ; i--) {
+            result.add(a.get(i));
+        }
+        return result;
+    }
+
+    static int[] something(int[] a, int[] b){
+        int[] result = new int[a.length + b.length];
+
+        for (int i = 0; i < a.length; i++) {
+            result[2*i] = a[i];
+            result[(2*i) + 1] = b[i];
+        }
+        return result;
     }
 }
