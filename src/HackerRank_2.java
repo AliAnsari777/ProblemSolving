@@ -21,6 +21,7 @@ public class HackerRank_2 {
 
 
     // Hard question in array part
+    // still not complete
     static int pSequences(int n, int p) {
 
         List<Integer> prime = new ArrayList<>(Arrays.asList(1, 2, 3, 5, 7, 11, 13, 17));
@@ -45,9 +46,14 @@ public class HackerRank_2 {
     /*******************************************************************/
 
 
-
+    // In this problem we check all the value in note does exist in magazine or not
+    // first I used array list which couldn't pass two test case because of time limit
+    // then I used hash table which has constant time for searching value.
     static void checkMagazine(String[] magazine, String[] note) {
+
         Hashtable<String, Integer> magazineWords = new Hashtable<>();
+        // initialize the hash table with magazine values and give them int value to keep track of words
+        // that appear more than once
         for(String m : magazine){
             magazineWords.put(m,magazineWords.getOrDefault(m, 0)+1);
         }
