@@ -5,8 +5,9 @@ public class Practice {
 //        int[] val = {3, 5, 6, 7, 2, 3, 4, 5, 1, 3, 6, 1};
 //        List<Integer> result = findDuplicateNumbers(val);
 //        System.out.println(result.toString());
-        List test = new ArrayList(Arrays.asList(4,4,9,2,3));
-        System.out.println(Practice.calculateAmount(test));
+//        List test = new ArrayList(Arrays.asList(4,4,9,2,3));
+//        System.out.println(Practice.calculateAmount(test));
+
 
     }
 
@@ -53,4 +54,6 @@ public class Practice {
         }
         return total;
     }
+
+
 }
