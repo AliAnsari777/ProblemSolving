@@ -17,6 +17,7 @@ public class PointTest {
             this.y = y;
         }
 
+        // by overriding the "equal" method we can remove similar objects.
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
