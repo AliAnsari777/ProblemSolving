@@ -1,3 +1,5 @@
+import Skillz.ThreadTest;
+
 import java.util.*;
 
 public class Practice {
@@ -11,19 +13,19 @@ public class Practice {
 
     }
 
-    static List<Integer> findDuplicateNumbers(int[] num){
+    static List<Integer> findDuplicateNumbers(int[] num) {
         Map<Integer, Integer> values = new HashMap<>();
         List<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < num.length; i++) {
             if (!values.containsKey(num[i])) {
                 values.put(num[i], 1);
-            }else{
+            } else {
                 values.replace(num[i], 2);
             }
         }
 
-        for(Map.Entry<Integer, Integer> val : values.entrySet()){
+        for (Map.Entry<Integer, Integer> val : values.entrySet()) {
             if (val.getValue() > 1)
                 result.add(val.getKey());
         }
@@ -41,19 +43,18 @@ public class Practice {
         int min = prices.get(0);
         long total = 0;
         discount.add(min);
-        for(int i = 1; i < prices.size(); i++){
-            temp  = Math.max(prices.get(i) - min, 0);
-            if(min > prices.get(i))
+        for (int i = 1; i < prices.size(); i++) {
+            temp = Math.max(prices.get(i) - min, 0);
+            if (min > prices.get(i))
                 min = prices.get(i);
 
             discount.add(temp);
         }
 
-        for(int a : discount){
+        for (int a : discount) {
             total += a;
         }
         return total;
     }
-
 
 }

@@ -7,13 +7,18 @@ package Skillz;
  */
 
 public class MyArrayList<T> {
+
+    Object[] array= new Object[10];
+    int idx = 0, size = 0;
+
+
     /**
      * The size of the list
      * @return the size
      */
     public int size() {
         // TODO: Implement
-        throw new UnsupportedOperationException();
+        return size;
     }
 
     /**
@@ -24,7 +29,10 @@ public class MyArrayList<T> {
      */
     public T get( int idx ) {
         // TODO: Implement
-        throw new UnsupportedOperationException();
+        if(idx > this.idx)
+            throw new ArrayIndexOutOfBoundsException();
+        else
+            return (T) array[idx];
     }
 
     /**
@@ -33,6 +41,9 @@ public class MyArrayList<T> {
      */
     public void add( T o ) {
         // TODO: Implement
+        array[idx] = o;
+        idx++;
+        size++;
     }
 
     /**
@@ -41,6 +52,12 @@ public class MyArrayList<T> {
      */
     public void remove( int idx ) {
         // TODO: Implement
+        if (idx > this.idx)
+            throw new ArrayIndexOutOfBoundsException();
+        else {
+            array[idx] = null;
+            size--;
+        }
     }
 
 }

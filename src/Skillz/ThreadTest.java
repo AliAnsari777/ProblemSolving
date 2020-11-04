@@ -13,11 +13,12 @@ public class ThreadTest {
     private boolean satisfied = false;
 
     public void first() {
+        System.out.println("This is first");
         satisfied = true;
     }
 
     public void second() {
-
+        System.out.println("This is Second");
     }
 
     public boolean isSatisfied() {
@@ -26,11 +27,13 @@ public class ThreadTest {
 
     public static void main(final String[] args) {
         final ThreadTest b = new ThreadTest();
+
         (new Thread(new Runnable() {
             public void run() {
                 b.second();
             }
         })).start();
+
 
         (new Thread(new Runnable() {
             public void run() {
