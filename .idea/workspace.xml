@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/RobotMoves.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Skillz/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Skillz/MyArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Skillz/ThreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Skillz/ThreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Signal/Part_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signal/Part_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="S:/MUM Materials/Assignments/SWA/Lab 3/lab 3 solution/WebShop" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -55,7 +52,20 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RobotMoves">
+  <component name="RunManager" selected="Application.Part_1">
+    <configuration name="Part_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Signal.Part_1" />
+      <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Signal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Practice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Practice" />
       <module name="ProblemSolving" />
@@ -65,13 +75,6 @@
     </configuration>
     <configuration name="RobotMoves" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RobotMoves" />
-      <module name="ProblemSolving" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Skillz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Skillz" />
       <module name="ProblemSolving" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,11 +108,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Part_1" />
         <item itemvalue="Application.RobotMoves" />
         <item itemvalue="Application.Practice" />
         <item itemvalue="Application.ThreadTest" />
         <item itemvalue="Application.StudentTest" />
-        <item itemvalue="Application.Skillz" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +174,9 @@
       <workItem from="1601849200879" duration="68067000" />
       <workItem from="1603046858864" duration="50068000" />
       <workItem from="1604037062168" duration="644000" />
-      <workItem from="1604355290691" duration="20970000" />
+      <workItem from="1604355290691" duration="22686000" />
+      <workItem from="1604783885732" duration="215000" />
+      <workItem from="1605237005570" duration="1106000" />
     </task>
     <servers />
   </component>
@@ -187,26 +192,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="195" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1598540246043" />
-    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1604037695132">
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1604783960591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604037695132" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1604448951910">
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604783960591" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1605238113950">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604448951910" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1604448951910">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605238113950" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1605238113949">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604448951910" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1604448951910">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605238113949" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1605238113949">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604448951910" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1604448951910">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605238113949" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1605238113950">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604448951910" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605238113950" />
     <state width="1493" height="333" key="GridCell.Tab.1.bottom" timestamp="1604446450285">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -227,10 +232,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598540253146" />
-    <state x="465" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1604037062219">
+    <state x="465" y="235" key="com.intellij.ide.util.TipDialog" timestamp="1604783887867">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1604037062219" />
+    <state x="465" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1604783887867" />
     <state x="209" y="32" key="new project wizard" timestamp="1604037701184">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
