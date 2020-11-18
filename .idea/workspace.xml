@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Signal/Part_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Signal/Part_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,14 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Part_1">
+  <component name="RunManager" selected="Application.HackerRank_2">
+    <configuration name="HackerRank_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HackerRank_2" />
+      <module name="ProblemSolving" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Part_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Signal.Part_1" />
       <module name="ProblemSolving" />
@@ -79,19 +87,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StudentTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Skillz.StudentTest" />
-      <module name="ProblemSolving" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Skillz.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ThreadTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Skillz.ThreadTest" />
       <module name="ProblemSolving" />
@@ -107,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HackerRank_2" />
         <item itemvalue="Application.Part_1" />
         <item itemvalue="Application.RobotMoves" />
         <item itemvalue="Application.Practice" />
         <item itemvalue="Application.ThreadTest" />
-        <item itemvalue="Application.StudentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +171,7 @@
       <workItem from="1604355290691" duration="22686000" />
       <workItem from="1604783885732" duration="215000" />
       <workItem from="1605237005570" duration="3036000" />
+      <workItem from="1605722015535" duration="283000" />
     </task>
     <servers />
   </component>
@@ -195,22 +191,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605427727840" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1605461518896">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1605722174431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605461518896" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1605461518896">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605722174431" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1605722174431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605461518896" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1605461518895">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605722174431" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1605722174430">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605461518895" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1605461518896">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605722174430" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1605722174431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605461518896" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605722174431" />
     <state width="1493" height="333" key="GridCell.Tab.1.bottom" timestamp="1604446450285">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

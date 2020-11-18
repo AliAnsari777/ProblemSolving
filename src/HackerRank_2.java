@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.*;
 
 public class HackerRank_2 {
     public static void main(String[] args) {
@@ -14,6 +11,11 @@ public class HackerRank_2 {
         String[] magazing = {"two", "times", "three", "is", "not", "four", "two"};
         String[] note = {"two", "times", "two", "is", "four"};
         HackerRank_2.checkMagazine(magazing, note);
+
+        //############################################################//
+
+        System.out.println("\nTwo String:");
+        System.out.println(HackerRank_2.twoStrings("hello", "world"));
 
     }
 
@@ -73,5 +75,23 @@ public class HackerRank_2 {
         if (flag)
             System.out.println("Yes");
 
+    }
+
+    /*******************************************************************/
+
+    //Given two strings, determine if they share a common substring. A substring may be as small as one character.
+    //For example, the words "a", "and", "art" share the common substring . The words "be" and "cat" do not share a substring.
+    static String twoStrings(String s1, String s2) {
+        Set<Character> chars = new HashSet<>();
+
+        for(int i = 0; i < s1.length(); i++){
+            chars.add(s1.charAt(i));
+        }
+
+        for (int i = 0; i < s2.length(); i++) {
+            if(chars.contains (s2.charAt(i)))
+                return "YES";
+        }
+        return "NO";
     }
 }
