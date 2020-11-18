@@ -1,5 +1,8 @@
 package Signal;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Part_1 {
 
     public static void main(String[] args) {
@@ -31,6 +34,10 @@ public class Part_1 {
         System.out.println("\nShape Area:");
         System.out.println(Part_1.shapeArea(4));
 
+        //############################################################//
+
+        System.out.println("\nTwo String:");
+        System.out.println(Part_1.twoStrings("hello", "world"));
     }
 
     //==========================================================================//
@@ -117,5 +124,23 @@ public class Part_1 {
         }
 
         return area;
+    }
+
+    /*******************************************************************/
+
+    //Given two strings, determine if they share a common substring. A substring may be as small as one character.
+    //For example, the words "a", "and", "art" share the common substring . The words "be" and "cat" do not share a substring.
+    static String twoStrings(String s1, String s2) {
+        Set<Character> chars = new HashSet<>();
+
+        for(int i = 0; i < s1.length(); i++){
+            chars.add(s1.charAt(i));
+        }
+
+        for (int i = 0; i < s2.length(); i++) {
+            if(chars.contains (s2.charAt(i)))
+                return "YES";
+        }
+        return "NO";
     }
 }
