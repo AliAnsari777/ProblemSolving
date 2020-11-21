@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Flexton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +52,14 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HackerRank_2">
+  <component name="RunManager" selected="Application.Flexton">
+    <configuration name="Flexton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Flexton" />
+      <module name="ProblemSolving" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HackerRank_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HackerRank_2" />
       <module name="ProblemSolving" />
@@ -86,26 +94,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Skillz.ThreadTest" />
-      <module name="ProblemSolving" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Skillz.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Flexton" />
         <item itemvalue="Application.HackerRank_2" />
         <item itemvalue="Application.Part_1" />
         <item itemvalue="Application.RobotMoves" />
         <item itemvalue="Application.Practice" />
-        <item itemvalue="Application.ThreadTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +165,7 @@
       <workItem from="1604355290691" duration="22686000" />
       <workItem from="1604783885732" duration="215000" />
       <workItem from="1605237005570" duration="3036000" />
-      <workItem from="1605722015535" duration="1097000" />
+      <workItem from="1605722015535" duration="1446000" />
     </task>
     <servers />
   </component>
