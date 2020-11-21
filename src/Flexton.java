@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class Flexton {
     public static void main(String[] args) {
 
@@ -5,9 +9,16 @@ public class Flexton {
 
         String res = obj.longestPalindrome("ugrecero");
         System.out.println(res);
+
         //############################################################//
 
         int[] numbers = {2,4,3,1,5,9,0};
+        int[] sum = obj.sumtwoNumber(numbers, 45);
+        if(sum != null)
+            System.out.println("Two number sum is: " + sum[0] + ", " + sum[1]);
+        else
+            System.out.println("No value pair");
+
         int[] zerOne = {1,1,0,0,1,0,1};
 
 
@@ -15,7 +26,7 @@ public class Flexton {
 
     //==========================================================================//
 
-    // find the longest palindrome in a text
+    // 0.find the longest palindrome in a text
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) return "";
         int start = 0;
@@ -46,4 +57,41 @@ public class Flexton {
 
     /*******************************************************************/
 
+    // 1. find two numbers in an array that their sum is equal to the specific given value
+    public int[] sumPair(int[] numbers, int k){
+        List<Integer> list = new ArrayList<>();
+        int[] result = new int[2];
+        int temp, value;
+
+        for(int i : numbers)
+            list.add(i);
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()){
+            temp = iterator.next();
+            iterator.remove();
+            value = k - temp;
+
+            if(list.contains(value)){
+                result[0] = temp;
+                result[1] = value;
+                return result;
+            }
+        }
+        return null;
+    }
+
+    // shorter method
+    public int[] sumtwoNumber(int[] numbers, int t){
+        List<Integer> values = new ArrayList<>();
+        for (int num : numbers){
+            if(values.contains(t - num)){
+                return new int[] {num, t - num};
+            }else {
+                values.add(num);
+            }
+        }
+        return new int[] {};
+    }
 }
