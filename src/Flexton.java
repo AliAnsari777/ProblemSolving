@@ -19,6 +19,17 @@ public class Flexton {
         else
             System.out.println("No value pair");
 
+        //############################################################//
+
+
+        int[] numbersList = {2,4,3,1,5,9,0};
+        obj.mergeSort(numbers, 0, numbersList.length-1);
+        System.out.println("sorted array");
+        for(int a : numbers){
+            System.out.print(a + ", ");
+        }
+        System.out.println();
+
         int[] zerOne = {1,1,0,0,1,0,1};
 
 
@@ -92,6 +103,57 @@ public class Flexton {
                 values.add(num);
             }
         }
-        return new int[] {};
+        return null;
     }
+
+    /*******************************************************************/
+
+    // 2. merge sort with merge method
+    public void mergeSort(int arr[], int left, int right){
+        if(left < right) {
+            int mid = (right + left) / 2;
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
+        }
+    }
+
+    public void merge(int arr[], int left, int mid, int right){
+        int i = 0, j = 0, r = left;
+        int[] leftArr = new int[mid - left +1];
+        int[] rightArr = new int[right - mid];
+
+        for (int k = 0; k < leftArr.length; k++) {
+            leftArr[k] = arr[left+k];
+        }
+        for (int k = 0; k < rightArr.length; k++) {
+            rightArr[k] = arr[mid + 1 + k];
+        }
+
+        while (i < leftArr.length && j < rightArr.length){
+            if (leftArr[i] <= rightArr[j]){
+                arr[r] = leftArr[i];
+                i++;
+            }else {
+                arr[r] = rightArr[j];
+                j++;
+            }
+            r++;
+        }
+
+        while (i < leftArr.length){
+            arr[r] = leftArr[i];
+            i++;
+            r++;
+        }
+
+        while (j < rightArr.length){
+            arr[r] = rightArr[j];
+            j++;
+            r++;
+        }
+    }
+
+    /*******************************************************************/
+
 }
