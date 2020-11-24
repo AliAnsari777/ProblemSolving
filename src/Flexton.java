@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -34,10 +35,17 @@ public class Flexton {
 
         //############################################################//
 
+        System.out.println("\nCombination Sum: ");
+        List<List<Integer>> list;
+        list = obj.combinationSum(numbers, 8);
+        for(List<Integer> a : list){
+            a.forEach(System.out::print);
+            System.out.println();
+        }
+
+        //############################################################//
 
         int[] zerOne = {1,1,0,0,1,0,1};
-
-
     }
 
     //==========================================================================//
@@ -161,5 +169,48 @@ public class Flexton {
 
     /*******************************************************************/
 
+    // 5. combination sum "still has problem"
+    public List<List<Integer>> combinationSum(int[] num, int x){
+        HashMap<Integer, Integer> set = new HashMap<>();
+        List<Integer> values = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
+        int temp = 0;
+
+        for (int i = 0; i < num.length; i++) {
+            set.put(num[i], num[i]);
+        }
+
+        if (set.containsKey(x)){
+            values.add(set.get(x));
+            result.add(values);
+            set.remove(x);
+        }
+
+        for(int a : set.values()){
+            values = new ArrayList<>();
+            temp = x - a;
+            if(set.containsKey(temp)){
+                values.add(temp);
+                values.add(a);
+                result.add(values);
+            }else{
+                values.add(a);
+                while (temp > 0){
+                    temp -= a;
+                    if(set.containsKey(temp)){
+                        values.add(a);
+                        values.add(temp);
+                        break;
+                    }
+                    values.add(a);
+                }
+                if (temp > 0){
+                    result.add(values);
+                }
+            }
+        }
+
+        return result;
+    }
 
 }
