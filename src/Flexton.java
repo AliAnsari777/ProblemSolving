@@ -7,11 +7,13 @@ public class Flexton {
 
         Flexton obj = new Flexton();
 
+        System.out.println("\nLongest Palindrome:");
         String res = obj.longestPalindrome("ugrecero");
         System.out.println(res);
 
         //############################################################//
 
+        System.out.println("\nSum Two Numbers: ");
         int[] numbers = {2,4,3,1,5,9,0};
         int[] sum = obj.sumtwoNumber(numbers, 45);
         if(sum != null)
@@ -21,7 +23,7 @@ public class Flexton {
 
         //############################################################//
 
-
+        System.out.println("\nMerge Sort:");
         int[] numbersList = {2,4,3,1,5,9,0};
         obj.mergeSort(numbers, 0, numbersList.length-1);
         System.out.println("sorted array");
@@ -29,6 +31,9 @@ public class Flexton {
             System.out.print(a + ", ");
         }
         System.out.println();
+
+        //############################################################//
+
 
         int[] zerOne = {1,1,0,0,1,0,1};
 
@@ -155,5 +160,6 @@ public class Flexton {
     }
 
     /*******************************************************************/
+
 
 }
