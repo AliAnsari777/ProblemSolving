@@ -53,6 +53,11 @@ public class Flexton {
 
         //############################################################//
 
+        System.out.println("\nRecursion Power Function:");
+        System.out.println(obj.power(2, 5));
+
+        //############################################################//
+
         int[] zerOne = {1,1,0,0,1,0,1};
     }
 
