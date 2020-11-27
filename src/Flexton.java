@@ -24,7 +24,6 @@ public class Flexton {
         System.out.println("\nMerge Sort:");
         int[] numbersList = {2,4,3,1,5,9,0};
         obj.mergeSort(numbers, 0, numbersList.length-1);
-        System.out.println("sorted array");
         for(int a : numbers){
             System.out.print(a + ", ");
         }
@@ -32,13 +31,25 @@ public class Flexton {
 
         //############################################################//
 
-        System.out.println("\nCombination Sum: ");
-        List<List<Integer>> list;
-        list = obj.combinationSum(numbers, 8);
-        for(List<Integer> a : list){
-            a.forEach(System.out::print);
-            System.out.println();
-        }
+//        System.out.println("\nCombination Sum: ");
+//        List<List<Integer>> list;
+//        list = obj.combinationSum(numbers, 8);
+//        for(List<Integer> a : list){
+//            a.forEach(System.out::print);
+//            System.out.println();
+//        }
+
+        //############################################################//
+
+        System.out.println("\nCustom Comparator Method: ");
+        List<employee> emp = new ArrayList<>();
+        emp.add(new employee("ali", 90000));
+        emp.add(new employee("ahmed", 89000));
+        emp.add(new employee("vali", 60000));
+        emp.add(new employee("wahid", 70000));
+
+        employee maxEmp = Collections.max(emp, new compEmp());
+        System.out.println("max employee is " + maxEmp);
 
         //############################################################//
 
