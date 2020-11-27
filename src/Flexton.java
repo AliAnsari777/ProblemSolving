@@ -223,7 +223,7 @@ public class Flexton {
 
     /*******************************************************************/
 
-// 8. creating a custom comparator to compare employees by their salary
+    // 8. creating a custom comparator to compare employees by their salary
     static class employee{
         String name;
         Integer salary;
@@ -252,5 +252,23 @@ public class Flexton {
             return o1.getSalary().compareTo(o2.getSalary());
         }
     }
+
+    /*******************************************************************/
+
+    // 11. power function with recursion with O(logn) time complexity
+    int power(int x, int n){
+        int sum;
+        if(n == 0)
+            return 1;
+        sum = power(x, n/2);
+        if(n%2 == 0)
+            return sum * sum;
+        else
+            return x * sum * sum;
+
+    }
+
+    /*******************************************************************/
+
 
 }
