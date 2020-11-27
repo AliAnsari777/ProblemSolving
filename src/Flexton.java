@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Flexton {
     public static void main(String[] args) {
@@ -211,6 +208,38 @@ public class Flexton {
         }
 
         return result;
+    }
+
+    /*******************************************************************/
+
+// 8. creating a custom comparator to compare employees by their salary
+    static class employee{
+        String name;
+        Integer salary;
+
+        public employee(String name, int salary){
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public String toString(){
+            return "Name: " + name + ", Salary: " + salary;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public Integer getSalary() {
+            return salary;
+        }
+    }
+
+    static class compEmp implements Comparator<employee> {
+        @Override
+        public int compare(employee o1, employee o2) {
+            return o1.getSalary().compareTo(o2.getSalary());
+        }
     }
 
 }
