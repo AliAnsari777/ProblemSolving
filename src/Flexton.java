@@ -63,6 +63,12 @@ public class Flexton {
         System.out.println(reverse);
 
         //############################################################//
+
+        System.out.println("\nDuplicate Characters:");
+        //        obj.duplicateChars("my name is ali ansari");
+
+        //############################################################//
+
         int[] zerOne = {1,1,0,0,1,0,1};
     }
 
