@@ -275,5 +275,19 @@ public class Flexton {
 
     /*******************************************************************/
 
+    // 12. Reversing a string text word by word.
+    String reverseString(String txt){
+        String[] temp = txt.split(" ");
+        Stack<String> value = new Stack<>();
+        StringBuilder result = new StringBuilder();
+
+        for(String s : temp)
+            value.push(s);
+
+        while (!value.empty())
+            result.append(value.pop()).append(" ");
+
+        return result.toString();
+    }
 
 }
