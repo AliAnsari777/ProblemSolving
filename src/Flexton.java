@@ -58,6 +58,11 @@ public class Flexton {
 
         //############################################################//
 
+        System.out.println("\nReverse text:");
+        String reverse = obj.reverseString("this is for test");
+        System.out.println(reverse);
+
+        //############################################################//
         int[] zerOne = {1,1,0,0,1,0,1};
     }
 
