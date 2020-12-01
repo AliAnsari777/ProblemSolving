@@ -65,7 +65,7 @@ public class Flexton {
         //############################################################//
 
         System.out.println("\nDuplicate Characters:");
-        //        obj.duplicateChars("my name is ali ansari");
+        obj.duplicateChars("my name is ali ansari");
 
         //############################################################//
 
@@ -303,6 +303,29 @@ public class Flexton {
             result.append(value.pop()).append(" ");
 
         return result.toString();
+    }
+
+    /*******************************************************************/
+
+    // 13. Given string only letters, print out the duplicate characters in string ignore case
+    void duplicateChars(String text){
+        HashMap<Character, Integer> list = new HashMap<>();
+        text = text.toLowerCase();
+
+        for (int i = 0; i < text.length(); i++) {
+            if(!(list.containsKey(text.charAt(i))) && text.charAt(i) != ' '){
+                list.put(text.charAt(i), 1);
+            }else if(text.charAt(i) != ' '){
+                list.put(text.charAt(i), list.get(text.charAt(i)) + 1);
+            }
+        }
+
+        // by using (Map.Entry) we can access to key and value of each element in hashMap
+        for(Map.Entry<Character, Integer> a : list.entrySet()){
+            if(a.getValue()>1){
+                System.out.print(a.getKey() + ", ");
+            }
+        }
     }
 
     /*******************************************************************/
