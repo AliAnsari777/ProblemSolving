@@ -69,9 +69,9 @@ public class Flexton {
 
         //############################################################//
 
-        System.out.println("\nPalindrome Text and Number: ");
+        System.out.println("\n\nPalindrome Text and Number: ");
         obj.palindromeText("recer");
-//        obj.palindromeNumber(23432);
+        obj.palindromeNumber(23432);
 
         int[] zerOne = {1,1,0,0,1,0,1};
     }
@@ -348,5 +348,23 @@ public class Flexton {
             System.out.println("text is palindrome");
         else
             System.out.println("text is not Palindrome ");
+    }
+
+    /*******************************************************************/
+
+    // 15. check if the number is palindrome
+    // for this I just reverse the number and compare it with original parameter
+    void palindromeNumber(int number){
+        int save = number, temp = 0;
+
+        while (save != 0){
+            temp = temp * 10 + (save%10);
+            save /= 10;
+        }
+
+        if (temp == number)
+            System.out.println("Number is palindrome");
+        else
+            System.out.println("Number is not palindrome");
     }
 }
