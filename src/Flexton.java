@@ -69,6 +69,10 @@ public class Flexton {
 
         //############################################################//
 
+        System.out.println("\nPalindrome Text and Number: ");
+        obj.palindromeText("recer");
+//        obj.palindromeNumber(23432);
+
         int[] zerOne = {1,1,0,0,1,0,1};
     }
 
@@ -301,4 +305,25 @@ public class Flexton {
         return result.toString();
     }
 
+    /*******************************************************************/
+
+    // 14. check if text is palindrome it means we can read same from both side (Madam)
+    void palindromeText(String text){
+        int end = text.length()-1;
+        boolean result = true;
+
+        for (int i = 0; i < end; i++) {
+            if(text.charAt(i) == text.charAt(end)) {
+                end--;
+            }else {
+                result = false;
+                break;
+            }
+        }
+
+        if (result)
+            System.out.println("text is palindrome");
+        else
+            System.out.println("text is not Palindrome ");
+    }
 }
