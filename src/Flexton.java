@@ -80,7 +80,9 @@ public class Flexton {
 
         //############################################################//
 
-        obj.secondLargestNum(numbers);
+        System.out.println("\nSecond Largest Number: ");
+        int[] num = {2,4,3,1,5,9,0, 10, 12};
+        obj.secondLargestNum(num);
 
         int[] zerOne = {1,1,0,0,1,0,1};
     }
