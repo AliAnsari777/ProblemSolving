@@ -78,6 +78,10 @@ public class Flexton {
         System.out.println("\nRemove Duplicate: ");
         obj.removeDuplicate("My name is Ali Ansari");
 
+        //############################################################//
+
+        obj.secondLargestNum(numbers);
+
         int[] zerOne = {1,1,0,0,1,0,1};
     }
 
@@ -383,5 +387,29 @@ public class Flexton {
         }
         String result = remove.toString();
         System.out.println(result);
+    }
+
+    /*******************************************************************/
+
+    // 17. find the second largest number in an array.
+    void secondLargestNum(int[] numbers){
+        if(numbers.length < 2)
+            System.out.println("small array of numbers.");
+
+        int first = 0, second = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > first){
+                second = first;
+                first = numbers[i];
+            }else if( numbers[i] >= second && numbers[i] != first){
+                second = numbers[i];
+            }
+        }
+
+        if (second == 0)
+            System.out.println("no second largest number");
+        else
+            System.out.println(second);
     }
 }
