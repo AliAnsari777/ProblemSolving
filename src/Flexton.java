@@ -73,6 +73,11 @@ public class Flexton {
         obj.palindromeText("recer");
         obj.palindromeNumber(23432);
 
+        //############################################################//
+
+        System.out.println("\nRemove Duplicate: ");
+        obj.removeDuplicate("My name is Ali Ansari");
+
         int[] zerOne = {1,1,0,0,1,0,1};
     }
 
