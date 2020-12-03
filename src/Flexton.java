@@ -367,4 +367,16 @@ public class Flexton {
         else
             System.out.println("Number is not palindrome");
     }
+
+    /*******************************************************************/
+
+    // 16. remove duplicate character from a string
+    void removeDuplicate(String val){
+        HashSet<Character> remove = new HashSet<>();
+        for (int i = 0; i < val.length(); i++) {
+            remove.add(val.charAt(i));
+        }
+        String result = remove.toString();
+        System.out.println(result);
+    }
 }
