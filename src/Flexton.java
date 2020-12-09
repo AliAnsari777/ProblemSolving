@@ -84,7 +84,11 @@ public class Flexton {
         int[] num = {2,4,3,1,5,9,0, 10, 12};
         obj.secondLargestNum(num);
 
+        //############################################################//
+
+        System.out.println("\nSort Array of Zeros and Ones");
         int[] zerOne = {1,1,0,0,1,0,1};
+        obj.sortZeroOne(zerOne);
     }
 
     //==========================================================================//
