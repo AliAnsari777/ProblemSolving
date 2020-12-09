@@ -414,4 +414,28 @@ public class Flexton {
         else
             System.out.println(second);
     }
+
+    /*******************************************************************/
+
+// 18. Sort an array which contains only 0 and 1 without using any inbuilt sorting library
+    void sortZeroOne(int[] list){
+        int left = 0, rigth = list.length-1;
+
+        while (left < rigth){
+            if (list[left] == 1){
+                // swap two numbers
+                list[rigth] = list[rigth] + list[left];
+                list[left] = list[rigth] - list[left];
+                list[rigth] = list[rigth] - list[left];
+                rigth--;
+            }
+            else{
+                left++;
+            }
+        }
+
+        for (int i : list){
+            System.out.print(i + " ");
+        }
+    }
 }
