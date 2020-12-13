@@ -447,30 +447,68 @@ public class Flexton {
 
     // 19. make a list in order that all the even number comes first and then all odd numbers in same order that
     // they are in the linked list
-    static class LinkedListEven{
+    static class LinkedListEven {
         Node head;
 
-        class Node{
+        class Node {
             int data;
             Node next;
-            Node(int a){
+
+            Node(int a) {
                 data = a;
                 next = null;
             }
         }
 
-        void push(int val){
+        void push(int val) {
             Node new_node = new Node(val);
             new_node.next = head;
             head = new_node;
         }
 
-        void print(){
+        void print() {
             Node temp = head;
-            while (temp != null){
+            while (temp != null) {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             }
             System.out.println();
         }
+
+        public void segregateEvenOdd() {
+            Node evenStart = null;
+            Node evenEnd = null;
+            Node oddStart = null;
+            Node oddEnd = null;
+            Node current = head;
+
+            while (current != null) {
+                if (current.data % 2 == 0) {
+                    if (evenStart == null) {
+                        evenStart = current;
+                        evenEnd = evenStart;
+                    } else {
+                        evenEnd.next = current;
+                        evenEnd = evenEnd.next;
+                    }
+                } else {
+                    if (oddStart == null) {
+                        oddStart = current;
+                        oddEnd = oddStart;
+                    } else {
+                        oddEnd.next = current;
+                        oddEnd = oddEnd.next;
+                    }
+                }
+                current = current.next;
+            }
+
+            if (evenStart == null || oddStart == null)
+                return;
+
+            evenEnd.next = oddStart;
+            oddEnd.next = null;
+            head = evenStart;
+        }
+    }
 }
