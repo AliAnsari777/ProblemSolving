@@ -89,6 +89,24 @@ public class Flexton {
         System.out.println("\nSort Array of Zeros and Ones");
         int[] zerOne = {1,1,0,0,1,0,1};
         obj.sortZeroOne(zerOne);
+
+        //############################################################//
+
+        System.out.println("\n\nSorting even and odd numbers as they are in list.");
+        LinkedListEven link = new LinkedListEven();
+        link.push(2);
+        link.push(3);
+        link.push(5);
+        link.push(6);
+        link.push(9);
+        link.push(8);
+        System.out.print("Before Sort: ");
+        link.print();
+        link.segregateEvenOdd();
+        System.out.print("After Sort: ");
+        link.print();
+        //############################################################//
+
     }
 
     //==========================================================================//
