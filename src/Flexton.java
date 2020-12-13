@@ -442,4 +442,35 @@ public class Flexton {
             System.out.print(i + " ");
         }
     }
+
+    /*******************************************************************/
+
+    // 19. make a list in order that all the even number comes first and then all odd numbers in same order that
+    // they are in the linked list
+    static class LinkedListEven{
+        Node head;
+
+        class Node{
+            int data;
+            Node next;
+            Node(int a){
+                data = a;
+                next = null;
+            }
+        }
+
+        void push(int val){
+            Node new_node = new Node(val);
+            new_node.next = head;
+            head = new_node;
+        }
+
+        void print(){
+            Node temp = head;
+            while (temp != null){
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.println();
+        }
 }
