@@ -105,8 +105,16 @@ public class Flexton {
         link.segregateEvenOdd();
         System.out.print("After Sort: ");
         link.print();
+
         //############################################################//
 
+        List<int[]> val = obj.tripleSum(numbers, 8);
+        for (int[] a : val){
+            for (int b : a){
+                System.out.print(b + ", ");
+            }
+            System.out.println();
+        }
     }
 
     //==========================================================================//
