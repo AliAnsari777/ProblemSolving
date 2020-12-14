@@ -108,7 +108,9 @@ public class Flexton {
 
         //############################################################//
 
-        List<int[]> val = obj.tripleSum(numbers, 8);
+        System.out.println("\nTriple Sum:");
+        int[] triple = {2,4,3,1,5,9,0};
+        List<int[]> val = obj.tripleSum(triple, 8);
         for (int[] a : val){
             for (int b : a){
                 System.out.print(b + ", ");
@@ -536,5 +538,33 @@ public class Flexton {
             oddEnd.next = null;
             head = evenStart;
         }
+    }
+
+    /*******************************************************************/
+
+    // 20. find three number in an array that their sum is equal to a target number.
+    List<int[]> tripleSum(int[] numbers, int target) {
+        List<int[]> result = new ArrayList<>();
+        int sum, left, right;
+        Arrays.sort(numbers);
+
+        for (int i = 0; i < numbers.length - 2; i++) {
+            left = i + 1;
+            right = numbers.length - 1;
+
+            while (left < right) {
+                sum = numbers[i] + numbers[left] + numbers[right];
+                if (sum == target) {
+                    result.add(new int[]{numbers[i], numbers[left], numbers[right]});
+                    left++;
+                    right--;
+                } else if (sum < target) {
+                    left++;
+                } else if (sum > target) {
+                    right--;
+                }
+            }
+        }
+        return result;
     }
 }
