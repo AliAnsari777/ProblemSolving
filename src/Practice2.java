@@ -5,6 +5,10 @@ import java.util.Map;
 public class Practice2 {
     public static void main(String[] args) {
 
+        int[] list = {3,5,1,1,3,4,2,1,5,3};
+        System.out.println("\nFind a number which is in majority of array");
+        System.out.println(average(list));
+
         //############################################################//
 
 
@@ -13,7 +17,7 @@ public class Practice2 {
     //==========================================================================//
 
     // find a number which is in majority of array
-    int average(int[] arr){
+    static int average(int[] arr){
         HashMap<Integer, Integer> mylist = new HashMap<>();
         for (int value : arr) {
             if (mylist.containsKey(value)) {
