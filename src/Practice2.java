@@ -11,6 +11,7 @@ public class Practice2 {
         System.out.println(average(list));
 
         //############################################################//
+
         LinkedList<Integer> one = new LinkedList<>();
         LinkedList<Integer> two = new LinkedList<>();
         one.push(1);
@@ -24,6 +25,12 @@ public class Practice2 {
         two.push(10);
         two.push(12);
         one.push(9);
+
+        System.out.println("\nMerge and sort two linked list:");
+        LinkedList<Integer> resul = Practice2.merge(two, one);
+        for (int i : resul){
+            System.out.print(i + ", ");
+        }
 
     }
 
@@ -45,7 +52,7 @@ public class Practice2 {
     /*******************************************************************/
 
     // Merge two sorted linked list
-    LinkedList<Integer> merge(LinkedList<Integer> L1, LinkedList<Integer> L2){
+    static LinkedList<Integer> merge(LinkedList<Integer> L1, LinkedList<Integer> L2){
         LinkedList<Integer> temp = new LinkedList<>();
 
         while (L1.peek() != null && L2.peek() != null){
