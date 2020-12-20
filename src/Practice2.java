@@ -1,5 +1,6 @@
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class Practice2 {
@@ -10,7 +11,19 @@ public class Practice2 {
         System.out.println(average(list));
 
         //############################################################//
-
+        LinkedList<Integer> one = new LinkedList<>();
+        LinkedList<Integer> two = new LinkedList<>();
+        one.push(1);
+        one.push(3);
+        one.push(5);
+        one.push(7);
+        two.push(2);
+        two.push(4);
+        two.push(6);
+        two.push(8);
+        two.push(10);
+        two.push(12);
+        one.push(9);
 
     }
 
@@ -31,4 +44,27 @@ public class Practice2 {
 
     /*******************************************************************/
 
+    // Merge two sorted linked list
+    LinkedList<Integer> merge(LinkedList<Integer> L1, LinkedList<Integer> L2){
+        LinkedList<Integer> temp = new LinkedList<>();
+
+        while (L1.peek() != null && L2.peek() != null){
+            if(L1.peek() >= L2.peek()){
+                temp.push(L1.pop());
+            }
+            else{
+                temp.push(L2.pop());
+            }
+        }
+
+        while (L1.peek() != null){
+            temp.push(L1.pop());
+        }
+
+        while (L2.peek() != null){
+            temp.push(L2.pop());
+        }
+
+        return temp;
+    }
 }
