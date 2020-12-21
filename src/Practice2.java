@@ -74,4 +74,25 @@ public class Practice2 {
 
         return temp;
     }
+
+    /*******************************************************************/
+
+    // checks if two Strings are Anagram or not
+    boolean anagram(String first, String second){
+        if(first.length() != second.length()){
+            return false;
+        }
+
+        HashMap<Integer, Character> test = new HashMap<>();
+
+        for (int i = 0; i < first.length(); i++) {
+            test.put(i, first.charAt(i));
+        }
+        for(char a : second.toCharArray()){
+            if(!(test.containsValue(a))){
+                return false;
+            }
+        }
+        return true;
+    }
 }
