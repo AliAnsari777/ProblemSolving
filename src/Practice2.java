@@ -32,6 +32,10 @@ public class Practice2 {
             System.out.print(i + ", ");
         }
 
+        //############################################################//
+
+        System.out.println("\n\nCheck two strings are anagram: ");
+        System.out.println(Practice2.anagram("Ahmed", "Ahmed"));
     }
 
     //==========================================================================//
@@ -78,7 +82,7 @@ public class Practice2 {
     /*******************************************************************/
 
     // checks if two Strings are Anagram or not
-    boolean anagram(String first, String second){
+    static boolean anagram(String first, String second){
         if(first.length() != second.length()){
             return false;
         }
