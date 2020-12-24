@@ -1,7 +1,4 @@
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class Practice2 {
     public static void main(String[] args) {
@@ -112,5 +109,24 @@ public class Practice2 {
             System.out.println("value overflowed");
         }
         System.out.println("First number: " + a + "  Second number: " + b);
+    }
+
+    /*******************************************************************/
+
+    // to find all pairs of elements in an integer array, whose sum is equal to a given number
+    HashSet subSetSum(int[] arr, int sum){
+        List<Integer> mylist = new ArrayList<Integer>();
+        HashSet<String> result = new HashSet<String>();
+
+        for(int i : arr){
+            mylist.add(i);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            int temp = sum - arr[i];
+            if(mylist.contains(temp)){
+                result.add("[" + arr[i] + "," + temp + "]");
+            }
+        }
+        return result;
     }
 }
