@@ -33,6 +33,13 @@ public class Practice2 {
 
         System.out.println("\n\nCheck two strings are anagram: ");
         System.out.println(Practice2.anagram("Ahmed", "Ahmed"));
+
+        //############################################################//
+
+        System.out.println("Swap two numbers without using third variable:");
+        Practice2.swap(20, Integer.MAX_VALUE);
+
+
     }
 
     //==========================================================================//
@@ -100,7 +107,7 @@ public class Practice2 {
     /*******************************************************************/
 
     // swap two number without using third variable and checking overflow.
-    void swap(int a, int b){
+    static void swap(int a, int b){
         try{
             a = Math.addExact(a, b);
             b = Math.subtractExact(a, b);
@@ -114,7 +121,7 @@ public class Practice2 {
     /*******************************************************************/
 
     // to find all pairs of elements in an integer array, whose sum is equal to a given number
-    HashSet subSetSum(int[] arr, int sum){
+    static HashSet subSetSum(int[] arr, int sum){
         List<Integer> mylist = new ArrayList<Integer>();
         HashSet<String> result = new HashSet<String>();
 
