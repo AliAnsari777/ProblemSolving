@@ -36,9 +36,17 @@ public class Practice2 {
 
         //############################################################//
 
-        System.out.println("Swap two numbers without using third variable:");
+        System.out.println("\nSwap two numbers without using third variable:");
         Practice2.swap(20, Integer.MAX_VALUE);
 
+        //############################################################//
+
+        System.out.println("\nSubset sum: ");
+        int[] myList = {3,5,1,1,3,4,2,1,5,3};
+        HashSet result = Practice2.subSetSum(myList, 7);
+        System.out.println(result);
+
+        //############################################################//
 
     }
 
@@ -136,4 +144,7 @@ public class Practice2 {
         }
         return result;
     }
+
+    /*******************************************************************/
+
 }
