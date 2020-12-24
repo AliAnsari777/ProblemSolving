@@ -99,4 +99,18 @@ public class Practice2 {
         }
         return true;
     }
+
+    /*******************************************************************/
+
+    // swap two number without using third variable and checking overflow.
+    void swap(int a, int b){
+        try{
+            a = Math.addExact(a, b);
+            b = Math.subtractExact(a, b);
+            a = Math.subtractExact(a, b);
+        }catch (Exception e){
+            System.out.println("value overflowed");
+        }
+        System.out.println("First number: " + a + "  Second number: " + b);
+    }
 }
