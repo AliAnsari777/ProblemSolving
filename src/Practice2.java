@@ -147,4 +147,25 @@ public class Practice2 {
 
     /*******************************************************************/
 
+    // fibonacci
+    int fib(int k){
+        if(k == 1 || k == 0){
+            return k;
+        }
+        return fib(k-1) + fib(k - 2);
+    }
+
+    int dynamicFib(int k){
+        int[] result = new int[k+1];
+        result[0] = 0;
+
+        if (k > 0) {
+            result[1] = 1;
+
+            for (int i = 2; i <= k; i++) {
+                result[i] = result[i - 1] + result[i - 2];
+            }
+        }
+        return result[k];
+    }
 }
