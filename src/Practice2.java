@@ -48,6 +48,8 @@ public class Practice2 {
 
         //############################################################//
 
+        System.out.println(Practice2.fib(9));
+        System.out.println(Practice2.dynamicFib(9));
     }
 
     //==========================================================================//
@@ -148,14 +150,14 @@ public class Practice2 {
     /*******************************************************************/
 
     // fibonacci
-    int fib(int k){
+    static int fib(int k){
         if(k == 1 || k == 0){
             return k;
         }
         return fib(k-1) + fib(k - 2);
     }
 
-    int dynamicFib(int k){
+    static int dynamicFib(int k){
         int[] result = new int[k+1];
         result[0] = 0;
 
