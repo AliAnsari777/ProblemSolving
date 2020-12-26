@@ -190,4 +190,11 @@ public class Practice2 {
 
     /*******************************************************************/
 
+    // remove every each character
+    String NewString(String str)
+    {
+        if ((str==null)||(str.length() <= 1) )
+            return str;
+        return NewString(str.substring(0,str.length()-2)) + str.charAt(str.length()-1);
+    }
 }
