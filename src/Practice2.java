@@ -53,6 +53,9 @@ public class Practice2 {
         System.out.println(Practice2.dynamicFib(9));
 
         //############################################################//
+
+        System.out.println("\nRemove duplicate letters: ");
+        Practice2.removeDuplicate("abcdbca");
     }
 
     //==========================================================================//
@@ -177,11 +180,14 @@ public class Practice2 {
     /*******************************************************************/
 
     // remove duplicate from string
-    void removeDuplicate(String text){
+    static void removeDuplicate(String text){
         TreeSet<Character> set = new TreeSet<>();
         for(char a : text.toCharArray()){
             set.add(a);
         }
         System.out.println(set);
     }
+
+    /*******************************************************************/
+
 }
