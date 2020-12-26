@@ -56,6 +56,13 @@ public class Practice2 {
 
         System.out.println("\nRemove duplicate letters: ");
         Practice2.removeDuplicate("abcdbca");
+
+        //############################################################//
+
+        System.out.println("\nRemove each every character: ");
+        String str = "Flexton";
+        System.out.println("Original String: " + str);
+        System.out.println("New String is: \'"+ Practice2.NewString(str)+"\'");
     }
 
     //==========================================================================//
@@ -191,7 +198,7 @@ public class Practice2 {
     /*******************************************************************/
 
     // remove every each character
-    String NewString(String str)
+    static String NewString(String str)
     {
         if ((str==null)||(str.length() <= 1) )
             return str;
