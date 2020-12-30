@@ -204,4 +204,66 @@ public class Practice2 {
             return str;
         return NewString(str.substring(0,str.length()-2)) + str.charAt(str.length()-1);
     }
+
+    /*******************************************************************/
+
+    // Find nth element form end of a single linked list
+    static class linkedList{
+        Node head;
+
+        static class Node{
+            int data;
+            Node next;
+
+            Node(int val){
+                this.data = val;
+                next = null;
+            }
+        }
+
+        linkedList insert(linkedList list, int data){
+            Node new_node = new Node(data);
+            new_node.next = null;
+
+            if(list.head == null){
+                list.head = new_node;
+            }else {
+                Node last = list.head;
+                while (last.next != null){
+                    last = last.next;
+                }
+                last.next = new_node;
+            }
+            return list;
+        }
+
+        void printList(linkedList list){
+            Node currentNode = list.head;
+            while (currentNode != null){
+                System.out.print(currentNode.data + " ");
+                currentNode = currentNode.next;
+            }
+        }
+
+        void  printNthElementFromEnd(int n){
+            Node temp = head;
+            int len = 0;
+
+            //find the size of list
+            while (temp != null){
+                temp = temp.next;
+                len++;
+            }
+
+            if(len < n)
+                return;
+
+            temp = head;
+            for (int i = 0; i < len - n; i++) {
+                temp = temp.next;
+            }
+
+            System.out.println(temp.data);
+        }
+    }
 }
