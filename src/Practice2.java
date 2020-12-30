@@ -42,8 +42,8 @@ public class Practice2 {
         //############################################################//
 
         System.out.println("\nSubset sum: ");
-        int[] myList = {3,5,1,1,3,4,2,1,5,3};
-        HashSet result = Practice2.subSetSum(myList, 7);
+        int[] myNumberList = {3,5,1,1,3,4,2,1,5,3};
+        HashSet result = Practice2.subSetSum(myNumberList, 7);
         System.out.println(result);
 
         //############################################################//
@@ -63,6 +63,17 @@ public class Practice2 {
         String str = "Flexton";
         System.out.println("Original String: " + str);
         System.out.println("New String is: \'"+ Practice2.NewString(str)+"\'");
+
+        //############################################################//
+
+        linkedList myList = new linkedList();
+        myList = myList.insert(myList, 1);
+        myList = myList.insert(myList, 2);
+        myList = myList.insert(myList, 3);
+        myList = myList.insert(myList, 4);
+        myList = myList.insert(myList, 5);
+
+        myList.printNthElementFromEnd(2);
     }
 
     //==========================================================================//
@@ -207,7 +218,7 @@ public class Practice2 {
 
     /*******************************************************************/
 
-    // Find nth element form end of a single linked list
+    // Find nth element from end of a single linked list
     static class linkedList{
         Node head;
 
