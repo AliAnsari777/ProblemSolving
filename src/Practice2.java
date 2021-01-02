@@ -78,6 +78,9 @@ public class Practice2 {
 
         //############################################################//
 
+        System.out.println("\nArmstrong Number:");
+        System.out.println(Practice2.armstrongNumber(1634));
+
     }
 
     //==========================================================================//
@@ -286,7 +289,7 @@ public class Practice2 {
 
     // it check if we raise each digit in number to power of number of its digit and the result will be equal to
     // the original number like 153 = 1*1*1 + 5*5*5 + 3*3*3
-    boolean armstrongNumber(int num){
+    static boolean armstrongNumber(int num){
         ArrayList<Integer> list = new ArrayList<>();
         int temp = num;
         while (temp != 0){
