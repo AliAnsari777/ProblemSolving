@@ -283,5 +283,23 @@ public class Practice2 {
     }
 
     /*******************************************************************/
+    // it check if we raise each digit in number to power of number of its digit and the result will be equal to
+    // the original number like 153 = 1*1*1 + 5*5*5 + 3*3*3
+    boolean armstrongNumber(int num){
+        ArrayList<Integer> list = new ArrayList<>();
+        int temp = num;
+        while (temp != 0){
+            list.add(temp%10);
+            temp /= 10;
+        }
 
+        int result = 0;
+        for(int a : list){
+            result += Math.pow(a, list.size());
+        }
+        if(result == num)
+            return true;
+        else
+            return false;
+    }
 }
