@@ -283,6 +283,7 @@ public class Practice2 {
     }
 
     /*******************************************************************/
+
     // it check if we raise each digit in number to power of number of its digit and the result will be equal to
     // the original number like 153 = 1*1*1 + 5*5*5 + 3*3*3
     boolean armstrongNumber(int num){
@@ -302,4 +303,21 @@ public class Practice2 {
         else
             return false;
     }
+
+    /*******************************************************************/
+
+    // check if the number is prime or not
+    boolean isPrime(int p){
+        if(p%2 == 0)
+            return false;
+
+        for (int i = 3; i < Math.sqrt(p) ; i += 2) {
+            if(p%i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    /*******************************************************************/
+
 }
