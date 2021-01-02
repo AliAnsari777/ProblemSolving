@@ -81,6 +81,11 @@ public class Practice2 {
         System.out.println("\nArmstrong Number:");
         System.out.println(Practice2.armstrongNumber(1634));
 
+        //############################################################//
+
+        System.out.println("\nIs Prime: ");
+        System.out.println(Practice2.isPrime(107));
+
     }
 
     //==========================================================================//
@@ -310,7 +315,7 @@ public class Practice2 {
     /*******************************************************************/
 
     // check if the number is prime or not
-    boolean isPrime(int p){
+    static boolean isPrime(int p){
         if(p%2 == 0)
             return false;
 
