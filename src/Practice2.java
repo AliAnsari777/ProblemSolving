@@ -328,4 +328,12 @@ public class Practice2 {
 
     /*******************************************************************/
 
+    static int chocolate(int kilo){
+        int bigBar = 5;
+        int result = kilo%bigBar;
+        if (result>0){
+            return result;
+        }
+        return -1;
+    }
 }
