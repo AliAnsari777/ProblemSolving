@@ -86,6 +86,10 @@ public class Practice2 {
         System.out.println("\nIs Prime: ");
         System.out.println(Practice2.isPrime(107));
 
+        //############################################################//
+
+        System.out.println("\nChocolate");
+        System.out.println(Practice2.chocolate(25));
     }
 
     //==========================================================================//
