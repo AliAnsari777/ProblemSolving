@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/KickStart/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/KickStart/roundB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" afterDir="false" />
     </list>
@@ -53,7 +55,7 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HackerRank_3">
+  <component name="RunManager" selected="Application.Solution">
     <configuration name="Flexton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Flexton" />
       <module name="ProblemSolving" />
@@ -86,7 +88,7 @@
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Signal.*" />
+          <option name="PATTERN" value="KickStart.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,8 +103,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KickStart.Solution" />
+    <configuration name="Practice2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Practice2" />
+      <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="KickStart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.roundB" />
         <item itemvalue="Application.HackerRank_3" />
         <item itemvalue="Application.Practice2" />
         <item itemvalue="Application.Flexton" />
@@ -182,7 +201,9 @@
       <workItem from="1615105915091" duration="2074000" />
       <workItem from="1616658425746" duration="1764000" />
       <workItem from="1616886432622" duration="7806000" />
-      <workItem from="1617521637838" duration="1351000" />
+      <workItem from="1617521637838" duration="1930000" />
+      <workItem from="1618789366750" duration="8528000" />
+      <workItem from="1619951865293" duration="1111000" />
     </task>
     <servers />
   </component>
