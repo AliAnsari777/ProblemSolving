@@ -94,4 +94,22 @@ public class HackerRank_2 {
         }
         return "NO";
     }
+
+    /*******************************************************************/
+
+    //Given two strings, determine if they share a common substring. A substring may be as small as one character.
+    //For example, the words "a", "and", "art" share the common substring . The words "be" and "cat" do not share a substring.
+    static String twoString(String s1, String s2) {
+        Set<Character> chars = new HashSet<>();
+
+        for(int i = 0; i < s1.length(); i++){
+            chars.add(s1.charAt(i));
+        }
+
+        for (int i = 0; i < s2.length(); i++) {
+            if(chars.contains (s2.charAt(i)))
+                return "YES";
+        }
+        return "NO";
+    }
 }

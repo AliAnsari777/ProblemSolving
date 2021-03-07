@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HackerRank_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank_2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,16 +31,16 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="S:/MUM Materials/Assignments/SWA/Lab 9/exercise1/Eureka" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -93,6 +94,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Practice2" />
@@ -115,6 +127,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value=",SHOW_PROPERTIES,SHOW_FIELDS" />
   </component>
@@ -169,45 +182,47 @@
       <workItem from="1607501104267" duration="992000" />
       <workItem from="1607881856445" duration="8355000" />
       <workItem from="1608874572883" duration="2469000" />
-      <workItem from="1609338132250" duration="2241000" />
+      <workItem from="1609338132250" duration="3302000" />
+      <workItem from="1615105915091" duration="61000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="190" y="95" key="#com.intellij.ide.util.MemberChooser" timestamp="1604358221785">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="190" y="95" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1604358221785" />
-    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1608498285838">
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1609702351086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609702351086" />
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1608498285838" />
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605427727840" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1609701556602">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1609702458717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609701556602" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609702458717" />
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1609097780538" />
     <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609338526002" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1609701556601">
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1609702458717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609701556601" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609702458717" />
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1609097780538" />
     <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609338526002" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1609701556601">
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1609702458716">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609701556601" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609702458716" />
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1609097780538" />
     <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609338526002" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1609701556601">
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1609702458717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609701556601" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609702458717" />
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1609097780538" />
     <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609338526002" />
     <state width="1493" height="333" key="GridCell.Tab.1.bottom" timestamp="1604446450285">
@@ -230,9 +245,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="235" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1607501104304" />
-    <state x="296" y="79" key="new project wizard" timestamp="1608498112172">
+    <state x="296" y="79" key="new project wizard" timestamp="1609702401369">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="296" y="79" key="new project wizard/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1609702401369" />
     <state x="296" y="79" key="new project wizard/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1608498112172" />
     <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1604037701184" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602469388365">
