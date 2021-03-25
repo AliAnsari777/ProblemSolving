@@ -1,4 +1,4 @@
-import sun.awt.util.IdentityLinkedList;
+package HackerRank;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ public class Hackerrank {
 
 //        // Simple Array Sum
 //        int[] simpleArray = {7,5,3,8,4,2,1};
-//        System.out.println("Simple Array Sum: " + Hackerrank.simpleArraySum(simpleArray));
+//        System.out.println("Simple Array Sum: " + HackerRank.Hackerrank.simpleArraySum(simpleArray));
 
         //############################################################//
 
@@ -32,7 +32,7 @@ public class Hackerrank {
 
 //        // A very big sum
 //        long[] bigArray = {1000000001, 1000000002, 1000000003, 1000000004, 1000000005};
-//        System.out.println("Very Big Sum: " + Hackerrank.aVeryBigSum(bigArray));
+//        System.out.println("Very Big Sum: " + HackerRank.Hackerrank.aVeryBigSum(bigArray));
 
         //############################################################//
 
@@ -44,61 +44,61 @@ public class Hackerrank {
 //        diagonal.add(one);
 //        diagonal.add(two);
 //        diagonal.add(three);
-//        System.out.println("Diagonal Difference: " + Hackerrank.diagonalDifference(diagonal));
+//        System.out.println("Diagonal Difference: " + HackerRank.Hackerrank.diagonalDifference(diagonal));
 
         //############################################################//
 
 //        // Plus Minus
 //        int[] plusMinus = {4, 7, -8, -2, 0};
 //        System.out.println("Plus Minus: ");
-//        Hackerrank.plusMinus(plusMinus);
+//        HackerRank.Hackerrank.plusMinus(plusMinus);
 
         //############################################################//
 
 //        // Staircase
 //        System.out.println("Staircase: ");
-//        Hackerrank.staircase(5);
+//        HackerRank.Hackerrank.staircase(5);
 
         //############################################################//
 
 //        // MinMaxSum
 //        int[] minMax = {3,5, 8, 9, 2};
 //        System.out.println("Min Max Sum: ");
-//        Hackerrank.miniMaxSum(minMax);
+//        HackerRank.Hackerrank.miniMaxSum(minMax);
 
         //############################################################//
 
 //        // BirthdayCakeCandles
 //        int[] candles = {4,7,3,7};
 //        System.out.println("Birthday Cake Candles: ");
-//        System.out.println(Hackerrank.birthdayCakeCandles(candles));
+//        System.out.println(HackerRank.Hackerrank.birthdayCakeCandles(candles));
 
         //############################################################//
 
 //        // TimeConversion
 //        String time = "07:05:45PM";
 //        System.out.println("Time Conversion: ");
-//        System.out.println(Hackerrank.timeConversion(time));
+//        System.out.println(HackerRank.Hackerrank.timeConversion(time));
 
         //############################################################//
 
 //        // Text Palindrome
 //        String palindrome = "madam";
 //        System.out.println("Is the text palindrome: " + palindrome);
-//        System.out.println(Hackerrank.palindrome(palindrome));
+//        System.out.println(HackerRank.Hackerrank.palindrome(palindrome));
 
         //############################################################//
 
 //        // Grading Students
 //        List<Integer> grades = new ArrayList<>(Arrays.asList(73, 67, 38, 33));
 //        System.out.println("Grading Students: ");
-//        System.out.println(Hackerrank.gradingStudents(grades));
+//        System.out.println(HackerRank.Hackerrank.gradingStudents(grades));
 
         //############################################################//
 
 //        // kangaroo
 //        System.out.println("Kangaroo: ");
-//        System.out.println(Hackerrank.kangaroo(0, 3, 4, 2));
+//        System.out.println(HackerRank.Hackerrank.kangaroo(0, 3, 4, 2));
 
         //############################################################//
 
@@ -106,7 +106,7 @@ public class Hackerrank {
 //        int[] list = {4,3,2,1,5,7};
 //        System.out.println("Zig Zag Sequence: ");
 //        try {
-//            Hackerrank.findZigZagSequence(list, 6);
+//            HackerRank.Hackerrank.findZigZagSequence(list, 6);
 //        }catch (Exception e){
 //            System.out.println(e.getMessage());
 //        }
@@ -117,14 +117,14 @@ public class Hackerrank {
 //        int[] apples = {-2, 2, 1};
 //        int[] oranges = {5, -6};
 //        System.out.println("Count Apples and Oranges: ");
-//        Hackerrank.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
+//        HackerRank.Hackerrank.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
 
         //############################################################//
 
 //        // Breaking Record
 //        int[] records = {10, 5, 20, 20, 4, 5, 2, 25, 1};
 //        System.out.println("Breaking Record: ");
-//        int[] result = Hackerrank.breakingRecords(records);
+//        int[] result = HackerRank.Hackerrank.breakingRecords(records);
 //        for(int r : result){
 //            System.out.print(r + " ");
 //        }
@@ -134,31 +134,31 @@ public class Hackerrank {
 
 //        List<Integer> cake = new ArrayList<>(Arrays.asList(1,2,1,3,5));
 //        System.out.println("\nBirth Day Cake: ");
-//        System.out.println(Hackerrank.birthday(cake,3, 2));
+//        System.out.println(HackerRank.Hackerrank.birthday(cake,3, 2));
 
         //############################################################//
 
 //        int[] socks = {1, 3, 2, 1, 5, 5, 2, 7, 4};
 //        System.out.println("\nMatching Pair of Numbers in an array: ");
-//        System.out.println(Hackerrank.sockMerchant(socks.length, socks));
+//        System.out.println(HackerRank.Hackerrank.sockMerchant(socks.length, socks));
 
         //############################################################//
 
 //        String path = "UDDDUDUU";
 //        System.out.println("\nCounting Valleys: ");
-//        System.out.println(Hackerrank.countingValleys(8, path));
+//        System.out.println(HackerRank.Hackerrank.countingValleys(8, path));
 
         //############################################################//
 
 //        int[] cloude = {0, 0, 1, 0, 0, 1, 0};
 //        System.out.println("\nJump on cloud: ");
-//        System.out.println(Hackerrank.jumpingOnClouds(cloude));
+//        System.out.println(HackerRank.Hackerrank.jumpingOnClouds(cloude));
 
         //############################################################//
 
 //        String text = "aba";
 //        System.out.println("\nRepeated String: ");
-//        System.out.println(Hackerrank.repeatedString(text, 10));
+//        System.out.println(HackerRank.Hackerrank.repeatedString(text, 10));
 
         //############################################################//
 
@@ -171,14 +171,14 @@ public class Hackerrank {
 //                {0, 0, 1, 2, 4, 0}
 //        };
 //        System.out.println("\n2D Array - Hours Glass Sum: ");
-//        System.out.println(Hackerrank.hourglassSum(glass));
-//        System.out.println(Hackerrank.hourGlassSum2(glass));
+//        System.out.println(HackerRank.Hackerrank.hourglassSum(glass));
+//        System.out.println(HackerRank.Hackerrank.hourGlassSum2(glass));
 
         //############################################################//
 
 //        int[] numbers = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
 //        System.out.println("\nArrays: Left Rotation");
-//        int[] rotatedArray = Hackerrank.rotLeft(numbers, 13);
+//        int[] rotatedArray = HackerRank.Hackerrank.rotLeft(numbers, 13);
 //        for (int a : rotatedArray)
 //            System.out.print(a + " ");
 
@@ -186,14 +186,14 @@ public class Hackerrank {
 
 //        int[] line = {1, 2, 5, 3, 4, 7, 8, 6};
 //        System.out.println("\nNew Year Chaos: ");
-//        Hackerrank.minimumBribes(line);
+//        HackerRank.Hackerrank.minimumBribes(line);
 
         List val = new ArrayList();
         val.add(2);
         val.add(3);
         Hackerrank.sumOfTheDigits(val);
 
-//        System.out.println(Hackerrank.gameWinner("wwwbbbbwww"));
+//        System.out.println(HackerRank.Hackerrank.gameWinner("wwwbbbbwww"));
     }
 
 

@@ -1,3 +1,5 @@
+package HackerRank;
+
 import Amazon.BST;
 
 import java.util.*;

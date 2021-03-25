@@ -1,3 +1,5 @@
+package HackerRank;
+
 import java.util.*;
 
 public class HackerRank_2 {
