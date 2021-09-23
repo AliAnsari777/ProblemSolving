@@ -63,13 +63,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HackerRank_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_2" />
-      <module name="ProblemSolving" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HackerRank_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_3" />
       <module name="ProblemSolving" />
@@ -83,8 +76,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Signal.Part_1" />
+    <configuration name="Practice2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Practice2" />
+      <module name="ProblemSolving" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KickStart.Solution" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
@@ -96,9 +96,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Practice2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Practice2" />
+    <configuration name="roundB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KickStart.roundB" />
       <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="KickStart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,8 +142,6 @@
         <item itemvalue="Application.HackerRank_3" />
         <item itemvalue="Application.Practice2" />
         <item itemvalue="Application.Flexton" />
-        <item itemvalue="Application.HackerRank_2" />
-        <item itemvalue="Application.Part_1" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +218,10 @@
       <workItem from="1616886432622" duration="7806000" />
       <workItem from="1617521637838" duration="1930000" />
       <workItem from="1618789366750" duration="8528000" />
+<<<<<<< HEAD
       <workItem from="1619951865293" duration="1111000" />
+=======
+>>>>>>> 85888d5de73e8441265d27324d401046cddca92e
     </task>
     <servers />
   </component>
