@@ -109,18 +109,21 @@ public class HackerRank_3 {
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
         // Write your code here
         int lastAnswer = 0;
-        int[][] arr = new int[n][];
         List<Integer> result = new ArrayList<>();
 
         List<List<Integer>> list = new ArrayList<>();
 
+        for (int i = 0; i < n; i++) {
+            list.add(new ArrayList<>());
+        }
+
         for (List<Integer> num : queries) {
-            int idx = ((num.get(1) ^ lastAnswer) % n);
+            List<Integer> temp = list.get((num.get(1) ^ lastAnswer) % n);
 
             if (num.get(0) == 1){
-                list.get(idx).add(num.get(2));
+                temp.add(num.get(2));
             } else {
-                lastAnswer = list.get(idx).get(num.get(2) % list.get(idx).size());
+                lastAnswer = temp.get(num.get(2) % temp.size());
                 System.out.println(lastAnswer);
                 result.add(lastAnswer);
             }
