@@ -37,6 +37,9 @@ public class HackerRank_3 {
         queries.add(Arrays.asList(2,1,0));
         queries.add(Arrays.asList(2,1,1));
         HackerRank_3.dynamicArray(2, queries);
+
+        //############################################################//
+
     }
 
 
@@ -106,6 +109,8 @@ public class HackerRank_3 {
 
     /*******************************************************************/
 
+    // https://www.hackerrank.com/challenges/dynamic-array/problem
+
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
         // Write your code here
         int lastAnswer = 0;
@@ -128,7 +133,10 @@ public class HackerRank_3 {
                 result.add(lastAnswer);
             }
         }
-
         return result;
     }
+
+    /*******************************************************************/
+
+
 }
