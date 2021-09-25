@@ -25,8 +25,18 @@ public class HackerRank_3 {
 //        }
         //############################################################//
 
-        int[][] numbers = {{1,2,100}, {2,5, 100}, {3,4,100}};
-        System.out.println(HackerRank_3.arrayManipulation(5, numbers));
+//        int[][] numbers = {{1,2,100}, {2,5, 100}, {3,4,100}};
+//        System.out.println(HackerRank_3.arrayManipulation(5, numbers));
+
+        //############################################################//
+
+        List<List<Integer>> queries = new ArrayList<>();
+        queries.add(Arrays.asList(1,0,5));
+        queries.add(Arrays.asList(1,1,7));
+        queries.add(Arrays.asList(1,0,3));
+        queries.add(Arrays.asList(2,1,0));
+        queries.add(Arrays.asList(2,1,1));
+        HackerRank_3.dynamicArray(2, queries);
     }
 
 
@@ -94,5 +104,28 @@ public class HackerRank_3 {
         return max;
     }
 
+    /*******************************************************************/
 
+    public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+        // Write your code here
+        int lastAnswer = 0;
+        int[][] arr = new int[n][];
+        List<Integer> result = new ArrayList<>();
+
+        List<List<Integer>> list = new ArrayList<>();
+
+        for (List<Integer> num : queries) {
+            int idx = ((num.get(1) ^ lastAnswer) % n);
+
+            if (num.get(0) == 1){
+                list.get(idx).add(num.get(2));
+            } else {
+                lastAnswer = list.get(idx).get(num.get(2) % list.get(idx).size());
+                System.out.println(lastAnswer);
+                result.add(lastAnswer);
+            }
+        }
+
+        return result;
+    }
 }
