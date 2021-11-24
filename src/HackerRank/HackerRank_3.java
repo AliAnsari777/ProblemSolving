@@ -30,16 +30,17 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        List<List<Integer>> queries = new ArrayList<>();
-        queries.add(Arrays.asList(1,0,5));
-        queries.add(Arrays.asList(1,1,7));
-        queries.add(Arrays.asList(1,0,3));
-        queries.add(Arrays.asList(2,1,0));
-        queries.add(Arrays.asList(2,1,1));
-        HackerRank_3.dynamicArray(2, queries);
+//        List<List<Integer>> queries = new ArrayList<>();
+//        queries.add(Arrays.asList(1,0,5));
+//        queries.add(Arrays.asList(1,1,7));
+//        queries.add(Arrays.asList(1,0,3));
+//        queries.add(Arrays.asList(2,1,0));
+//        queries.add(Arrays.asList(2,1,1));
+//        HackerRank_3.dynamicArray(2, queries);
 
         //############################################################//
 
+        System.out.println(HackerRank_3.downToZero(10));
     }
 
 
@@ -139,4 +140,20 @@ public class HackerRank_3 {
     /*******************************************************************/
 
 
+    static int[] minMoves = new int[1000001];
+
+    public static int downToZero(int n) {
+        if (n <= 3) return n;
+        if (minMoves[n] > 0) return minMoves[n];
+        int min = Integer.MAX_VALUE;
+        for (int i=2; i<=Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                int factor = n/i;
+                min = Math.min(min, 1 + downToZero(factor));
+            }
+        }
+        min = Math.min(min, 1 + downToZero(n-1));
+        minMoves[n] = min;
+        return min;
+    }
 }
