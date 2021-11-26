@@ -53,7 +53,7 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ValidateSubsequence">
+  <component name="RunManager" selected="Application.HackerRank_3">
     <configuration name="HackerRank_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_3" />
       <module name="ProblemSolving" />
@@ -148,9 +148,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HackerRank_3" />
         <item itemvalue="Application.ValidateSubsequence" />
         <item itemvalue="Application.TwoNumbers" />
-        <item itemvalue="Application.HackerRank_3" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.roundB" />
       </list>
@@ -227,7 +227,7 @@
       <workItem from="1617521637838" duration="1930000" />
       <workItem from="1618789366750" duration="8528000" />
       <workItem from="1619951865293" duration="1111000" />
-      <workItem from="1637486179729" duration="13722000" />
+      <workItem from="1637486179729" duration="17606000" />
     </task>
     <servers />
   </component>
@@ -253,6 +253,11 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/HackerRank/HackerRank_3.java</url>
+          <line>175</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -40,7 +40,13 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        System.out.println(HackerRank_3.downToZero(10));
+//        System.out.println(HackerRank_3.downToZero(10));
+
+        //############################################################//
+
+        int[] keyboards = {5};
+        int[] drives = {4};
+        System.out.println(HackerRank_3.getMoneySpent(keyboards,drives, 5));
     }
 
 
@@ -161,21 +167,18 @@ public class HackerRank_3 {
 
 
     static int getMoneySpent(int[] keyboards, int[] drives, int b) {
-        keyboards = Arrays.stream(keyboards).sorted().toArray();
-        drives = Arrays.stream(drives).sorted().toArray();
-        int result = 0, subtract = 0, temp = 0;
-
-        for (int val : keyboards){
-            subtract = b - val;
-            for (int i = 0; i < drives.length; i++) {
-                 if (drives[i] > subtract) {
-                     temp = val + drives[i - 1];
-                     break;
-                 }
+        int max = 0;
+        for(int i = keyboards.length-1; i >= 0; i--){
+            int sum = 0;
+            for(int j = drives.length-1; j >= 0; j--){
+                sum = keyboards[i]+drives[j];
+                if(sum > max && sum <= b)
+                    max = sum;
             }
-            if (result < temp)
-                result = temp;
         }
-        return result;
+        if(max == 0)
+            return -1;
+        else
+            return max;
     }
 }
