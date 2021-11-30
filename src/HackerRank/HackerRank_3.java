@@ -47,6 +47,8 @@ public class HackerRank_3 {
         int[] keyboards = {5};
         int[] drives = {4};
         System.out.println(HackerRank_3.getMoneySpent(keyboards,drives, 5));
+
+
     }
 
 
@@ -180,5 +182,17 @@ public class HackerRank_3 {
             return -1;
         else
             return max;
+    }
+
+    /*******************************************************************/
+
+    static String catAndMouse(int x, int y, int z) {
+        if (Math.abs(z-x) < Math.abs(z-y)){
+            return "Cat A";
+        } else if (Math.abs(z-x) > Math.abs(z-y)){
+            return "Cat B";
+        } else {
+            return "Mouse C";
+        }
     }
 }

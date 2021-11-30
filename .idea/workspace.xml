@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +226,7 @@
       <workItem from="1617521637838" duration="1930000" />
       <workItem from="1618789366750" duration="8528000" />
       <workItem from="1619951865293" duration="1111000" />
-      <workItem from="1637486179729" duration="17606000" />
+      <workItem from="1637486179729" duration="19414000" />
     </task>
     <servers />
   </component>
@@ -253,11 +252,6 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/HackerRank/HackerRank_3.java</url>
-          <line>175</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
