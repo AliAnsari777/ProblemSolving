@@ -50,7 +50,15 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        System.out.println(HackerRank_3.catAndMouse(1,3,2));
+//        System.out.println(HackerRank_3.catAndMouse(1,3,2));
+
+        //############################################################//
+
+        List<List<Integer>> numbers = new ArrayList<>();
+        numbers.add(Arrays.asList(5,3,4));
+        numbers.add(Arrays.asList(1,5,8));
+        numbers.add(Arrays.asList(6,4,2));
+        System.out.println(HackerRank_3.formingMagicSquare(numbers));
     }
 
 
