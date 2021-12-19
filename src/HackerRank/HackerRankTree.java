@@ -80,7 +80,11 @@ public class HackerRankTree {
 //        System.out.println("\nTree Top View: ");
 //        topView(root);
 
+        //*******************************************************//
 
+        System.out.println("Closest value in BST: ");
+        FindClosestValueInBST bst = new FindClosestValueInBST();
+        System.out.println(bst.FindClosestValue(root, 15));
     }
 
     //================================================================//
