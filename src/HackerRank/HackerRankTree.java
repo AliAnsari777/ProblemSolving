@@ -1,6 +1,6 @@
 package HackerRank;
 
-import Amazon.BST;
+import AlgoExpert.Easy.FindClosestValueInBST;
 
 import java.util.*;
 
@@ -16,51 +16,51 @@ public class HackerRankTree {
         insert(28);
         insert(10);
 
-        insert(16);
-        insert(19);
-        insert(44);
-        insert(39);
-        insert(27);
-        insert(7);
-        insert(9);
-        insert(31);
-        insert(12);
-
-        insert(43);
-        insert(21);
-        insert(5);
-        insert(41);
-        insert(34);
-        insert(49);
-        insert(13);
-        insert(33);
-        insert(3);
-
-        insert(4);
-        insert(25);
-        insert(22);
-        insert(29);
-        insert(15);
-        insert(32);
-        insert(35);
-        insert(6);
-        insert(24);
-
-        insert(23);
-        insert(26);
-        insert(1);
-        insert(11);
-        insert(42);
-        insert(36);
-        insert(37);
-        insert(17);
-        insert(18);
-
-        insert(8);
-        insert(45);
-        insert(48);
-        insert(50);
-        insert(46);
+//        insert(16);
+//        insert(19);
+//        insert(44);
+//        insert(39);
+//        insert(27);
+//        insert(7);
+//        insert(9);
+//        insert(31);
+//        insert(12);
+//
+//        insert(43);
+//        insert(21);
+//        insert(5);
+//        insert(41);
+//        insert(34);
+//        insert(49);
+//        insert(13);
+//        insert(33);
+//        insert(3);
+//
+//        insert(4);
+//        insert(25);
+//        insert(22);
+//        insert(29);
+//        insert(15);
+//        insert(32);
+//        insert(35);
+//        insert(6);
+//        insert(24);
+//
+//        insert(23);
+//        insert(26);
+//        insert(1);
+//        insert(11);
+//        insert(42);
+//        insert(36);
+//        insert(37);
+//        insert(17);
+//        insert(18);
+//
+//        insert(8);
+//        insert(45);
+//        insert(48);
+//        insert(50);
+//        insert(46);
         //*******************************************************//
 
 //        System.out.println("\nHeight of the tree");
@@ -73,20 +73,21 @@ public class HackerRankTree {
 
         //*******************************************************//
 
-//        System.out.println("\n\nPrint Each Level of Tree:");
-//        printTree(root);
+        System.out.println("\n\nPrint Each Level of Tree:");
+        printTree(root);
 
         //*******************************************************//
-        System.out.println("\nTree Top View: ");
-        topView(root);
+//        System.out.println("\nTree Top View: ");
+//        topView(root);
+
 
     }
 
     //================================================================//
 
-    static class Node{
-        int value;
-        Node right, left;
+    public static class Node{
+        public int value;
+        public Node right, left;
         public Node(){}
 
         public Node(int value){
