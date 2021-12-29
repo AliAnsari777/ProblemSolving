@@ -1,7 +1,5 @@
 package AlgoExpert.Easy;
 
-import HackerRank.HackerRankTree;
-
 import static HackerRank.HackerRankTree.Node;
 
 public class FindClosestValueInBST {

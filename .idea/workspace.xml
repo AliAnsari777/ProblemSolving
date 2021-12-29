@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AlgoExpert/Easy/FindClosestValueInBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlgoExpert/Easy/FindClosestValueInBST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRankTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRankTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,19 +130,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HackerRankTree" />
@@ -225,7 +213,8 @@
       <workItem from="1619951865293" duration="1111000" />
       <workItem from="1637486179729" duration="19820000" />
       <workItem from="1639342996922" duration="2768000" />
-      <workItem from="1639942170208" duration="7461000" />
+      <workItem from="1639942170208" duration="8216000" />
+      <workItem from="1640748900226" duration="1008000" />
     </task>
     <servers />
   </component>

@@ -230,4 +230,22 @@ public class HackerRank_3 {
         }
         return cost;
     }
+
+    /*******************************************************************/
+
+    public static int pickingNumbers(List<Integer> a) {
+        // Write your code here
+        int[] repeated = new int[100];
+        int max = 0;
+
+        for (int num : a) {
+            repeated[num]++;
+        }
+
+        for (int i = 0; i < repeated.length - 1; i++) {
+            max = Math.max(repeated[i] + repeated[i + 1], max);
+        }
+
+        return max;
+    }
 }
