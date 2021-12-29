@@ -54,11 +54,17 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        List<List<Integer>> numbers = new ArrayList<>();
-        numbers.add(Arrays.asList(5,3,4));
-        numbers.add(Arrays.asList(1,5,8));
-        numbers.add(Arrays.asList(6,4,2));
-        System.out.println(HackerRank_3.formingMagicSquare(numbers));
+//        List<List<Integer>> numbers = new ArrayList<>();
+//        numbers.add(Arrays.asList(5,3,4));
+//        numbers.add(Arrays.asList(1,5,8));
+//        numbers.add(Arrays.asList(6,4,2));
+//        System.out.println(HackerRank_3.formingMagicSquare(numbers));
+
+        //############################################################//
+
+        List<Integer> array =  Arrays.asList(1,2,2,3,1,2);
+        System.out.println(HackerRank_3.pickingNumbers(array));
+
     }
 
 

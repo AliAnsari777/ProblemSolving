@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AlgoExpert/Easy/FindClosestValueInBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlgoExpert/Easy/FindClosestValueInBST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRankTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRankTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRank_3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +61,7 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HackerRankTree">
+  <component name="RunManager" selected="Application.HackerRank_3">
     <configuration name="HackerRankTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRankTree" />
       <module name="ProblemSolving" />
@@ -130,10 +128,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HackerRankTree" />
         <item itemvalue="Application.HackerRank_3" />
+        <item itemvalue="Application.HackerRankTree" />
         <item itemvalue="Application.ValidateSubsequence" />
         <item itemvalue="Application.TwoNumbers" />
         <item itemvalue="Application.Solution" />
@@ -214,7 +223,7 @@
       <workItem from="1637486179729" duration="19820000" />
       <workItem from="1639342996922" duration="2768000" />
       <workItem from="1639942170208" duration="8216000" />
-      <workItem from="1640748900226" duration="1008000" />
+      <workItem from="1640748900226" duration="1966000" />
     </task>
     <servers />
   </component>
