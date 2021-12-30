@@ -240,7 +240,6 @@ public class HackerRank_3 {
     /*******************************************************************/
 
     public static int pickingNumbers(List<Integer> a) {
-        // Write your code here
         int[] repeated = new int[100];
         int max = 0;
 
@@ -253,5 +252,41 @@ public class HackerRank_3 {
         }
 
         return max;
+    }
+
+    /*******************************************************************/
+
+    public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
+        List<Integer> ranks = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        int rank = 0, temp = Integer.MAX_VALUE;
+
+        for (int num : ranked) {
+            if (temp > num) {
+                temp = num;
+                rank++;
+                ranks.add(rank);
+            }else{
+                ranks.add(rank);
+            }
+        }
+
+
+        for (int j = 0; j < player.size(); j++) {
+            int newRank = rank;
+            for (int i = ranked.size()-1; i > 0; i--) {
+                if (ranked.get(i).equals(player.get(j))){
+                    result.add(newRank);
+                    break;
+                } else if(ranked.get(i) > player.get(j)){
+                    result.add(newRank+1);
+                    break;
+                } else if(ranked.get(i) < player.get(j)){
+                    newRank--;
+                }
+            }
+        }
+
+        return result;
     }
 }
