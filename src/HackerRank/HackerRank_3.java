@@ -62,8 +62,16 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        List<Integer> array =  Arrays.asList(1,2,2,3,1,2);
-        System.out.println(HackerRank_3.pickingNumbers(array));
+//        List<Integer> array =  Arrays.asList(1,2,2,3,1,2);
+//        System.out.println(HackerRank_3.pickingNumbers(array));
+
+        //############################################################//
+
+        List<Integer> ranked =  Arrays.asList(100, 100, 50, 40, 40, 20, 10);
+        List<Integer> player =  Arrays.asList(5, 25, 50, 120);
+        System.out.println("Climbing Leaderboard");
+        System.out.println(HackerRank_3.climbingLeaderboard(ranked, player));
+
 
     }
 
@@ -272,17 +280,20 @@ public class HackerRank_3 {
         }
 
 
-        for (int j = 0; j < player.size(); j++) {
-            int newRank = rank;
-            for (int i = ranked.size()-1; i > 0; i--) {
-                if (ranked.get(i).equals(player.get(j))){
-                    result.add(newRank);
+        for (Integer integer : player) {
+            List<Integer> newRank = new ArrayList<>(ranks);
+            for (int i = ranked.size() - 1; i >= 0; i--) {
+                if (ranked.get(i).equals(integer)) {
+                    result.add(newRank.get(i));
                     break;
-                } else if(ranked.get(i) > player.get(j)){
-                    result.add(newRank+1);
+                } else if (ranked.get(i) > integer) {
+                    result.add(newRank.get(i) + 1);
                     break;
-                } else if(ranked.get(i) < player.get(j)){
-                    newRank--;
+                } else if (i == 0) {
+                    result.add(1);
+                    break;
+                } else {
+                    newRank.remove(i);
                 }
             }
         }
