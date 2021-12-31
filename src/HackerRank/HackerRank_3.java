@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HackerRank_3 {
     public static void main(String[] args) {
@@ -265,39 +266,23 @@ public class HackerRank_3 {
     /*******************************************************************/
 
     public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
-        List<Integer> ranks = new ArrayList<>();
+        List<Integer> ranks = ranked.stream().distinct().collect(Collectors.toList());
         List<Integer> result = new ArrayList<>();
-        int rank = 0, temp = Integer.MAX_VALUE;
+        int index = ranks.size() - 1;
 
-        for (int num : ranked) {
-            if (temp > num) {
-                temp = num;
-                rank++;
-                ranks.add(rank);
-            }else{
-                ranks.add(rank);
-            }
-        }
-
-
-        for (Integer integer : player) {
-            List<Integer> newRank = new ArrayList<>(ranks);
-            for (int i = ranked.size() - 1; i >= 0; i--) {
-                if (ranked.get(i).equals(integer)) {
-                    result.add(newRank.get(i));
+        for(int num : player){
+            while (index >= 0){
+                if (num >= ranks.get(index)){
+                    index--;
+                }else{
+                    result.add(index+2);
                     break;
-                } else if (ranked.get(i) > integer) {
-                    result.add(newRank.get(i) + 1);
-                    break;
-                } else if (i == 0) {
-                    result.add(1);
-                    break;
-                } else {
-                    newRank.remove(i);
                 }
             }
+            if (index < 0){
+                result.add(1);
+            }
         }
-
         return result;
     }
 }

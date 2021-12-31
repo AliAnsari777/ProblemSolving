@@ -223,7 +223,7 @@
       <workItem from="1637486179729" duration="19820000" />
       <workItem from="1639342996922" duration="2768000" />
       <workItem from="1639942170208" duration="8216000" />
-      <workItem from="1640748900226" duration="8532000" />
+      <workItem from="1640748900226" duration="12107000" />
     </task>
     <servers />
   </component>
@@ -249,6 +249,11 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/HackerRank/HackerRank_3.java</url>
+          <line>273</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
