@@ -1,20 +1,20 @@
 package HackerRank;
 
-import AlgoExpert.Easy.FindClosestValueInBST;
+import AlgoExpert.Easy.BranchSums;
 
 import java.util.*;
 
 public class HackerRankTree {
     public static void main(String[] args) {
-        insert(47);
-        insert(2);
-        insert(40);
-        insert(20);
-        insert(38);
-        insert(30);
-        insert(14);
-        insert(28);
-        insert(10);
+//        insert(47);
+//        insert(2);
+//        insert(40);
+//        insert(20);
+//        insert(38);
+//        insert(30);
+//        insert(14);
+//        insert(28);
+//        insert(10);
 
 //        insert(16);
 //        insert(19);
@@ -46,15 +46,16 @@ public class HackerRankTree {
 //        insert(6);
 //        insert(24);
 //
-//        insert(23);
-//        insert(26);
-//        insert(1);
-//        insert(11);
-//        insert(42);
-//        insert(36);
-//        insert(37);
-//        insert(17);
-//        insert(18);
+        // for branch sum example
+        insert(5);
+        insert(3);
+        insert(2);
+        insert(4);
+        insert(8);
+        insert(6);
+        insert(7);
+        insert(9);
+        insert(10);
 //
 //        insert(8);
 //        insert(45);
@@ -83,12 +84,18 @@ public class HackerRankTree {
         //*******************************************************//
 
         // These codes come from Algo Expert practice
-        System.out.println("Closest value in BST: ");
-        FindClosestValueInBST bst = new FindClosestValueInBST();
-        System.out.println(bst.FindClosestValue(root, 15));
+//        System.out.println("Closest value in BST: ");
+//        FindClosestValueInBST bst = new FindClosestValueInBST();
+//        System.out.println(bst.FindClosestValue(root, 15));
+//
+//        System.out.println("Closest value in BST Iterative:");
+//        System.out.println(bst.FindClosestValueIterative(root, 11));
 
-        System.out.println("Closest value in BST Iterative:");
-        System.out.println(bst.FindClosestValueIterative(root, 11));
+        //*******************************************************//
+
+        System.out.println("Branch Sum:");
+        BranchSums sumOfBST = new BranchSums();
+        System.out.println(sumOfBST.BranchSum(root));
     }
 
     //================================================================//

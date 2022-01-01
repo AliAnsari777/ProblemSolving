@@ -5,7 +5,7 @@ import HackerRank.HackerRankTree.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BranchSumOfBST {
+public class BranchSums {
 
     public List<Integer> BranchSum(Node root){
         List<Integer> result = new ArrayList<>();
