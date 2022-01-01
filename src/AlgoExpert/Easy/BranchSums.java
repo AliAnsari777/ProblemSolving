@@ -7,6 +7,7 @@ import java.util.List;
 
 public class BranchSums {
 
+    // Average: Time O(n)  |  Space O(n)
     public List<Integer> BranchSum(Node root){
         List<Integer> result = new ArrayList<>();
         HelperMethod(root, 0, result);

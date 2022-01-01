@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRankTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRankTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlgoExpert/Easy/BranchSums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlgoExpert/Easy/BranchSums.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +222,7 @@
       <workItem from="1637486179729" duration="19820000" />
       <workItem from="1639342996922" duration="2768000" />
       <workItem from="1639942170208" duration="8216000" />
-      <workItem from="1640748900226" duration="14534000" />
+      <workItem from="1640748900226" duration="15314000" />
     </task>
     <servers />
   </component>
@@ -249,11 +248,6 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/HackerRank/HackerRankTree.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
