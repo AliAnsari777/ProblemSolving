@@ -1,6 +1,7 @@
 package HackerRank;
 
 import AlgoExpert.Easy.BranchSums;
+import AlgoExpert.Easy.NodeDepths;
 
 import java.util.*;
 
@@ -96,6 +97,15 @@ public class HackerRankTree {
         System.out.println("Branch Sum:");
         BranchSums sumOfBST = new BranchSums();
         System.out.println(sumOfBST.BranchSum(root));
+
+        //*******************************************************//
+
+        System.out.println("Node Depths:");
+        NodeDepths nodeDepths = new NodeDepths();
+        System.out.println(nodeDepths.NodeDepth(root, 0));
+//        System.out.println("+++++++++++++++++++++++++++++++");
+//        System.out.println(nodeDepths.NodeDepthIterative(root));
+
     }
 
     //================================================================//

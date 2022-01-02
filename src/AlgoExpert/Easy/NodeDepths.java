@@ -2,23 +2,44 @@ package AlgoExpert.Easy;
 
 import HackerRank.HackerRankTree.Node;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 public class NodeDepths {
     // Average: Time O(n) | Space O(h)
-    int currentDepth = 0;
 
-    public int NodeDepth(Node node){
-        return HelperMethod(node, 0);
+
+    public int NodeDepth(Node node, int depth){
+        if (node == null)
+            return 0;
+
+        return depth + NodeDepth(node.left, depth+1) + NodeDepth(node.right, depth+1);
     }
 
-    private int HelperMethod(Node node, int depth) {
-        if (node == null)
-            return currentDepth;
+    public int NodeDepthIterative(Node node){
+        int sumOfDepth = 0;
+        HashMap<Node, Integer> hashMap = new HashMap<>();
+        hashMap.put(node, 0);
+        Stack<HashMap<Node, Integer>> stack = new Stack();
+        stack.push(hashMap);
 
-        currentDepth += depth;
+        while (stack.size() > 0){
+            HashMap<Node, Integer> nodeInfo = stack.pop();
+            int depth = nodeInfo.get(node);
+            Node value = nodeInfo.keySet().iterator().next();
 
-        HelperMethod(node.left, currentDepth+1);
-        HelperMethod(node.right, currentDepth+1);
+            if (value == null)
+                continue;
+            sumOfDepth += depth;
 
-        return currentDepth;
+            nodeInfo.clear();
+            nodeInfo.put(value.left, depth+1);
+            stack.push(nodeInfo);
+            nodeInfo.clear();
+            nodeInfo.put(value.right, depth+1);
+            stack.push(nodeInfo);
+        }
+        return sumOfDepth;
     }
 }
