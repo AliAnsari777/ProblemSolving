@@ -75,9 +75,16 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        System.out.println("Hurdle Race:");
-        List<Integer> hurdles =  Arrays.asList(5, 8, 3, 7);
-        System.out.println(HackerRank_3.hurdleRace(9, hurdles));
+//        System.out.println("Hurdle Race:");
+//        List<Integer> hurdles =  Arrays.asList(5, 8, 3, 7);
+//        System.out.println(HackerRank_3.hurdleRace(9, hurdles));
+
+        //############################################################//
+
+        System.out.println("Designer PDF Viewer:");
+        List<Integer> heights = Arrays.asList(1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7);
+        String word = "zaba";
+        System.out.println(HackerRank_3.designerPdfViewer(heights, word));
 
     }
 
@@ -297,5 +304,19 @@ public class HackerRank_3 {
         // Write your code here
         int maxHeight = Collections.max(height);
         return Math.max(maxHeight - k, 0);
+    }
+
+    /*******************************************************************/
+
+    public static int designerPdfViewer(List<Integer> h, String word) {
+        // Write your code here
+        int wordCount = word.length(), tallest = 0, index = 0;
+        for (int i = 0; i < wordCount; i++) {
+            index = word.charAt(i) - 97;
+            if (h.get(index) > tallest){
+                tallest = h.get(index);
+            }
+        }
+        return tallest * wordCount;
     }
 }
