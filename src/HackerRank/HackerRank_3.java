@@ -68,11 +68,16 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        List<Integer> ranked =  Arrays.asList(100, 100, 50, 40, 40, 20, 10);
-        List<Integer> player =  Arrays.asList(5, 25, 50, 120);
-        System.out.println("Climbing Leaderboard");
-        System.out.println(HackerRank_3.climbingLeaderboard(ranked, player));
+//        List<Integer> ranked =  Arrays.asList(100, 100, 50, 40, 40, 20, 10);
+//        List<Integer> player =  Arrays.asList(5, 25, 50, 120);
+//        System.out.println("Climbing Leaderboard");
+//        System.out.println(HackerRank_3.climbingLeaderboard(ranked, player));
 
+        //############################################################//
+
+        System.out.println("Hurdle Race:");
+        List<Integer> hurdles =  Arrays.asList(5, 8, 3, 7);
+        System.out.println(HackerRank_3.hurdleRace(9, hurdles));
 
     }
 
@@ -284,5 +289,13 @@ public class HackerRank_3 {
             }
         }
         return result;
+    }
+
+    /*******************************************************************/
+
+    public static int hurdleRace(int k, List<Integer> height) {
+        // Write your code here
+        int maxHeight = Collections.max(height);
+        return Math.max(maxHeight - k, 0);
     }
 }
