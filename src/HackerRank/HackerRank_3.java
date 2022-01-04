@@ -81,10 +81,15 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        System.out.println("Designer PDF Viewer:");
-        List<Integer> heights = Arrays.asList(1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7);
-        String word = "zaba";
-        System.out.println(HackerRank_3.designerPdfViewer(heights, word));
+//        System.out.println("Designer PDF Viewer:");
+//        List<Integer> heights = Arrays.asList(1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7);
+//        String word = "zaba";
+//        System.out.println(HackerRank_3.designerPdfViewer(heights, word));
+
+        //############################################################//
+
+        System.out.println("Utopian Tree");
+        System.out.println(HackerRank_3.utopianTree(5));
 
     }
 
@@ -318,5 +323,26 @@ public class HackerRank_3 {
             }
         }
         return tallest * wordCount;
+    }
+
+    /*******************************************************************/
+
+    //  The Utopian Tree goes through 2 cycles of growth every year. Each spring,
+    //  it doubles in height. Each summer, its height increases by 1 meter
+    public static int utopianTree(int n) {
+        // Write your code here
+        int height = 1;
+        if (n == 0)
+            return height;
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                height++;
+            } else {
+                height *= 2;
+            }
+        }
+
+        return height;
     }
 }
