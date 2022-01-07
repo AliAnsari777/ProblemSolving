@@ -1,9 +1,6 @@
 package HackerRank;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class HackerRank_3 {
@@ -88,8 +85,20 @@ public class HackerRank_3 {
 
         //############################################################//
 
-        System.out.println("Utopian Tree");
-        System.out.println(HackerRank_3.utopianTree(5));
+//        System.out.println("Utopian Tree");
+//        System.out.println(HackerRank_3.utopianTree(5));
+
+        //############################################################//
+
+//        System.out.println("Non Divisible Subset:");
+//        System.out.println(HackerRank_3.nonDivisibleSubset());
+
+        //############################################################//
+
+        System.out.println("Non Divisible Subset:");
+        List<Integer> divisibleArray = Arrays.asList(2, 3, 7, 8, 12);
+        System.out.println(HackerRank_3.nonDivisibleSubset(5, divisibleArray));
+
 
     }
 
@@ -350,6 +359,22 @@ public class HackerRank_3 {
 
     public static int nonDivisibleSubset(int k, List<Integer> s) {
         // Write your code here
-        return 0;
+        int[] reminderArray = new int[k];
+
+        for(int num : s) {
+            reminderArray[num % k]++;
+        }
+
+        int zeroReminder = reminderArray[0];
+        int maxNumberOfDivisibleSet = zeroReminder > 0 ? 1 : 0;
+        for (int i = 1; i <= (k/2); i++) {
+            if (i != k - 1){
+                maxNumberOfDivisibleSet += Math.max(reminderArray[i], reminderArray[k-i]);
+            } else {
+                maxNumberOfDivisibleSet++;
+            }
+        }
+
+        return maxNumberOfDivisibleSet;
     }
 }
