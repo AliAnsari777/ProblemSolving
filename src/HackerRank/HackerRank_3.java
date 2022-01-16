@@ -102,7 +102,7 @@ public class HackerRank_3 {
         //############################################################//
 
         System.out.println("");
-        List<Integer> divisibleNumbers = Arrays.asList(1, 3, 2, 1, 6, 2);
+        List<Integer> divisibleNumbers = Arrays.asList(1, 3, 2, 6, 1, 2);
         System.out.println(HackerRank_3.divisibleSumPairs(6, 3, divisibleNumbers));
     }
 
@@ -417,29 +417,14 @@ public class HackerRank_3 {
         Map<Integer, Boolean> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
 
-//        while (start < end) {
-//            if ((ar.get(start) + ar.get(end)) % k == 0){
-//                counter++;
-//                start++;
-//                end--;
-//            } else if ((ar.get(start) + ar.get(end)) % k > 0){
-//                end--;
-//            } else {
-//                start++;
-//            }
-//        }
-
         for (int i = 0; i < n - 1; i++) {
-            int temp = Math.round(k/ar.get(i));
-            if (!list.contains(temp)){
-                list.add(ar.get(i));
-            } else {
-                counter++;
-                list.add(ar.get(i));
+            for (int j = i + 1; j < n; j++) {
+                if((ar.get(i) + ar.get(j)) % k == 0){
+                    counter++;
+                }
             }
         }
 
         return counter;
-
     }
 }

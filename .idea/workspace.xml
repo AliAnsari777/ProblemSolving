@@ -128,17 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HackerRank_3" />
@@ -224,6 +213,7 @@
       <workItem from="1639342996922" duration="2768000" />
       <workItem from="1639942170208" duration="8216000" />
       <workItem from="1640748900226" duration="36180000" />
+      <workItem from="1642293112939" duration="926000" />
     </task>
     <servers />
   </component>
@@ -251,8 +241,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/HackerRank/HackerRank_3.java</url>
-          <line>434</line>
-          <option name="timeStamp" value="12" />
+          <line>431</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
