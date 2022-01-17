@@ -11,6 +11,7 @@ public class HackerRank_4 {
 
         //############################################################//
 
+        System.out.println(beautifulDays(20, 23, 6));
 
     }
 
@@ -32,5 +33,25 @@ public class HackerRank_4 {
 
     /*******************************************************************/
 
+    public static int beautifulDays(int i, int j, int k) {
 
+        int result = 0, reverse;
+        while (i <= j){
+            reverse = reverseNumber(i);
+            if (Math.abs(i - reverse) % k == 0)
+                result++;
+
+            i++;
+        }
+        return result;
+    }
+
+    static int reverseNumber(int number){
+        int reminder = 0;
+        while (number > 0){
+            reminder =  (reminder * 10) + (number % 10);
+            number /= 10;
+        }
+        return reminder;
+    }
 }
