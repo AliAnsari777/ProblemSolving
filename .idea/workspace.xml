@@ -60,7 +60,7 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HackerRank_3">
+  <component name="RunManager" selected="Application.HackerRank_4">
     <configuration name="HackerRankTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRankTree" />
       <module name="ProblemSolving" />
@@ -87,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KickStart.Solution" />
+    <configuration name="HackerRank_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_4" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="KickStart.*" />
+          <option name="PATTERN" value="HackerRank.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,13 +127,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HackerRank_4" />
         <item itemvalue="Application.HackerRank_3" />
         <item itemvalue="Application.HackerRankTree" />
         <item itemvalue="Application.ValidateSubsequence" />
         <item itemvalue="Application.TwoNumbers" />
-        <item itemvalue="Application.Solution" />
       </list>
     </recent_temporary>
   </component>
