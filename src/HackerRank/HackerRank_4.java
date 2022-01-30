@@ -65,6 +65,7 @@ public class HackerRank_4 {
         return reminder;
     }
 
+    /*******************************************************************/
 
     public static int viralAdvertising(int n) {
         int cucumulativeCount = 0, start = 5, likes = 0;
@@ -76,6 +77,7 @@ public class HackerRank_4 {
         return cucumulativeCount;
     }
 
+    /*******************************************************************/
 
     public static int saveThePrisoner(int n, int m, int s) {
 //        int result, reminder;
@@ -86,5 +88,12 @@ public class HackerRank_4 {
 //            result -= n;
 
         return ((s - 1 + m - 1) % n) + 1;
+    }
+
+    /*******************************************************************/
+
+    public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
+        // Write your code here
+
     }
 }
