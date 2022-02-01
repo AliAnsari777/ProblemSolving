@@ -1,5 +1,6 @@
 package HackerRank;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,6 +24,13 @@ public class HackerRank_4 {
 
         System.out.println("Save The Prisoner:");
         System.out.println(HackerRank_4.saveThePrisoner(5, 2, 2));
+
+        //############################################################//
+
+        System.out.println("Circular Array Rotation");
+        List<Integer> array = Arrays.asList(3,4,5);
+        List<Integer> queries = Arrays.asList(1,2);
+        System.out.println(HackerRank_4.circularArrayRotation(array, 2, queries));
     }
 
     //==========================================================================//
@@ -93,7 +101,22 @@ public class HackerRank_4 {
     /*******************************************************************/
 
     public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
-        // Write your code here
+        List<Integer> result = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
+        int lastEle = a.size()-1;
 
+        for (int i = 0; i < k; i++) {
+            int val = a.get(lastEle);
+            a.remove(lastEle);
+            temp.add(val);
+            temp.addAll(a);
+            a.removeAll(a);
+            a.addAll(temp);
+        }
+
+        for (int i = 0; i < queries.size(); i++) {
+            result.add(a.get(queries.get(i)));
+        }
+        return result;
     }
 }
