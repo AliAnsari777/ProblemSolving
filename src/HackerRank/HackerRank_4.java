@@ -7,7 +7,7 @@ import java.util.List;
 public class HackerRank_4 {
     public static void main(String[] args) {
 
-        System.out.println("Angry Professon:");
+        System.out.println("Angry Professor:");
         System.out.println(HackerRank_4.angryProfessor(3, Arrays.asList(-1, -3, -2, 0, 1, 4, 7)));
 
         //############################################################//
@@ -31,6 +31,10 @@ public class HackerRank_4 {
         List<Integer> array = Arrays.asList(3,4,5);
         List<Integer> queries = Arrays.asList(1,2);
         System.out.println(HackerRank_4.circularArrayRotation(array, 2, queries));
+
+        //############################################################//
+
+
     }
 
     //==========================================================================//
@@ -76,13 +80,13 @@ public class HackerRank_4 {
     /*******************************************************************/
 
     public static int viralAdvertising(int n) {
-        int cucumulativeCount = 0, start = 5, likes = 0;
+        int cumulativeCount = 0, start = 5, likes = 0;
         for (int i = 1; i <= n; i++){
             likes = (int) Math.floor(start / 2);
-            cucumulativeCount += likes;
+            cumulativeCount += likes;
             start = likes * 3;
         }
-        return cucumulativeCount;
+        return cumulativeCount;
     }
 
     /*******************************************************************/
@@ -116,4 +120,8 @@ public class HackerRank_4 {
         }
         return result;
     }
+
+    /*******************************************************************/
+
+
 }
