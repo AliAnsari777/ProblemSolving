@@ -102,20 +102,17 @@ public class HackerRank_4 {
 
     public static List<Integer> circularArrayRotation(List<Integer> a, int k, List<Integer> queries) {
         List<Integer> result = new ArrayList<>();
-        List<Integer> temp = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>(a);
+
         int lastEle = a.size()-1;
 
         for (int i = 0; i < k; i++) {
-            int val = a.get(lastEle);
-            a.remove(lastEle);
-            temp.add(val);
-            temp.addAll(a);
-            a.removeAll(a);
-            a.addAll(temp);
+            int val = temp.remove(lastEle);
+            temp.add(0, val);
         }
 
-        for (int i = 0; i < queries.size(); i++) {
-            result.add(a.get(queries.get(i)));
+        for (Integer query : queries) {
+            result.add(temp.get(query));
         }
         return result;
     }
