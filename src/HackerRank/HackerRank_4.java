@@ -37,6 +37,10 @@ public class HackerRank_4 {
         System.out.println("Sequence Equation:");
         List<Integer> sequence = Arrays.asList(4, 3, 5, 1, 2);
         System.out.println(HackerRank_4.permutationEquation(sequence));
+
+        //############################################################//
+
+
     }
 
     //==========================================================================//
@@ -137,4 +141,8 @@ public class HackerRank_4 {
 
         return result;
     }
+
+    /*******************************************************************/
+
+
 }
