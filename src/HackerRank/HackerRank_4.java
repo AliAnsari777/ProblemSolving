@@ -34,7 +34,9 @@ public class HackerRank_4 {
 
         //############################################################//
 
-
+        System.out.println("Sequence Equation:");
+        List<Integer> sequence = Arrays.asList(4, 3, 5, 1, 2);
+        System.out.println(HackerRank_4.permutationEquation(sequence));
     }
 
     //==========================================================================//
@@ -123,5 +125,16 @@ public class HackerRank_4 {
 
     /*******************************************************************/
 
+    public static List<Integer> permutationEquation(List<Integer> p) {
+        List<Integer> result = new ArrayList<>();
+        int size = p.size(), index, y;
 
+        for (int x = 1; x <= size; x++) {
+            index = p.indexOf(x)+1;
+            y = p.indexOf(index)+1;
+            result.add(y);
+        }
+
+        return result;
+    }
 }
