@@ -7,10 +7,10 @@ public class HackerRank_Medium {
 
     public static void main(String[] args) {
 
-        HackerRank_Medium.encryption("if man was meant to stay on the ground god would have given us roots");
+        System.out.println("Encryption:");
+        System.out.println(HackerRank_Medium.encryption("if man was meant to stay on the ground god would have given us roots"));
 
         //############################################################//
-
 
     }
 
@@ -18,30 +18,41 @@ public class HackerRank_Medium {
 
 
     public static String encryption(String s) {
-        String result = "this is for test", temp, column;
+        String temp, column;
         List<String> grid = new ArrayList<>();
         int row, col, size;
+        StringBuilder result = new StringBuilder();
 
         temp = s.replaceAll("\\s", "");;
         size = temp.length();
-        row = (int)Math.floor(Math.sqrt(size));
         col = (int)Math.ceil(Math.sqrt(size));;
 
-        if (row * col >= size) {
-            for (int i = col; i > 1; i--) {
-                if (temp.length() < col){
-                    grid.add(temp);
-                    continue;
-                }
-                column = temp.substring(0, col);
-                temp = temp.substring(col);
-                grid.add(column);
+        for (int i = col; i > 0; i--) {
+            if (temp.length() == 0)
+                continue;
+            else if (temp.length() < col){
+                grid.add(temp);
+                temp = "";
+                continue;
             }
+            column = temp.substring(0, col);
+            temp = temp.substring(col);
+            grid.add(column);
         }
 
+        row = grid.size();
 
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < row; j++) {
+                temp = grid.get(j);
+                if (temp.length() <= i)
+                    continue;
+                result.append(temp.charAt(i));
+            }
+            result.append(" ");
+        }
 
-        return result;
+        return result.toString();
     }
 
     /*******************************************************************/
