@@ -6,8 +6,12 @@ import java.util.HashMap;
 public class Easy {
 
     public static void main(String[] args) {
-        int[] numbers = {3,3};
-        System.out.println(Arrays.toString(Easy.twoSum(numbers, 4)));
+        int[] numbers = {2,7,11,15};
+        System.out.println(Arrays.toString(Easy.twoSum(numbers, 18)));
+
+        //############################################################//
+
+
     }
 
     //==========================================================================//
@@ -24,4 +28,8 @@ public class Easy {
         }
         return new int[]{};
     }
+
+    /*******************************************************************/
+
+
 }

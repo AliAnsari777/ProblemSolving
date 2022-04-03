@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/Easy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlgoExpert/Easy/BinarySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LeetCode/Easy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/Easy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +62,13 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Easy">
-    <configuration name="Easy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.Easy" />
+  <component name="RunManager" selected="Application.BinarySearch">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AlgoExpert.Easy.BinarySearch" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
+          <option name="PATTERN" value="AlgoExpert.Easy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,12 +76,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HackerRankTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRankTree" />
+    <configuration name="Easy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Easy" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HackerRank.*" />
+          <option name="PATTERN" value="LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.Easy" />
         <item itemvalue="Application.HackerRank_Medium" />
         <item itemvalue="Application.HackerRank_4" />
         <item itemvalue="Application.HackerRank_3" />
-        <item itemvalue="Application.HackerRankTree" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +228,7 @@
       <workItem from="1640748900226" duration="36180000" />
       <workItem from="1642293112939" duration="18606000" />
       <workItem from="1644811005294" duration="13602000" />
-      <workItem from="1648487304148" duration="1763000" />
+      <workItem from="1648487304148" duration="3950000" />
     </task>
     <servers />
   </component>
