@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AlgoExpert/Easy/InsertionSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AlgoExpert/Easy/BubbleSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,9 +61,22 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InsertionSort">
+  <component name="RunManager" selected="Application.BubbleSort">
     <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AlgoExpert.Easy.BinarySearch" />
+      <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AlgoExpert.Easy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AlgoExpert.Easy.BubbleSort" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
@@ -81,19 +94,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="LeetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HackerRank_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_4" />
-      <module name="ProblemSolving" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="HackerRank.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BubbleSort" />
         <item itemvalue="Application.InsertionSort" />
         <item itemvalue="Application.BinarySearch" />
         <item itemvalue="Application.Easy" />
         <item itemvalue="Application.HackerRank_Medium" />
-        <item itemvalue="Application.HackerRank_4" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +227,7 @@
       <workItem from="1640748900226" duration="36180000" />
       <workItem from="1642293112939" duration="18606000" />
       <workItem from="1644811005294" duration="13602000" />
-      <workItem from="1648487304148" duration="5292000" />
+      <workItem from="1648487304148" duration="6465000" />
     </task>
     <servers />
   </component>
