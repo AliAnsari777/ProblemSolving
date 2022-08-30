@@ -40,6 +40,8 @@ public class HackerRank_4 {
 
         //############################################################//
 
+        System.out.println("Page Count:");
+        System.out.println(HackerRank_4.pageCount(6, 2));
 
     }
 
@@ -144,5 +146,13 @@ public class HackerRank_4 {
 
     /*******************************************************************/
 
-
+    public static int pageCount(int n, int p) {
+        n = n % 2 == 0 ? n + 1 : n;
+        int mid = n / 2;
+        if(p <= mid) {
+            return p / 2;
+        } else {
+            return (n - p) / 2;
+        }
+    }
 }

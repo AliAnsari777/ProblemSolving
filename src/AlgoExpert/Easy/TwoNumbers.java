@@ -2,6 +2,7 @@ package AlgoExpert.Easy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class TwoNumbers {
@@ -46,7 +47,6 @@ public class TwoNumbers {
                 num.add(number);
             }
         }
-
         System.out.println(Arrays.deepToString(result.toArray()));
     }
 }
