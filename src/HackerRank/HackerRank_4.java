@@ -45,7 +45,9 @@ public class HackerRank_4 {
 
         //############################################################//
 
-
+        int[] clouds = {0, 0, 1, 0, 0, 1, 1, 0};
+        System.out.println("Jumping on Clouds:");
+        System.out.println(HackerRank_4.jumpingOnClouds(clouds, 2));
     }
 
     //==========================================================================//
@@ -160,4 +162,19 @@ public class HackerRank_4 {
     }
 
     /*******************************************************************/
+
+    static int jumpingOnClouds(int[] c, int k) {
+        int idx = 0, energy = 100;
+        do{
+
+            if(c[idx] == 1){
+                energy -= 3;
+            } else {
+                energy--;
+            }
+            idx = (idx + k) % (c.length);
+        } while(idx != 0);
+
+        return energy;
+    }
 }
