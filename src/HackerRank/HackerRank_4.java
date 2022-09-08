@@ -48,6 +48,11 @@ public class HackerRank_4 {
         int[] clouds = {0, 0, 1, 0, 0, 1, 1, 0};
         System.out.println("Jumping on Clouds:");
         System.out.println(HackerRank_4.jumpingOnClouds(clouds, 2));
+
+        //############################################################//
+
+        System.out.println("Find Digit:");
+        System.out.println(HackerRank_4.findDigits(124));
     }
 
     //==========================================================================//
@@ -176,5 +181,24 @@ public class HackerRank_4 {
         } while(idx != 0);
 
         return energy;
+    }
+
+    /*******************************************************************/
+
+    // An integer d is a divisor of an integer n if the remainder of  n / d = 0.
+    // n=124
+    // Check whether 1, 2 and 4 are divisors of 124. All 3 numbers divide evenly into 124 so return 3 .
+    public static int findDigits(int n) {
+        int counter = 0, digit, number = n;
+
+        while(number >= 1) {
+            digit = number % 10;
+            number = number / 10;
+            if(digit != 0 && n % digit == 0){
+                counter++;
+            }
+        }
+
+        return counter;
     }
 }
