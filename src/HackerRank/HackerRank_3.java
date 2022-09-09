@@ -151,35 +151,6 @@ public class HackerRank_3 {
 
     /*******************************************************************/
 
-    /**
-     * Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each
-     * the array element between two given indices, inclusive. Once all operations have been performed, return
-     * the maximum value in the array.
-     *  a b k
-     *  1 5 3
-     *  4 8 7
-     *  6 9 1
-     */
-    static long arrayManipulation(int n, int[][] queries) {
-        int[] numbers = new int[n+1];
-
-        for (int[] query : queries) {
-            numbers[query[0] - 1] += query[2];
-            numbers[query[1]] -= query[2];
-        }
-
-
-        long sum = 0;
-        long max = 0;
-        for (int i = 0; i < n; i++) {
-            sum += numbers[i];
-            max = Math.max(max, sum);
-        }
-        return max;
-    }
-
-    /*******************************************************************/
-
     // https://www.hackerrank.com/challenges/dynamic-array/problem
 
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
