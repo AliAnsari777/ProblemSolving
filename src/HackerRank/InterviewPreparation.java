@@ -5,6 +5,7 @@ public class InterviewPreparation {
     public static void main(String[] args) {
 
         // Array's Problems
+        System.out.println("Array Problems: ------------------------------");
 
         int[][] glass = new int[][]{
                 {1, 1, 1, 0, 0, 0},
@@ -19,9 +20,9 @@ public class InterviewPreparation {
         System.out.println(InterviewPreparation.hourGlassSum2(glass));
 
 
-        int[] numbers2 = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
+        int[] numbers = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
         System.out.println("\nArrays: Left Rotation");
-        int[] rotatedArray = InterviewPreparation.rotLeft(numbers2, 13);
+        int[] rotatedArray = InterviewPreparation.rotLeft(numbers, 13);
         for (int a : rotatedArray)
             System.out.print(a + " ");
 
@@ -30,9 +31,13 @@ public class InterviewPreparation {
         System.out.println("\n\nNew Year Chaos: ");
         InterviewPreparation.minimumBribes(line);
 
-        int[] numbers = {1, 3, 5, 2, 4, 6, 7};
+        int[] numbers2 = {1, 3, 5, 2, 4, 6, 7};
         System.out.println("\nMinimum Swaps:");
-        System.out.println(InterviewPreparation.minimumSwaps(numbers));
+        System.out.println(InterviewPreparation.minimumSwaps(numbers2));
+
+        int[][] numbers3 = {{1,2,100}, {2,5, 100}, {3,4,100}};
+        System.out.println("\nArray Manipulation:");
+        System.out.println(InterviewPreparation.arrayManipulation(5, numbers3));
 
         //############################################################//
 
@@ -150,6 +155,34 @@ public class InterviewPreparation {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+
+    /**
+     * Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each
+     * the array element between two given indices, inclusive. Once all operations have been performed, return
+     * the maximum value in the array.
+     *  a b k
+     *  1 5 3
+     *  4 8 7
+     *  6 9 1
+     */
+    // Hard
+    static long arrayManipulation(int n, int[][] queries) {
+        int[] numbers = new int[n+1];
+
+        for (int[] query : queries) {
+            numbers[query[0] - 1] += query[2];
+            numbers[query[1]] -= query[2];
+        }
+
+
+        long sum = 0;
+        long max = 0;
+        for (int i = 0; i < n; i++) {
+            sum += numbers[i];
+            max = Math.max(max, sum);
+        }
+        return max;
     }
 
     /*******************************************************************/

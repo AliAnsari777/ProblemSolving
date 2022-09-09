@@ -21,10 +21,6 @@ public class HackerRank_3 {
 //        for (int a : result) {
 //            System.out.print(a + ", ");
 //        }
-        //############################################################//
-
-//        int[][] numbers = {{1,2,100}, {2,5, 100}, {3,4,100}};
-//        System.out.println(HackerRank_3.arrayManipulation(5, numbers));
 
         //############################################################//
 
