@@ -614,25 +614,6 @@ public class Hackerrank {
     /*******************************************************************/
 
 
-    // Complete the rotLeft function below.
-    static int[] rotLeft(int[] a, int d) {
-        int size = a.length;
-        int[] result = new int[size];
-//        int i;
-//        for(i = 0; i < a.length - d; i++){
-//            result[i] = a[i+d];
-//        }
-//        for(int j = 0; j < d; j++, i++){
-//            result[i] = a[j];
-//        }
-
-        for (int j = 0; j < size; j++) {
-            int loc = (j + (size - d) ) % size;
-            result[loc] = a[j];
-        }
-        return result;
-    }
-
     /*******************************************************************/
 
     // Complete the minimumBribes function below.
