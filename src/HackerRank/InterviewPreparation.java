@@ -1,5 +1,9 @@
 package HackerRank;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class InterviewPreparation {
 
     public static void main(String[] args) {
@@ -19,13 +23,11 @@ public class InterviewPreparation {
         System.out.println(InterviewPreparation.hourglassSum(glass));
         System.out.println(InterviewPreparation.hourGlassSum2(glass));
 
-
         int[] numbers = {33, 47, 70, 37, 8, 53, 13, 93, 71, 72, 51, 100, 60, 87, 97};
         System.out.println("\nArrays: Left Rotation");
         int[] rotatedArray = InterviewPreparation.rotLeft(numbers, 13);
         for (int a : rotatedArray)
             System.out.print(a + " ");
-
 
         int[] line = {1, 2, 5, 3, 4, 7, 8, 6};
         System.out.println("\n\nNew Year Chaos: ");
@@ -41,6 +43,8 @@ public class InterviewPreparation {
 
         //############################################################//
 
+        String text = "cdcd";
+        System.out.println(InterviewPreparation.sherlockAndAnagrams(text));
 
 
     }
@@ -98,7 +102,6 @@ public class InterviewPreparation {
         }
         return result;
     }
-
 
     // Easy
     static int[] rotLeft(int[] a, int d) {
@@ -187,5 +190,23 @@ public class InterviewPreparation {
 
     /*******************************************************************/
 
-
+    static int sherlockAndAnagrams(String s) {
+        // Write your code here
+        Map<String, Integer> map = new HashMap<>();
+        int count = 0;
+        for (int start = 0; start < s.length(); start++) {
+            for (int end = start + 1; end <= s.length(); end++) {
+                char[] arr = s.substring(start, end).toCharArray();
+                Arrays.sort(arr);
+                String str = new String(arr);
+                if (map.containsKey(str)) {
+                    count += map.get(str);
+                    map.put(str, map.get(str) + 1);
+                } else {
+                    map.put(str, 1);
+                }
+            }
+        }
+        return count;
+    }
 }
