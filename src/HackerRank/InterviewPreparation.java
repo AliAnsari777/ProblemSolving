@@ -49,6 +49,19 @@ public class InterviewPreparation {
         System.out.println("\nCount Triplets:");
         System.out.println(InterviewPreparation.countTriplets(list, 3));
 
+        List<List<Integer>> quries = new ArrayList<>();
+        quries.add(Arrays.asList(1, 5));
+        quries.add(Arrays.asList(1, 6));
+        quries.add(Arrays.asList(3, 2));
+        quries.add(Arrays.asList(1, 10));
+        quries.add(Arrays.asList(1, 10));
+        quries.add(Arrays.asList(1, 6));
+        quries.add(Arrays.asList(2, 5));
+        quries.add(Arrays.asList(3, 2));
+
+        System.out.println("\nFrequency Queries:");
+        System.out.println(InterviewPreparation.freqQuery(quries));
+
 
     }
 
@@ -193,6 +206,7 @@ public class InterviewPreparation {
 
     /*******************************************************************/
 
+    // HashMap's Problems
     static int sherlockAndAnagrams(String s) {
         // Write your code here
         Map<String, Integer> map = new HashMap<>();
@@ -231,5 +245,21 @@ public class InterviewPreparation {
         return numberOfTriplets;
     }
 
+    static List<Integer> freqQuery(List<List<Integer>> queries) {
+        List<Integer> result = new ArrayList<>();
+        Map<Integer, Integer> numMap = new HashMap<>();
 
+        for(int i = 0; i < queries.size(); i++){
+            int opr = queries.get(i).get(0), val = queries.get(i).get(1);
+
+            if(opr == 1){
+                numMap.put(val, numMap.getOrDefault(val, 0) + 1);
+            } else if(opr == 2 && numMap.containsKey(val)){
+                numMap.put(val, numMap.get(val) - 1);
+            } else if(opr == 3){
+                result.add(numMap.containsValue(val) ? 1 : 0);
+            }
+        }
+        return result;
+    }
 }
