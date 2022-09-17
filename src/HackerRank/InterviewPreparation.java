@@ -213,42 +213,23 @@ public class InterviewPreparation {
         return count;
     }
 
-//    static long countTriplets(List<Integer> arr, int r) {
-//        int result = 0, k = 0;
-//
-//        for(int i = 0; i < arr.size(); i++){
-//            int count = 1;
-//            for (int j = i; j < arr.size() - 1; j++) {
-//                if(arr.get(k) * r == arr.get(j + 1)){
-//                    count++;
-//                    k++;
-//                }
-//
-//                if(count == 3){
-//                    result++;
-//                    k = i+1;
-//                    count = 2;
-//                }
-//
-//            }
-//        }
-//        return result;
-//    }
-static long countTriplets(List<Integer> arr, int r) {
-    long numberOfTriplets = 0L;
-    Map<Long, Long> mapValueCounting = new HashMap<>();
-    Map<Long, Long> mapPair = new HashMap<>();
+    static long countTriplets(List<Integer> arr, int r) {
+        long numberOfTriplets = 0L;
+        Map<Long, Long> mapValueCounting = new HashMap<>();
+        Map<Long, Long> mapPair = new HashMap<>();
 
-    for (int i = arr.size() - 1; i >= 0; i--) {
-        long a = arr.get(i);
-        if (mapPair.containsKey(a * r)) {
-            numberOfTriplets += mapPair.get(a * r);
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            long a = arr.get(i);
+            if (mapPair.containsKey(a * r)) {
+                numberOfTriplets += mapPair.get(a * r);
+            }
+            if (mapValueCounting.containsKey(a * r)) {
+                mapPair.put(a, mapPair.getOrDefault(a, 0L) + mapValueCounting.get(a * r));
+            }
+            mapValueCounting.merge(a, 1L, Long::sum);
         }
-        if (mapValueCounting.containsKey(a * r)) {
-            mapPair.put(a, mapPair.getOrDefault(a, 0L) + mapValueCounting.get(a * r));
-        }
-        mapValueCounting.merge(a, 1L, Long::sum);
+        return numberOfTriplets;
     }
-    return numberOfTriplets;
-}
+
+
 }
