@@ -1,6 +1,8 @@
 package HackerRank;
 
+import javax.swing.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class InterviewPreparation {
 
@@ -66,6 +68,7 @@ public class InterviewPreparation {
 
         System.out.println("\nFrequency Queries:");
         System.out.println(InterviewPreparation.freqQuery(quries));
+
     }
 
 
@@ -267,4 +270,5 @@ public class InterviewPreparation {
         }
         return result;
     }
+
 }

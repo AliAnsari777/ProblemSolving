@@ -3,6 +3,7 @@ package HackerRank;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HackerRank_4 {
     public static void main(String[] args) {
@@ -53,6 +54,11 @@ public class HackerRank_4 {
 
         System.out.println("Find Digit:");
         System.out.println(HackerRank_4.findDigits(124));
+
+        //############################################################//
+
+        String chars = "1010111001010";
+        System.out.println(HackerRank_4.appleTest(chars));
     }
 
     //==========================================================================//
@@ -200,5 +206,20 @@ public class HackerRank_4 {
         }
 
         return counter;
+    }
+
+    /*******************************************************************/
+
+    static int appleTest(String s){
+        List<Character> chars = s.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+
+        for (int i =  0; i < chars.size()-1; i++) {
+            if (chars.size() > 1 && chars.get(i) != chars.get(i + 1) && chars.get(i) != '*' && chars.get(i + 1) != '*') {
+                chars.remove(i);
+                chars.remove(i);
+                i = -1;
+            }
+        }
+        return chars.size();
     }
 }

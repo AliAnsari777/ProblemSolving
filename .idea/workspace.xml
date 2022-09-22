@@ -44,12 +44,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Amazon.ProjectEuler" />
@@ -211,7 +211,8 @@
       <workItem from="1648487304148" duration="9919000" />
       <workItem from="1650613129034" duration="264000" />
       <workItem from="1652656334429" duration="192000" />
-      <workItem from="1661616735412" duration="56246000" />
+      <workItem from="1661616735412" duration="57785000" />
+      <workItem from="1663720302447" duration="8623000" />
     </task>
     <servers />
   </component>
