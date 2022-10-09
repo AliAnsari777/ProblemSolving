@@ -19,7 +19,16 @@ public class Medium {
             result = result.next;
         }
 
+        //############################################################//
+
+        System.out.println("\nSum of two integers without using + and -");
+        System.out.println(Medium.getSum(7, 17));
+
     }
+
+
+    //==========================================================================//
+
 
     static class ListNode {
         int val;
@@ -50,6 +59,7 @@ public class Medium {
 //            sum += reminder;
 //            reminder = sum/10;
 //            ListNode node = new ListNode(sum%10);
+//            // this way we will have the result in order
 //            node.next = result;
 //            result = node;
 //
@@ -74,9 +84,21 @@ public class Medium {
             sum+=carry;
             carry = sum/10;
             ListNode node = new ListNode(sum%10);
+            // this way we will have the result in reverse which is what question asked
             temp.next = node;
             temp = temp.next;
         }
         return dummy.next;
     }
+
+    /*******************************************************************/
+
+    // Given two integers a and b, return the sum of the two integers without using the operators + and -.
+    public static int getSum(int a, int b) {
+        return Integer.sum(a, b);
+    }
+
+    /*******************************************************************/
+
+
 }

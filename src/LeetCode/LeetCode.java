@@ -1,7 +1,8 @@
+package LeetCode;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
-import java.util.function.IntBinaryOperator;
 
 public class LeetCode {
     public static void main(String[] args) {
@@ -39,18 +40,18 @@ public class LeetCode {
         //############################################################//
 
         // Reverse Integer
-//        System.out.println("Reverse Integer: " + LeetCode.reverse(7841));
+//        System.out.println("Reverse Integer: " + LeetCode.LeetCode.reverse(7841));
 
         //############################################################//
 
         // Reverse Bits
-//        System.out.println("Reverse Bits: " + LeetCode.reverseBits(43261596));
+//        System.out.println("Reverse Bits: " + LeetCode.LeetCode.reverseBits(43261596));
 
         //############################################################//
 
         // Two Sum
 //        int[] twoSum = {5, 8, 7, 6, 2, 4};
-//        int[] result = LeetCode.twoSum(twoSum, 9);
+//        int[] result = LeetCode.LeetCode.twoSum(twoSum, 9);
 //
 //        if (result != null)
 //            System.out.println("Two Sum: " + result[0] + ", " + result[1]);
@@ -61,12 +62,12 @@ public class LeetCode {
 
         // Valid Parentheses
 //        String parenthese = "({)[]";
-//        System.out.println("Valid Parentheses: " + LeetCode.validParentheses(parenthese));
+//        System.out.println("Valid Parentheses: " + LeetCode.LeetCode.validParentheses(parenthese));
 
         //############################################################//
 
         // Palindrome
-//        System.out.println("Is Palindrome: " + LeetCode.isPalindrome(787));
+//        System.out.println("Is Palindrome: " + LeetCode.LeetCode.isPalindrome(787));
 
         //############################################################//
 
