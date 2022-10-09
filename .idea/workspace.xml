@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HackerRank/HackerRank_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HackerRank/HackerRank_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/LeetCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeetCode/Medium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/Medium.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +217,7 @@
       <workItem from="1664297779737" duration="1308000" />
       <workItem from="1664407826942" duration="171000" />
       <workItem from="1664408015149" duration="3917000" />
-      <workItem from="1665294068045" duration="1163000" />
+      <workItem from="1665294068045" duration="3057000" />
     </task>
     <servers />
   </component>
@@ -245,6 +242,11 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LeetCode/Medium.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
