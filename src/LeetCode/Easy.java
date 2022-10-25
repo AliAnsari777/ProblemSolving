@@ -27,6 +27,8 @@ public class Easy {
         Easy.ListNode two = new Easy.ListNode(4);
         two.next = new Easy.ListNode(5);
         two.next.next = new Easy.ListNode(6);
+        two.next.next.next = new Easy.ListNode(8);
+        two.next.next.next.next = new Easy.ListNode(17);
 
         Easy.ListNode result = Easy.mergeTwoLists(one, two);
 
@@ -164,36 +166,40 @@ public class Easy {
 
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode result = new ListNode();
-        ListNode temp;
         ListNode head = result;
 
         while (list1 != null && list2 != null) {
             if (list1.val <= list2.val) {
-                temp = new ListNode(list1.val);
+                head.next = new ListNode(list1.val);
                 list1 = list1.next;
             } else {
-                temp = new ListNode(list2.val);
+                head.next = new ListNode(list2.val);
                 list2 = list2.next;
             }
-
-            head.next = temp;
-            head = head.next;
-
-        }
-
-        while (list1 != null) {
-            temp = new ListNode(list1.val);
-            list1 = list1.next;
-            head.next = temp;
             head = head.next;
         }
 
-        while (list2 != null) {
-            temp = new ListNode(list2.val);
-            list2 = list2.next;
-            head.next = temp;
-            head = head.next;
+        if (list1 != null) {
+            head.next = list1;
         }
+
+        if (list2 != null) {
+            head.next = list2;
+        }
+
         return result.next;
+    }
+
+    // This solution was in discussion
+    public ListNode mergeTwoListsRecursion(ListNode l1, ListNode l2){
+        if(l1 == null) return l2;
+        if(l2 == null) return l1;
+        if(l1.val < l2.val){
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else{
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
     }
 }
