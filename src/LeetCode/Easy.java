@@ -1,9 +1,6 @@
 package LeetCode;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class Easy {
 
@@ -36,6 +33,24 @@ public class Easy {
             System.out.println(result.val);
             result = result.next;
         }
+
+        //############################################################//
+
+        System.out.println("\nRemove Duplicate Numbers From Array");
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+        int[] nums1 = {0,0,1};
+        int[] nums2 = {};
+
+        System.out.println(Easy.removeDuplicates(nums2));
+
+        //############################################################//
+
+        System.out.println("\nRemove Element From Array");
+        int[] number = {0,1,2,2,3,0,4,2};
+        int[] number2 = {3,2,2,3};
+
+        System.out.println(Easy.removeElement(number2, 2));
+
 
     }
 
@@ -170,22 +185,16 @@ public class Easy {
 
         while (list1 != null && list2 != null) {
             if (list1.val <= list2.val) {
-                head.next = new ListNode(list1.val);
+                head.next = list1;
                 list1 = list1.next;
             } else {
-                head.next = new ListNode(list2.val);
+                head.next = list2;
                 list2 = list2.next;
             }
             head = head.next;
         }
 
-        if (list1 != null) {
-            head.next = list1;
-        }
-
-        if (list2 != null) {
-            head.next = list2;
-        }
+        head.next = list1 == null ? list2 : list1;
 
         return result.next;
     }
@@ -201,5 +210,34 @@ public class Easy {
             l2.next = mergeTwoLists(l1, l2.next);
             return l2;
         }
+    }
+
+    /*******************************************************************/
+    public static int removeDuplicates(int[] nums) {
+        int first = 0, answer = nums.length >= 1 ? 1 : 0;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[first] != nums[i]){
+                first++;
+                answer++;
+                nums[first] = nums[i];
+            }
+        }
+
+        return answer;
+    }
+
+    /*******************************************************************/
+
+    public static int removeElement(int[] nums, int val) {
+        int result = 0;
+
+        for (int a : nums){
+            if (a != val){
+                nums[result] = a;
+                result++;
+            }
+        }
+        return result;
     }
 }
