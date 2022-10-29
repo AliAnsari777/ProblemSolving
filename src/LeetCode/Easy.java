@@ -51,6 +51,23 @@ public class Easy {
 
         System.out.println(Easy.removeElement(number2, 2));
 
+        //############################################################//
+
+        System.out.println("\nRemove Linked List Element");
+        Easy.ListNode nodes = new Easy.ListNode(1);
+        nodes.next = new Easy.ListNode(2);
+        nodes.next.next = new Easy.ListNode(3);
+        nodes.next.next.next = new Easy.ListNode(1);
+//        nodes.next.next.next.next = new Easy.ListNode(4);
+//        nodes.next.next.next.next.next = new Easy.ListNode(5);
+//        nodes.next.next.next.next.next.next = new Easy.ListNode(6);
+
+        Easy.ListNode answer = Easy.removeElements(nodes, 1);
+
+        while (answer != null) {
+            System.out.println(answer.val);
+            answer = answer.next;
+        }
 
     }
 
@@ -239,5 +256,13 @@ public class Easy {
             }
         }
         return result;
+    }
+
+    /*******************************************************************/
+
+    public static ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;
+        head.next = removeElements(head.next, val);
+        return head.val == val ? head.next : head;
     }
 }
