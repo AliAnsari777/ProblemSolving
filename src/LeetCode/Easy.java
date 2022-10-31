@@ -69,6 +69,12 @@ public class Easy {
             answer = answer.next;
         }
 
+        //############################################################//
+
+        System.out.println("\nSearch Insert Position");
+        int[] values = {1,3};
+
+        System.out.println(Easy.searchInsert(values, 3));
     }
 
     //==========================================================================//
@@ -264,5 +270,21 @@ public class Easy {
         if (head == null) return null;
         head.next = removeElements(head.next, val);
         return head.val == val ? head.next : head;
+    }
+
+    /*******************************************************************/
+
+    public static int searchInsert(int[] nums, int target) {
+        int start = 0, end = nums.length-1;
+        while (start < end){
+            int mid = end + (start-end)/2;
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] > target)
+                end = Math.max(mid - 1, 0);
+            else
+                start = mid + 1;
+        }
+        return nums[end] < target ? end + 1 : end;
     }
 }
