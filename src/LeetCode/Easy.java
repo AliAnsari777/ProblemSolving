@@ -75,6 +75,11 @@ public class Easy {
         int[] values = {1,3};
 
         System.out.println(Easy.searchInsert(values, 3));
+
+        //############################################################//
+
+        System.out.println("\n278. First Bad Version");
+        System.out.println(Easy.firstBadVersion(1));
     }
 
     //==========================================================================//
@@ -287,4 +292,25 @@ public class Easy {
         }
         return nums[end] < target ? end + 1 : end;
     }
+
+    public static int firstBadVersion(int n) {
+        int start  = 0, mid;
+
+        while(n-start > 1) {
+            mid = n + Math.floorDiv((start-n), 2);
+            if(isBadVersion(mid)){
+                n = mid ;
+            }else{
+                start = mid;
+            }
+        }
+        return n;
+    }
+
+    private static boolean isBadVersion(int mid) {
+        return mid >= 1;
+    }
+
+
+
 }
