@@ -80,6 +80,11 @@ public class Easy {
 
         System.out.println("\n278. First Bad Version");
         System.out.println(Easy.firstBadVersion(1));
+
+        //############################################################//
+
+        System.out.println("\n58. Length of Last Word");
+        System.out.println(Easy.lengthOfLastWord("   fly me   to   the moon  "));
     }
 
     //==========================================================================//
@@ -293,6 +298,8 @@ public class Easy {
         return nums[end] < target ? end + 1 : end;
     }
 
+    /*******************************************************************/
+
     public static int firstBadVersion(int n) {
         int start  = 0, mid;
 
@@ -311,6 +318,12 @@ public class Easy {
         return mid >= 1;
     }
 
+    /*******************************************************************/
+
+    public static int lengthOfLastWord(String s) {
+        String[] words = s.split(" ");
+        return words[words.length-1].length();
+    }
 
 
 }

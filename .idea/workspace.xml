@@ -222,6 +222,7 @@
       <workItem from="1666155502620" duration="2908000" />
       <workItem from="1666484014649" duration="28267000" />
       <workItem from="1667199333267" duration="3455000" />
+      <workItem from="1667803357185" duration="900000" />
     </task>
     <servers />
   </component>
@@ -248,7 +249,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/Easy.java</url>
-          <line>298</line>
+          <line>305</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
