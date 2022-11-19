@@ -1,6 +1,7 @@
 package LeetCode;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Easy {
 
@@ -85,6 +86,13 @@ public class Easy {
 
         System.out.println("\n58. Length of Last Word");
         System.out.println(Easy.lengthOfLastWord("   fly me   to   the moon  "));
+
+        //############################################################//
+
+        System.out.println("\n66. Plus One");
+
+        int[] answer2 = Easy.plusOne1(new int[]{1,2,5,8,9});
+        Arrays.stream(answer2).forEach(System.out::println);
     }
 
     //==========================================================================//
@@ -325,5 +333,52 @@ public class Easy {
         return words[words.length-1].length();
     }
 
+    /*******************************************************************/
 
+    public static int[] plusOne(int[] digits) {
+        int size = digits.length-1;
+        int val = 1;
+        Stack<Integer> stack = new Stack<>();
+
+        if (digits[size] + val >= 10) {
+            for (int i = size; i >= 0; i--) {
+                if (digits[i] + val >= 10) {
+                    stack.push(0);
+                } else {
+                    stack.push(digits[i] + val);
+                    val = 0;
+                }
+            }
+
+            if (val != 0){
+                stack.push(val);
+            }
+        } else {
+            digits[size] += 1;
+        }
+        int length = stack.size();
+        int[] result = new int[length];
+        for (int i = 0; i < length; i++) {
+            result[i] = stack.pop();
+        }
+        return result.length > 0 ? result : digits;
+    }
+
+    public static int[] plusOne1(int[] digits) {
+
+        int n = digits.length;
+        for(int i=n-1; i>=0; i--) {
+            if(digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+
+            digits[i] = 0;
+        }
+
+        int[] newNumber = new int [n+1];
+        newNumber[0] = 1;
+
+        return newNumber;
+    }
 }
