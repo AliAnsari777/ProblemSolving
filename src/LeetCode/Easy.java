@@ -93,6 +93,16 @@ public class Easy {
 
         int[] answer2 = Easy.plusOne1(new int[]{1,2,5,8,9});
         Arrays.stream(answer2).forEach(System.out::println);
+
+        //############################################################//
+
+        String text = "PAYPALISHIRING";
+        System.out.println("\n6. Zigzag Conversion");
+        System.out.println(Easy.convert(text, 3));
+
+        //############################################################//
+
+        System.out.println(Easy.solution("010", "amazing"));
     }
 
     //==========================================================================//
@@ -380,5 +390,67 @@ public class Easy {
         newNumber[0] = 1;
 
         return newNumber;
+    }
+
+    /*******************************************************************/
+
+    public static String convert(String s, int numRows) {
+        char[] chars = s.toCharArray();
+        int size = chars.length;
+        StringBuffer[] sb = new StringBuffer[numRows];
+
+        for(int i = 0; i < sb.length; i++){
+            sb[i] = new StringBuffer();
+        }
+
+        int idx = 0;
+        while(idx < size){
+            for(int i = 0; i < numRows && idx < size; i++){
+                sb[i].append(chars[idx++]);
+            }
+
+            for(int i = numRows - 2; i >= 1 && idx < size; i--){
+                sb[i].append(chars[idx++]);
+            }
+        }
+
+        for(int i = 1; i < numRows; i++){
+            sb[0].append(sb[i]);
+        }
+
+        return sb[0].toString();
+    }
+
+    public static int solution(String pattern, String source) {
+        int result = 0;
+        Character[] vowels = {'a', 'e', 'i', 'o', 'u', 'y'};
+        char[] patt = pattern.toCharArray();
+        char[] src = source.toCharArray();
+        int j = 0;
+
+        if(pattern.length() > source.length()){
+            return 0;
+        }
+
+        for (int i = 0; i < src.length - patt.length; i++) {
+            for (int k = 0; k < patt.length; k++) {
+                if(patt[k] == '0' && Arrays.asList(vowels).contains(src[i + k])){
+                    j++;
+                    System.out.println("first: " + j);
+                } else if (patt[k] == '1' && !Arrays.asList(vowels).contains(src[i + k])){
+                    j++;
+                    System.out.println("second: " + j);
+                } else {
+                    j = 0;
+                }
+            }
+
+            if(j == patt.length){
+                result++;
+                j = 0;
+            }
+        }
+
+        return result;
     }
 }

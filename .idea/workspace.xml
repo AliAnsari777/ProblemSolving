@@ -223,7 +223,8 @@
       <workItem from="1666484014649" duration="28267000" />
       <workItem from="1667199333267" duration="3455000" />
       <workItem from="1667803357185" duration="7971000" />
-      <workItem from="1668667001884" duration="2249000" />
+      <workItem from="1668667001884" duration="7997000" />
+      <workItem from="1671600062180" duration="3546000" />
     </task>
     <servers />
   </component>
@@ -248,12 +249,12 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/Easy.java</url>
-          <line>368</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="source" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
