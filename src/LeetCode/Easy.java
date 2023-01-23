@@ -38,8 +38,8 @@ public class Easy {
         //############################################################//
 
         System.out.println("\nRemove Duplicate Numbers From Array");
-        int[] nums = {0,0,1,1,1,2,2,3,3,4};
-        int[] nums1 = {0,0,1};
+        int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int[] nums1 = {0, 0, 1};
         int[] nums2 = {};
 
         System.out.println(Easy.removeDuplicates(nums2));
@@ -47,8 +47,8 @@ public class Easy {
         //############################################################//
 
         System.out.println("\nRemove Element From Array");
-        int[] number = {0,1,2,2,3,0,4,2};
-        int[] number2 = {3,2,2,3};
+        int[] number = {0, 1, 2, 2, 3, 0, 4, 2};
+        int[] number2 = {3, 2, 2, 3};
 
         System.out.println(Easy.removeElement(number2, 2));
 
@@ -73,7 +73,7 @@ public class Easy {
         //############################################################//
 
         System.out.println("\nSearch Insert Position");
-        int[] values = {1,3};
+        int[] values = {1, 3};
 
         System.out.println(Easy.searchInsert(values, 3));
 
@@ -91,7 +91,7 @@ public class Easy {
 
         System.out.println("\n66. Plus One");
 
-        int[] answer2 = Easy.plusOne1(new int[]{1,2,5,8,9});
+        int[] answer2 = Easy.plusOne1(new int[]{1, 2, 5, 8, 9});
         Arrays.stream(answer2).forEach(System.out::println);
 
         //############################################################//
@@ -102,7 +102,14 @@ public class Easy {
 
         //############################################################//
 
-        System.out.println(Easy.solution("010", "amazing"));
+        int[] numbers22 = {1, 2, 3};
+        int target = 4 ;
+        int combinations = Easy.findCombinations(numbers22, target);
+        System.out.println("Number of ways to achieve " + target + ": " + combinations);
+
+        //############################################################//
+
+
     }
 
     //==========================================================================//
@@ -251,13 +258,13 @@ public class Easy {
     }
 
     // This solution was in discussion
-    public ListNode mergeTwoListsRecursion(ListNode l1, ListNode l2){
-        if(l1 == null) return l2;
-        if(l2 == null) return l1;
-        if(l1.val < l2.val){
+    public ListNode mergeTwoListsRecursion(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        if (l1.val < l2.val) {
             l1.next = mergeTwoLists(l1.next, l2);
             return l1;
-        } else{
+        } else {
             l2.next = mergeTwoLists(l1, l2.next);
             return l2;
         }
@@ -268,7 +275,7 @@ public class Easy {
         int first = 0, answer = nums.length >= 1 ? 1 : 0;
 
         for (int i = 1; i < nums.length; i++) {
-            if (nums[first] != nums[i]){
+            if (nums[first] != nums[i]) {
                 first++;
                 answer++;
                 nums[first] = nums[i];
@@ -283,8 +290,8 @@ public class Easy {
     public static int removeElement(int[] nums, int val) {
         int result = 0;
 
-        for (int a : nums){
-            if (a != val){
+        for (int a : nums) {
+            if (a != val) {
                 nums[result] = a;
                 result++;
             }
@@ -303,9 +310,9 @@ public class Easy {
     /*******************************************************************/
 
     public static int searchInsert(int[] nums, int target) {
-        int start = 0, end = nums.length-1;
-        while (start < end){
-            int mid = end + (start-end)/2;
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = end + (start - end) / 2;
             if (nums[mid] == target)
                 return mid;
             else if (nums[mid] > target)
@@ -319,13 +326,13 @@ public class Easy {
     /*******************************************************************/
 
     public static int firstBadVersion(int n) {
-        int start  = 0, mid;
+        int start = 0, mid;
 
-        while(n-start > 1) {
-            mid = n + Math.floorDiv((start-n), 2);
-            if(isBadVersion(mid)){
-                n = mid ;
-            }else{
+        while (n - start > 1) {
+            mid = n + Math.floorDiv((start - n), 2);
+            if (isBadVersion(mid)) {
+                n = mid;
+            } else {
                 start = mid;
             }
         }
@@ -340,13 +347,13 @@ public class Easy {
 
     public static int lengthOfLastWord(String s) {
         String[] words = s.split(" ");
-        return words[words.length-1].length();
+        return words[words.length - 1].length();
     }
 
     /*******************************************************************/
 
     public static int[] plusOne(int[] digits) {
-        int size = digits.length-1;
+        int size = digits.length - 1;
         int val = 1;
         Stack<Integer> stack = new Stack<>();
 
@@ -360,7 +367,7 @@ public class Easy {
                 }
             }
 
-            if (val != 0){
+            if (val != 0) {
                 stack.push(val);
             }
         } else {
@@ -377,8 +384,8 @@ public class Easy {
     public static int[] plusOne1(int[] digits) {
 
         int n = digits.length;
-        for(int i=n-1; i>=0; i--) {
-            if(digits[i] < 9) {
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
                 digits[i]++;
                 return digits;
             }
@@ -386,7 +393,7 @@ public class Easy {
             digits[i] = 0;
         }
 
-        int[] newNumber = new int [n+1];
+        int[] newNumber = new int[n + 1];
         newNumber[0] = 1;
 
         return newNumber;
@@ -399,22 +406,22 @@ public class Easy {
         int size = chars.length;
         StringBuffer[] sb = new StringBuffer[numRows];
 
-        for(int i = 0; i < sb.length; i++){
+        for (int i = 0; i < sb.length; i++) {
             sb[i] = new StringBuffer();
         }
 
         int idx = 0;
-        while(idx < size){
-            for(int i = 0; i < numRows && idx < size; i++){
+        while (idx < size) {
+            for (int i = 0; i < numRows && idx < size; i++) {
                 sb[i].append(chars[idx++]);
             }
 
-            for(int i = numRows - 2; i >= 1 && idx < size; i--){
+            for (int i = numRows - 2; i >= 1 && idx < size; i--) {
                 sb[i].append(chars[idx++]);
             }
         }
 
-        for(int i = 1; i < numRows; i++){
+        for (int i = 1; i < numRows; i++) {
             sb[0].append(sb[i]);
         }
 
@@ -428,16 +435,16 @@ public class Easy {
         char[] src = source.toCharArray();
         int j = 0;
 
-        if(pattern.length() > source.length()){
+        if (pattern.length() > source.length()) {
             return 0;
         }
 
         for (int i = 0; i < src.length - patt.length; i++) {
             for (int k = 0; k < patt.length; k++) {
-                if(patt[k] == '0' && Arrays.asList(vowels).contains(src[i + k])){
+                if (patt[k] == '0' && Arrays.asList(vowels).contains(src[i + k])) {
                     j++;
                     System.out.println("first: " + j);
-                } else if (patt[k] == '1' && !Arrays.asList(vowels).contains(src[i + k])){
+                } else if (patt[k] == '1' && !Arrays.asList(vowels).contains(src[i + k])) {
                     j++;
                     System.out.println("second: " + j);
                 } else {
@@ -445,10 +452,63 @@ public class Easy {
                 }
             }
 
-            if(j == patt.length){
+            if (j == patt.length) {
                 result++;
                 j = 0;
             }
+        }
+
+        return result;
+    }
+
+//    public void sumup(long sum, long[] array, int indx) {
+//
+//        for(int i = indx; i < array.length; i = 2*i+1) {
+//            if (array[2*i+1] != null && array[2*i+1] > 0) {
+//                sum += array[2*i+1];
+//            }
+//
+//            if (array[2*i+2] != null && array[2*i+2] > 0) {
+//                sum += array[2*i+2];
+//            }
+//        }
+//    }
+
+//    public static int[][] findCombinations(int[] numbers, int target) {
+//        int[][] combinations = new int[target + 1][numbers.length];
+//        for (int i = 0; i < numbers.length; i++) {
+//            combinations[0][i] = 1;
+//        }
+//        for (int i = 1; i <= target; i++) {
+//            for (int j = 0; j < numbers.length; j++) {
+//                int withoutCurrent = (j > 0) ? combinations[i][j-1] : 0;
+//                int withCurrent = (i >= numbers[j]) ? combinations[i - numbers[j]][j] : 0;
+//                combinations[i][j] = withoutCurrent + withCurrent;
+//            }
+//        }
+//        return combinations;
+//    }
+
+    public static int findCombinations(int[] nums, int target) {
+        int counter = 1, result = 1;
+
+        while (target - (counter * 2) >= 0) {
+            if (target - (counter * 2) == 0) {
+                result++;
+            } else {
+                result += counter + (target - (counter * 2));
+            }
+            counter++;
+        }
+
+        counter = 1;
+        while (target - (counter * 3) >= 0) {
+            if (target - (counter * 3) == 0) {
+                result++;
+            } else {
+                result += counter + (target - (counter * 3));
+            }
+            counter++;
         }
 
         return result;

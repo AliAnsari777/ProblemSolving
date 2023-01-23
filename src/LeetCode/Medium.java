@@ -1,5 +1,9 @@
 package LeetCode;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Medium {
     public static void main(String[] args) {
 
@@ -26,7 +30,9 @@ public class Medium {
 
         //############################################################//
 
-
+        System.out.println("\nStock Prices:");
+        long[] prices = {-2,10,2,20,-7,3};
+        System.out.println(price(prices));
 
     }
 
@@ -104,5 +110,36 @@ public class Medium {
 
     /*******************************************************************/
 
+    public static long price(long[] prices){
+        if (prices.length == 0){
+            return 0;
+        }
 
+        List<Long> priceList = Arrays.stream(prices).boxed().collect(Collectors.toList());
+        boolean lowChange = false, highChange = false;
+        long low, high, diff = 0;
+        low = prices[0];
+        high = prices[0];
+
+        for (long price : prices) {
+            if (low > price) {
+                low = price;
+                lowChange = true;
+            } else if (high < price) {
+                high = price;
+                highChange = true;
+            }
+
+            if ((lowChange || highChange) && (priceList.indexOf(low) < priceList.indexOf(high))) {
+                long currentVal = high - low;
+                if (diff < currentVal) {
+                    diff = currentVal;
+                    lowChange = false;
+                    highChange = false;
+                }
+            }
+        }
+
+        return diff;
+    }
 }
