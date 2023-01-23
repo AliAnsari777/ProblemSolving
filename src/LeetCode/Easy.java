@@ -102,13 +102,6 @@ public class Easy {
 
         //############################################################//
 
-        int[] numbers22 = {1, 2, 3};
-        int target = 4 ;
-        int combinations = Easy.findCombinations(numbers22, target);
-        System.out.println("Number of ways to achieve " + target + ": " + combinations);
-
-        //############################################################//
-
 
     }
 
@@ -456,59 +449,6 @@ public class Easy {
                 result++;
                 j = 0;
             }
-        }
-
-        return result;
-    }
-
-//    public void sumup(long sum, long[] array, int indx) {
-//
-//        for(int i = indx; i < array.length; i = 2*i+1) {
-//            if (array[2*i+1] != null && array[2*i+1] > 0) {
-//                sum += array[2*i+1];
-//            }
-//
-//            if (array[2*i+2] != null && array[2*i+2] > 0) {
-//                sum += array[2*i+2];
-//            }
-//        }
-//    }
-
-//    public static int[][] findCombinations(int[] numbers, int target) {
-//        int[][] combinations = new int[target + 1][numbers.length];
-//        for (int i = 0; i < numbers.length; i++) {
-//            combinations[0][i] = 1;
-//        }
-//        for (int i = 1; i <= target; i++) {
-//            for (int j = 0; j < numbers.length; j++) {
-//                int withoutCurrent = (j > 0) ? combinations[i][j-1] : 0;
-//                int withCurrent = (i >= numbers[j]) ? combinations[i - numbers[j]][j] : 0;
-//                combinations[i][j] = withoutCurrent + withCurrent;
-//            }
-//        }
-//        return combinations;
-//    }
-
-    public static int findCombinations(int[] nums, int target) {
-        int counter = 1, result = 1;
-
-        while (target - (counter * 2) >= 0) {
-            if (target - (counter * 2) == 0) {
-                result++;
-            } else {
-                result += counter + (target - (counter * 2));
-            }
-            counter++;
-        }
-
-        counter = 1;
-        while (target - (counter * 3) >= 0) {
-            if (target - (counter * 3) == 0) {
-                result++;
-            } else {
-                result += counter + (target - (counter * 3));
-            }
-            counter++;
         }
 
         return result;

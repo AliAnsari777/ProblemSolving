@@ -34,6 +34,13 @@ public class Medium {
         long[] prices = {-2,10,2,20,-7,3};
         System.out.println(price(prices));
 
+        //############################################################//
+
+        System.out.println("\nFind Combinations:");
+        int[] numbers22 = {1, 2, 3};
+        int target = 4 ;
+        int combinations = findCombinations(numbers22, target);
+        System.out.println("Number of ways to achieve " + target + ": " + combinations);
     }
 
 
@@ -142,4 +149,35 @@ public class Medium {
 
         return diff;
     }
+
+    /*******************************************************************/
+
+    public static int findCombinations(int[] nums, int target) {
+        int counter = 1, result = 1;
+
+        while (target - (counter * 2) >= 0) {
+            if (target - (counter * 2) == 0) {
+                result++;
+            } else {
+                result += counter + (target - (counter * 2));
+            }
+            counter++;
+        }
+
+        counter = 1;
+        while (target - (counter * 3) >= 0) {
+            if (target - (counter * 3) == 0) {
+                result++;
+            } else {
+                result += counter + (target - (counter * 3));
+            }
+            counter++;
+        }
+
+        return result;
+    }
+
+    /*******************************************************************/
+
+
 }
