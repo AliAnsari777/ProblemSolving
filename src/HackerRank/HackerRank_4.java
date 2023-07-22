@@ -1,9 +1,7 @@
 package HackerRank;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class HackerRank_4 {
@@ -60,6 +58,10 @@ public class HackerRank_4 {
 
         String chars = "1010111001010";
         System.out.println(HackerRank_4.appleTest(chars));
+
+        //############################################################//
+
+
     }
 
     //==========================================================================//
@@ -223,4 +225,6 @@ public class HackerRank_4 {
         }
         return chars.size();
     }
+
+    /*******************************************************************/
 }
