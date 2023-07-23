@@ -1,3 +1,8 @@
+import sun.util.resources.LocaleData;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 
 public class Paypal {
@@ -25,6 +30,9 @@ public class Paypal {
 
         //############################################################//
 
+        System.out.println("substring count: ");
+        String test = "aaaa";
+        System.out.println(Paypal.substrCount(4, test));
 
     }
 
@@ -166,12 +174,12 @@ public class Paypal {
 
     //############################################################//
 
-    public static long substrCount(int n, String s) {
+    // this is my code but with o(n3) which didn pass test cases
+    public static long substrCount2(int n, String s) {
         long result = (long)n;
-        HashMap<Integer, List> map = new HashMap<>();
 
         for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n; j++){
+            for(int j = i+2; j <= n; j++){
                 String sub = s.substring(i, j);
                 if(palindromeTest(sub)){
                     result++;
@@ -183,6 +191,10 @@ public class Paypal {
 
     public static boolean palindromeTest(String text) {
         int i = 0, j = text.length()-1;
+        long val = text.chars().distinct().count();
+        if (val > 2){
+            return false;
+        }
         while(i < j){
             if(text.charAt(i) != text.charAt(j)){
                 return false;
@@ -195,4 +207,55 @@ public class Paypal {
 
     //############################################################//
 
+    static int count;
+    public static long substrCount(int n, String s) {
+        count = 0;
+        //O(n^2)
+        for(int i = 0 ; i < n;i++){//O(n)
+            helperOdd(i,i,s);//0(n)
+            helperEven(i,i+1,s);//O(n)
+        }
+        return count;
+    }
+
+    static void helperEven(int i, int j, String s){
+        if(i >=0 && j < s.length()){
+            char c = s.charAt(i);
+            while(i >=0 && j < s.length() && s.charAt(i) == s.charAt(j)&& s.charAt(i) == c){
+                count++;
+                i--;
+                j++;
+            }
+        }
+
+    }
+    static void helperOdd(int i, int j, String s){
+        count++;
+        i--;
+        j++;
+
+        helperEven(i, j, s);
+    }
+
+    //############################################################//
+
+    static int minimumSwaps(int[] arr) {
+        int idx = 0, swapCount = 0;
+
+        while(idx < arr.length){
+            if(arr[idx] != idx+1){
+                swap(idx, arr[idx] - 1, arr);
+                swapCount++;
+            }else{
+                idx++;
+            }
+        }
+        return swapCount;
+    }
+
+    static void swap(int i, int j, int[] array){
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
