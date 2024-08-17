@@ -1,7 +1,6 @@
 package LeetCode;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Medium {
@@ -43,6 +42,8 @@ public class Medium {
         System.out.println("Number of ways to achieve " + target + ": " + combinations);
 
         //############################################################//
+
+        Medium.minimumPushes("aabbccddeeffgghhiiiiii");
     }
 
 
@@ -195,5 +196,53 @@ public class Medium {
     }
 
     /*******************************************************************/
+
+    public static int kthFactor(int n, int k) {
+               int count = 0, i = 1;
+        while (count < k) {
+            if (n % i == 0) {
+                count++;
+                if (count == k) {
+                    return i;
+                }
+            }
+            i++;
+        }
+        return -1;
+    }
+
+    public static int minimumPushes(String word) {
+        HashMap<Character, Integer> chars = new HashMap<>();
+
+        for(char c : word.toCharArray()) {
+            if(!chars.containsKey(c)) {
+                chars.put(c, 1);
+            } else {
+                chars.put(c, chars.get(c)+1);
+            }
+        }
+
+        if(chars.size() <= 8) {
+            return word.length();
+        }
+
+        List<Integer> valueList = new ArrayList<>(chars.values());
+        valueList.sort(Collections.reverseOrder());
+
+        int count = 1;
+        int time = 1;
+        int result = 0;
+
+        for (int temp : valueList) {
+            if (count > 8) {
+                time++;
+                count = 1;
+            }
+            result += temp * time;
+            count++;
+        }
+
+        return result;
+    }
 
 }

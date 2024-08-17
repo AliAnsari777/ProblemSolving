@@ -1,42 +1,157 @@
-import sun.util.resources.LocaleData;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.*;
 
 public class Paypal {
     public static void main(String[] args) {
 
-        List<Integer> c = Arrays.asList(0, 0, 1, 0, 0, 1, 0);
-        System.out.println(Paypal.jumpingOnClouds(c));
+//        List<Integer> c = Arrays.asList(0, 0, 1, 0, 0, 1, 0);
+//        System.out.println(Paypal.jumpingOnClouds(c));
+//
+//        //############################################################//
+//
+//        String s1 = "abcde";
+//        String s2 = "bcdefg";
+//        System.out.println("Min Deletion");
+//        System.out.println(Paypal.minDeletionsToAnagrams(s1, s2));
+//
+//        //############################################################//
+//
+//        System.out.println("### Test ###");
+//        System.out.println(Math.abs(3-5));
+//
+//        //############################################################//
+//
+//        String sample = "aabbccdd";
+//        System.out.println(Paypal.isValid(sample));
+//
+//        //############################################################//
+//
+//        System.out.println("substring count: ");
+//        String test = "aaaa";
+//        System.out.println(Paypal.substrCount(4, test));
+//
+//        //############################################################//
+//
+//        int[] numbers = {4, 3, 1, 2};
+//        System.out.println("array length");
+//        System.out.println(numbers.length);
+//        System.out.println(Paypal.minimumSwaps(numbers));
+//
+//        //############################################################//
+//
+//        System.out.println("Common Child: ");
+//        String sample1 = "ABC", sample2 = "ADC";
+//        System.out.println(Paypal.commonChild2(sample1, sample2));
+//
+////        Pair<Integer, Integer> val = new Pair<>();
+////        int val = Integer.
+//
+//        //############################################################//
+//
+//        System.out.println("###########################################");
+//        int[] numbers2 = {6,2,1,0,0,0,1,0,0,0};
+//        System.out.println(Paypal.isSelfReferential(numbers2));
+//
+//
+//        System.out.println("Prime ###########################################");
+//        System.out.println(Paypal.isPrimeHappy(17));
 
-        //############################################################//
-
-        String s1 = "abcde";
-        String s2 = "bcdefg";
-        System.out.println("Min Deletion");
-        System.out.println(Paypal.minDeletionsToAnagrams(s1, s2));
-
-        //############################################################//
-
-        System.out.println("### Test ###");
-        System.out.println(Math.abs(3-5));
-
-        //############################################################//
-
-        String sample = "aabbccdd";
-        System.out.println(Paypal.isValid(sample));
-
-        //############################################################//
-
-        System.out.println("substring count: ");
-        String test = "aaaa";
-        System.out.println(Paypal.substrCount(4, test));
+        String testing = "http://exmaple.com/mypage?token=2j234jl&name=jack&id=12";
+        String[] a1 = testing.split("[?&=]");
+        System.out.println(Arrays.toString(a1));
 
     }
 
     //==========================================================================//
+
+
+    static int test(){
+
+        return 0;
+    }
+
+    static int Martin(int[] a) {
+        int one = 0, two = 0;
+
+        if (a.length == 0){
+            return 0;
+        }
+
+        for (int i = a.length-1; i >= 0; i--) {
+            if (a[i] == 1){
+                one++;
+            } else if(a[i] == 2){
+                two++;
+            }
+            if (i != 0 && a[i] == a[i-1]){
+                return 0;
+            }
+        }
+
+        System.out.println("one " + one);
+        System.out.println("two " + two);
+        if (one > two){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    static int isSelfReferential(int[] a){
+        Map<Integer, Integer> count = new HashMap<>();
+
+        for (int i = 0; i<a.length; i++) {
+            count.put(a[i], count.getOrDefault(a[i], 0) + 1);
+        }
+
+         for(int i = 0; i<a.length; i++){
+             if (a[i] != count.getOrDefault(i, 0)) {
+                return 0;
+             }
+         }
+
+         return 1;
+    }
+
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        if (num <= 3) {
+            return true;
+        }
+        if (num % 2 == 0 || num % 3 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int isPrimeHappy(int n) {
+        if (n <= 2) {
+            return 0; // PrimeHappy requires at least one prime less than n, and 1 is not considered prime
+        }
+
+        long sumOfPrimes = 0;
+
+        for (int i = 2; i < n; i++) {
+            if (isPrime(i)) {
+                sumOfPrimes += i;
+            }
+        }
+
+        if (sumOfPrimes % n == 0) {
+            return 1; // n is primeHappy
+        } else {
+            return 0; // n is not primeHappy
+        }
+    }
+
 
 
     static int sockMerchant(int n, List<Integer> arr) {
@@ -258,4 +373,29 @@ public class Paypal {
         array[i] = array[j];
         array[j] = temp;
     }
+
+    //############################################################//
+
+    /*
+    A string is said to be a child of a another string if it can be formed by deleting 0 or more characters from
+    the other string. Letters cannot be rearranged. Given two strings of equal length, what's the longest string
+    that can be constructed such that it is a child of both?
+    */
+    public static int commonChild2(String s1, String s2)
+    {
+        int m = s1.length() + 1, n = s2.length() + 1;
+        int[][] LCS = new int[m][n];
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+                    LCS[i][j] = LCS[(i - 1)][(j - 1)] + 1;
+                } else {
+                    LCS[i][j] = Math.max(LCS[(i - 1)][j], LCS[i][(j - 1)]);
+                }
+            }
+        }
+        return LCS[(m - 1)][(n - 1)];
+    }
+
+
 }
