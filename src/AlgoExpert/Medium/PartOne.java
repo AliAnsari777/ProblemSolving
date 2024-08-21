@@ -14,13 +14,14 @@ public class PartOne {
 
         List<Integer> firstArray = new ArrayList<>(Arrays.asList(-1, 5, 10, 20, 28, 3));
         List<Integer> secondArray = new ArrayList<>(Arrays.asList(26, 134, 135, 15, 17));
-        System.out.println(smallestDifference(firstArray, secondArray));
+        System.out.println(Arrays.toString(smallestDifference(firstArray, secondArray)));
     }
 
-
+    // time O(n^2) | space O(n)
     public static List<List<Integer>> tripleSum(List<Integer> numbers, int target) {
 
-        int left, right;
+        int left;
+        int right;
         List<List<Integer>> result = new ArrayList<>();
         numbers.sort(null);
 
@@ -52,10 +53,12 @@ public class PartOne {
 
     /*******************************************************************/
 
-    public static int smallestDifference(List<Integer> first, List<Integer> second) {
+    // time O(n log(n) + m log(m)) | space O(1)
+    public static int[] smallestDifference(List<Integer> first, List<Integer> second) {
         int firstIdx = 0;
         int secondIdx = 0;
         int smallDiff = Integer.MAX_VALUE;
+        int[] result = new int[2];
         first.sort(null);
         second.sort(null);
 
@@ -63,10 +66,13 @@ public class PartOne {
             int diff = Math.abs(first.get(firstIdx) - second.get(secondIdx));
 
             if(diff == 0)
-                return 0;
+                return new int[]{first.get(firstIdx), second.get(secondIdx)};
 
-            if(diff < smallDiff)
+            if(diff < smallDiff) {
                 smallDiff = diff;
+                result[0] = first.get(firstIdx);
+                result[1] = second.get(secondIdx);
+            }
 
             if(first.get(firstIdx) < second.get(secondIdx))
                 firstIdx++;
@@ -74,6 +80,10 @@ public class PartOne {
                 secondIdx++;
         }
 
-        return smallDiff;
+        return result;
     }
+
+    /*******************************************************************/
+
+
 }
