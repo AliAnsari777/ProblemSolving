@@ -97,4 +97,52 @@ public class HackerRank_Medium {
 
         return "Possible";
     }
+
+    public static String biggerIsGreater(String w) {
+        // Write your code here
+        /*
+        * Ideas:
+        1. Selecting an element that is smallest in a specific substring on the right of the string and swap it with the element (e) next to the left of that substring, which is also in the string.
+        2. After that, sort characters on the right of that e in increment order.
+
+        * Steps to identify the smallest element to swap
+        1. Traverse from right to left until finds a element that is smaller than the right one.
+        2. Then, there is at least 1 way to swap.
+        3. Find the smallest one by traversing until satisfy the requirement
+        */
+
+        int curIdx = w.length() - 1;
+        int leftIdx = curIdx - 1;
+
+        //Find the first of two elements to switch
+        while(leftIdx > -1 && w.charAt(leftIdx) >= w.charAt(curIdx)) {
+            curIdx--;
+            leftIdx--;
+        }
+
+        if(leftIdx == -1) {
+            return "no answer";
+        }
+
+        //Find the second one
+        int mid = curIdx;
+        while(mid < w.length() - 1 && w.charAt(mid + 1) > w.charAt(leftIdx)) {
+            mid++;
+        }
+
+        char[] tempC = w.toCharArray();
+        //Swap
+        char tempSwap = tempC[leftIdx];
+        tempC[leftIdx] = tempC[mid];
+        tempC[mid] = tempSwap;
+
+        char[] tempRSub = new char[w.length() - curIdx];
+        System.arraycopy(tempC, curIdx, tempRSub, 0, w.length() - curIdx);
+
+        //Get new substring
+        Arrays.sort(tempRSub);
+        System.arraycopy(tempRSub, 0, tempC, curIdx, w.length() - curIdx);
+
+        return new String(tempC);
+    }
 }
