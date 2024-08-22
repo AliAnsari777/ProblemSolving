@@ -7,14 +7,28 @@ import java.util.List;
 public class PartOne {
     public static void main(String[] args) {
 
+        System.out.println("Triple Sum:");
         List<Integer> numbers = new ArrayList<>(Arrays.asList(12, 3, 1, 2, -6, 5, -8, 6, 10));
         System.out.println(tripleSum(numbers, 0));
 
         //############################################################//
 
+        System.out.println("\nSmallest Difference:");
         List<Integer> firstArray = new ArrayList<>(Arrays.asList(-1, 5, 10, 20, 28, 3));
         List<Integer> secondArray = new ArrayList<>(Arrays.asList(26, 134, 135, 15, 17));
         System.out.println(Arrays.toString(smallestDifference(firstArray, secondArray)));
+
+        //############################################################//
+
+        System.out.println("\nMove Element to End:");
+        List<Integer> list = new ArrayList<>(Arrays.asList(2,1,2,2,21,3,4,2));
+        System.out.println(moveElementToEnd(list, 2));
+
+        //############################################################//
+
+        System.out.println("\nIs Array Monotonic:");
+        List<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 4, 6, 5, 3, 8, 10));
+        System.out.println(isMonotonicArray(array));
     }
 
     // time O(n^2) | space O(n)
@@ -85,5 +99,43 @@ public class PartOne {
 
     /*******************************************************************/
 
+    //Move all the target number to the end of the list
+    // time O(n) | space O(1)
+    public static List<Integer> moveElementToEnd(List<Integer> list, int target) {
 
+        int leftIdx = 0;
+        int rightIdx = list.size() - 1;
+
+        while (leftIdx < rightIdx){
+
+            while(leftIdx < rightIdx && list.get(rightIdx) == target) {
+                rightIdx--;
+            }
+
+            if(list.get(leftIdx) == target) {
+                int temp = list.get(leftIdx);
+                list.set(leftIdx, list.get(rightIdx));
+                list.set(rightIdx, temp);
+            }
+            leftIdx++;
+        }
+
+        return list;
+    }
+
+    /*******************************************************************/
+
+    public static boolean isMonotonicArray(List<Integer> array) {
+        boolean isIncreasing = true;
+        boolean isDecreasing = true;
+
+        for(int i = 1; i < array.size(); i++) {
+            if(array.get(i) < array.get(i - 1))
+                isDecreasing = false;
+            else if(array.get(i) > array.get(i - 1))
+                isIncreasing = false;
+        }
+
+        return isIncreasing || isDecreasing;
+    }
 }
