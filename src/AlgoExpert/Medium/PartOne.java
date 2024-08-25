@@ -29,6 +29,16 @@ public class PartOne {
         System.out.println("\nIs Array Monotonic:");
         List<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 4, 6, 5, 3, 8, 10));
         System.out.println(isMonotonicArray(array));
+
+        //############################################################//
+
+        System.out.println("\nSpiral Traverse:");
+        List<List<Integer>> matrix = new ArrayList<>();
+        matrix.add(Arrays.asList(1, 2, 3, 4));
+        matrix.add(Arrays.asList(12, 13, 14, 5));
+        matrix.add(Arrays.asList(11, 16, 15, 6));
+        matrix.add(Arrays.asList(10, 9, 8, 7));
+        System.out.println(spiralTraverse(matrix));
     }
 
     // time O(n^2) | space O(n)
@@ -99,7 +109,7 @@ public class PartOne {
 
     /*******************************************************************/
 
-    //Move all the target number to the end of the list
+    // Move all the target number to the end of the list
     // time O(n) | space O(1)
     public static List<Integer> moveElementToEnd(List<Integer> list, int target) {
 
@@ -125,6 +135,8 @@ public class PartOne {
 
     /*******************************************************************/
 
+    // Is array all increasing or decreasing
+    // time O(n) | space O(1)
     public static boolean isMonotonicArray(List<Integer> array) {
         boolean isIncreasing = true;
         boolean isDecreasing = true;
@@ -137,5 +149,39 @@ public class PartOne {
         }
 
         return isIncreasing || isDecreasing;
+    }
+
+    /*******************************************************************/
+
+    public static List<Integer> spiralTraverse(List<List<Integer>> array) {
+        List<Integer> result = new ArrayList<>();
+        int startRow = 0;
+        int endRow = array.size() - 1;
+        int startCol = 0;
+        int endCol = array.get(0).size() - 1;
+
+        while (startRow <= endRow && startCol <= endCol) {
+            for (int col = startCol; col <= endCol; col++) {
+                result.add(array.get(startRow).get(col));
+            }
+            startRow++;
+
+            for(int row = startRow; row <= endRow; row++) {
+                result.add(array.get(row).get(endCol));
+            }
+            endCol--;
+
+            for (int col = endCol; col >= startCol; col--) {
+                result.add(array.get(endRow).get(col));
+            }
+            endRow--;
+
+            for (int row = endRow; row >= startRow; row--) {
+                result.add(array.get(row).get(startCol));
+            }
+            startCol++;
+        }
+
+        return result;
     }
 }
