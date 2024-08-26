@@ -1,5 +1,9 @@
 package LeetCode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Amazon {
     public static void main(String[] args) {
         System.out.println("Min Swaps");
@@ -74,5 +78,32 @@ public class Amazon {
 
     /*******************************************************************/
 
+    // You are given n tables represented with two arrays names and columns, where names[i] is the
+    // name of the ith table and columns[i] is the number of columns of the ith table.
+    class SQL {
+
+        HashMap<String, Integer> ids = new HashMap<>();
+        HashMap<String, HashMap<Integer, List<String>>> tables = new HashMap<>();
+
+        public SQL(List<String> names, List<Integer> columns) {
+            for(String name : names) {
+                tables.put(name, new HashMap<>());
+                ids.put(name, 1);
+            }
+        }
+
+        public void insertRow(String name, List<String> row) {
+            tables.get(name).put(ids.get(name), new ArrayList<>(row));
+            ids.put(name, ids.get(name) + 1);
+        }
+
+        public void deleteRow(String name, int rowId) {
+            tables.get(name).remove(rowId);
+        }
+
+        public String selectCell(String name, int rowId, int columnId) {
+            return tables.get(name).get(rowId).get(columnId-1);
+        }
+    }
 
 }
