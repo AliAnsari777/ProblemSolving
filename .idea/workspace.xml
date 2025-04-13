@@ -9,9 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="">
+    <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="LeetCode Medium problems for Amazon interview, The SQL class.">
+      <change afterPath="$PROJECT_DIR$/src/Meta/LeetCode/Easy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Meta/LeetCode/Medium.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Meta/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paypal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paypal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProblemSolving.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProblemSolving.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlgoExpert/Medium/PartOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlgoExpert/Medium/PartOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LeetCode/Medium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/Medium.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +34,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AliAnsari777&quot;
+  }
+}</component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -36,9 +48,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AliAnsari777/ProblemSolving.git&quot;,
+    &quot;accountId&quot;: &quot;0decc28c-ef88-4cb2-a025-8bd3080730c0&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="1dyoOchN1PJ2jN54aKWOMOeLuC3" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -47,24 +68,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Level1.executor": "Run",
+    "Application.Medium.executor": "Run",
+    "Application.Meta.LeetCode.Easy.executor": "Run",
+    "Application.PartOne.executor": "Debug",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "S:/PROGRAMMING Tutorials/Testing and Refactoring/TailQueuePart1-Problem-Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Paypal">
-    <configuration name="Easy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.Easy" />
+  <component name="RunManager" selected="Application.Meta.LeetCode.Easy">
+    <configuration name="Amazon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Amazon" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
@@ -76,8 +112,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HackerRank.HackerRank_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_4" />
+    <configuration name="HackerRank_Medium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_Medium" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
@@ -89,12 +125,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LeetCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.LeetCode" />
+    <configuration name="Level1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Meta.Level1" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
+          <option name="PATTERN" value="Meta.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,20 +151,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Paypal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Paypal" />
+    <configuration name="Meta.LeetCode.Easy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Meta.LeetCode.Easy" />
       <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Meta.LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AlgoExpert.Medium.PartOne" />
+      <module name="ProblemSolving" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AlgoExpert.Medium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Paypal" />
-        <item itemvalue="Application.HackerRank.HackerRank_4" />
-        <item itemvalue="Application.Easy" />
+        <item itemvalue="Application.Meta.LeetCode.Easy" />
+        <item itemvalue="Application.Level1" />
         <item itemvalue="Application.Medium" />
-        <item itemvalue="Application.LeetCode" />
+        <item itemvalue="Application.PartOne" />
+        <item itemvalue="Application.Amazon" />
       </list>
     </recent_temporary>
   </component>
@@ -143,6 +198,14 @@
         </serviceView>
       </list>
     </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewFactory">
@@ -230,8 +293,106 @@
       <workItem from="1674429636216" duration="5515000" />
       <workItem from="1674978097078" duration="1901000" />
       <workItem from="1684713973846" duration="2051000" />
-      <workItem from="1689738947916" duration="27179000" />
+      <workItem from="1689738947916" duration="37827000" />
+      <workItem from="1696734406753" duration="5693000" />
+      <workItem from="1699908919480" duration="129000" />
+      <workItem from="1699909067739" duration="1680000" />
+      <workItem from="1705815110320" duration="4549000" />
+      <workItem from="1722921989646" duration="7837000" />
+      <workItem from="1723915111084" duration="27368000" />
+      <workItem from="1724560470383" duration="10020000" />
+      <workItem from="1724640865779" duration="132000" />
+      <workItem from="1724641015956" duration="4945000" />
+      <workItem from="1725414840210" duration="2644000" />
+      <workItem from="1725498342024" duration="731000" />
+      <workItem from="1726642011216" duration="3167000" />
+      <workItem from="1744254238565" duration="11854000" />
     </task>
+    <task id="LOCAL-00001" summary="last few change">
+      <created>1723915492074</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723915492074</updated>
+    </task>
+    <task id="LOCAL-00002" summary="queensAttack from hacker rank">
+      <created>1723922627916</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723922627916</updated>
+    </task>
+    <task id="LOCAL-00003" summary="AlgoExpert Medium problems.">
+      <created>1724040271006</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724040271006</updated>
+    </task>
+    <task id="LOCAL-00004" summary="AlgoExpert Medium problems.">
+      <created>1724213292127</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724213292127</updated>
+    </task>
+    <task id="LOCAL-00005" summary="HackerRank Medium problems.">
+      <created>1724219517336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724219517336</updated>
+    </task>
+    <task id="LOCAL-00006" summary="AlgoExpert Medium problems Part one.">
+      <created>1724290206315</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1724290206315</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Hacker Rank Medium problems Bigger Is Greater.">
+      <created>1724304015175</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1724304015175</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Hacker Rank Easy problems is Kaprekar Number.">
+      <created>1724545706080</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724545706080</updated>
+    </task>
+    <task id="LOCAL-00009" summary="AlgoExpert Medium problems, Spiral Traverse.">
+      <created>1724560213851</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724560213851</updated>
+    </task>
+    <task id="LOCAL-00010" summary="LeetCode Medium problems for Amazon interview, Minimum Swaps.">
+      <created>1724604731254</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1724604731254</updated>
+    </task>
+    <task id="LOCAL-00011" summary="LeetCode Medium problems for Amazon interview, The Longest Common Subsequence.">
+      <created>1724611379809</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1724611379809</updated>
+    </task>
+    <task id="LOCAL-00012" summary="LeetCode Medium problems for Amazon interview, The SQL class.">
+      <created>1724632242446</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724632242446</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +409,20 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="last few change" />
+    <MESSAGE value="queensAttack from hacker rank" />
+    <MESSAGE value="AlgoExpert Medium problems." />
+    <MESSAGE value="HackerRank Medium problems." />
+    <MESSAGE value="AlgoExpert Medium problems Part one." />
+    <MESSAGE value="Hacker Rank Medium problems Bigger Is Greater." />
+    <MESSAGE value="Hacker Rank Easy problems is Kaprekar Number." />
+    <MESSAGE value="AlgoExpert Medium problems, Spiral Traverse." />
+    <MESSAGE value="LeetCode Medium problems for Amazon interview, Minimum Swaps." />
+    <MESSAGE value="LeetCode Medium problems for Amazon interview, The Longest Common Subsequence." />
+    <MESSAGE value="LeetCode Medium problems for Amazon interview, The SQL class." />
+    <option name="LAST_COMMIT_MESSAGE" value="LeetCode Medium problems for Amazon interview, The SQL class." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -256,14 +431,9 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Paypal.java</url>
-          <line>193</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Paypal.java</url>
-          <line>181</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/HackerRank/Medium.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

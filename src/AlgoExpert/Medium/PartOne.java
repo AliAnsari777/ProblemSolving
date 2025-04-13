@@ -39,6 +39,29 @@ public class PartOne {
         matrix.add(Arrays.asList(11, 16, 15, 6));
         matrix.add(Arrays.asList(10, 9, 8, 7));
         System.out.println(spiralTraverse(matrix));
+
+        //############################################################//
+
+        System.out.println("\nLongest Peak:");
+        List<Integer> peak = new ArrayList<>(Arrays.asList(1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3));
+        System.out.println(longestPeak(peak));
+
+        //############################################################//
+
+        System.out.println("\nMake Palindrome:");
+        System.out.println(makePalindrome("zbcfedcba"));
+
+        //############################################################//
+
+        System.out.println("\nMaximum Books:");
+        int[] books = {8,2,3,7,3,4,0,1,4,3};
+        System.out.println(maximumBooks(books));
+
+        //############################################################//
+        System.out.println("\nGet Max");
+        List<Integer> list1 = Arrays.asList(2,3,2);
+        System.out.println(getMax2(list1, 4));
+
     }
 
     // time O(n^2) | space O(n)
@@ -184,4 +207,138 @@ public class PartOne {
 
         return result;
     }
+
+    /*******************************************************************/
+
+    // Find the longest peak in the given array of integers.
+    // Peak is defined as a number that is greater than its neighbors, it means the left and right side of the peak is resterictly decreasing.
+    // time O(n) | space O(1)
+    public static int longestPeak(List<Integer> array) {
+        int longest = 0;
+        for (int i = 1; i < array.size() - 1; i++) {
+            if(array.get(i) > array.get(i-1) && array.get(i) > array.get(i+1)){
+                int left = i - 1;
+                int right = i + 1;
+
+                while(left >= 0 && array.get(left) > array.get(left-1)) {
+                    left--;
+                }
+
+                while(right < array.size()-1 && array.get(right) > array.get(right+1)) {
+                    right++;
+                }
+
+                longest = Math.max(longest, right - left + 1);
+                i = right;
+            }
+        }
+
+        return longest;
+    }
+
+    /*******************************************************************/
+
+    public static boolean makePalindrome(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+        int counter = 0;
+
+        while(left < right) {
+            if(s.charAt(left) != s.charAt(right)) {
+                counter++;
+                if(counter > 2) {
+                    return false;
+                }
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    /*******************************************************************/
+
+    public static long maximumBooks(int[] books) {
+        int n = books.length;
+        long[][] dp = new long[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                dp[i][j] = 0;
+            }
+        }
+
+        for (int len = 1; len <= n; len++) {
+            for (int i = 0; i <= n - len; i++) {
+                int j = i + len - 1;
+                if (len == 1) {
+                    dp[i][j] = books[i];
+                } else {
+                    long maxBooks = 0;
+                    for (int k = i; k < j; k++) {
+                        maxBooks = Math.max(maxBooks, books[k] + dp[k + 1][j]);
+                    }
+                    dp[i][j] = maxBooks;
+                }
+            }
+        }
+
+        return dp[0][n - 1];
+    }
+
+//    public static String sortPermutation(List<Integer> p, List<Integer> moves){
+//
+//    }
+
+    public static int getMax(List<Integer> list, int day){
+        List<Integer> allDays = new ArrayList<>();
+        int max = 0;
+
+        for(int i = 0; i < list.size(); i++){
+            for (int j = 1; j <= list.get(i); j++) {
+                allDays.add(j);
+            }
+        }
+
+        for (int i = 0, j = day; j < allDays.size() ; i++, j++){
+            int sum = 0;
+
+            for (int k = i; k < j; k++) {
+                sum += allDays.get(k);
+            }
+            if(sum > max)
+                max = sum;
+        }
+
+        return max;
+    }
+
+
+    public static int getMax2(List<Integer> list, int day) {
+    List<Integer> allDays = new ArrayList<>();
+    int max = 0;
+    int sum = 0;
+
+    // Create a list of all days
+    for (int i = 0; i < list.size(); i++) {
+        for (int j = 1; j <= list.get(i); j++) {
+            allDays.add(j);
+        }
+    }
+
+    // Calculate the sum for the first 'day' days
+    for (int i = 0; i < day; i++) {
+        sum += allDays.get(i);
+    }
+    max = sum;
+
+    // Slide the window and update the max sum
+    for (int i = day; i < allDays.size(); i++) {
+        sum = sum - allDays.get(i - day) + allDays.get(i);
+        max = Math.max(max, sum);
+    }
+
+    return max;
+}
 }

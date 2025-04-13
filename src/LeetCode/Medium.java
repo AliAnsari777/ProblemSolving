@@ -44,6 +44,12 @@ public class Medium {
         //############################################################//
 
         Medium.minimumPushes("aabbccddeeffgghhiiiiii");
+
+        //############################################################//
+
+        System.out.println("\nLargest Number:");
+        int[] nums = {3,30,34,5,9};
+        System.out.println(largestNumber(nums));
     }
 
 
@@ -245,4 +251,28 @@ public class Medium {
         return result;
     }
 
+    public static String largestNumber(int[] nums) {
+        String[] strs = new String[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            strs[i] = String.valueOf(nums[i]);
+        }
+
+        Arrays.sort(strs, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                return (b + a).compareTo(a + b);
+            }
+        });
+
+        StringBuilder sb = new StringBuilder();
+        for (String str : strs) {
+            sb.append(str);
+        }
+
+        while (sb.length() > 1 && sb.charAt(0) == '0') {
+            sb.deleteCharAt(0);
+        }
+
+        return sb.toString();
+    }
 }
