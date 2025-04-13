@@ -9,15 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="LeetCode Medium problems for Amazon interview, The SQL class.">
+    <list default="true" id="7d9d5d6d-914d-4498-8b3c-74c836e8f635" name="Default Changelist" comment="my last changes before start Meta practice">
       <change afterPath="$PROJECT_DIR$/src/Meta/LeetCode/Easy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Meta/LeetCode/Hard.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Meta/LeetCode/Medium.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Meta/Level1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProblemSolving.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProblemSolving.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AlgoExpert/Medium/PartOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlgoExpert/Medium/PartOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeetCode/Medium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/Medium.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Hard.executor": "Run",
     "Application.Level1.executor": "Run",
     "Application.Medium.executor": "Run",
     "Application.Meta.LeetCode.Easy.executor": "Run",
@@ -98,13 +96,13 @@
       <recent name="Amazon.ProjectEuler" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Meta.LeetCode.Easy">
-    <configuration name="Amazon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.Amazon" />
+  <component name="RunManager" selected="Application.Hard">
+    <configuration name="HackerRank_Medium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_Medium" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
+          <option name="PATTERN" value="HackerRank.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HackerRank_Medium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HackerRank.HackerRank_Medium" />
+    <configuration name="Hard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Meta.LeetCode.Hard" />
       <module name="ProblemSolving" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HackerRank.*" />
+          <option name="PATTERN" value="Meta.LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -179,11 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Hard" />
         <item itemvalue="Application.Meta.LeetCode.Easy" />
         <item itemvalue="Application.Level1" />
         <item itemvalue="Application.Medium" />
         <item itemvalue="Application.PartOne" />
-        <item itemvalue="Application.Amazon" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +304,7 @@
       <workItem from="1725414840210" duration="2644000" />
       <workItem from="1725498342024" duration="731000" />
       <workItem from="1726642011216" duration="3167000" />
-      <workItem from="1744254238565" duration="11854000" />
+      <workItem from="1744254238565" duration="20681000" />
     </task>
     <task id="LOCAL-00001" summary="last few change">
       <created>1723915492074</created>
@@ -392,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724632242446</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="my last changes before start Meta practice">
+      <option name="closed" value="true" />
+      <created>1744509614787</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744509614787</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +427,8 @@
     <MESSAGE value="LeetCode Medium problems for Amazon interview, Minimum Swaps." />
     <MESSAGE value="LeetCode Medium problems for Amazon interview, The Longest Common Subsequence." />
     <MESSAGE value="LeetCode Medium problems for Amazon interview, The SQL class." />
-    <option name="LAST_COMMIT_MESSAGE" value="LeetCode Medium problems for Amazon interview, The SQL class." />
+    <MESSAGE value="my last changes before start Meta practice" />
+    <option name="LAST_COMMIT_MESSAGE" value="my last changes before start Meta practice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
