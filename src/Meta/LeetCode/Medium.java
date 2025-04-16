@@ -1,6 +1,5 @@
 package Meta.LeetCode;
 
-import javax.swing.tree.TreeNode;
 import java.util.*;
 
 public class Medium {
@@ -24,6 +23,28 @@ public class Medium {
         }
 
         return minHeap.peek();
+    }
+
+    /*******************************************************************/
+
+    /*
+      Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
+      A subarray is a contiguous non-empty sequence of elements within an array.
+    */
+    public int subarraySum(int[] nums, int k) {
+        Map<Integer, Integer> counts = new HashMap<>();
+
+        int prefixSum = 0;
+        int result = 0;
+
+        counts.put(0, 1);
+        for(int num : nums) {
+            prefixSum += num;
+
+            result += counts.getOrDefault(prefixSum - k, 0);
+            counts.put(prefixSum, counts.getOrDefault(prefixSum, 0) + 1);
+        }
+        return result;
     }
 
     /*******************************************************************/
@@ -103,6 +124,66 @@ public class Medium {
         return answers;
     }
 
+    /*******************************************************************/
+
+    // 1762. Buildings With an Ocean View
+    public int[] findBuildings(int[] heights) {
+        Stack<Integer> idx = new Stack<>();
+        int size = heights.length-1;
+        int max = heights[size];
+
+        if(size == 0) {
+            return new int[]{0};
+        }
+
+        idx.push(size);
+
+        for(int i = size; i > 0; i--) {
+            if(heights[i-1] > heights[i] && heights[i-1] > max) {
+                idx.push(i-1);
+                max = Math.max(max, heights[i-1]);
+            }
+        }
+
+        size = idx.size();
+        int[] result = new int[size];
+        for(int j = 0; j < size; j++) {
+            result[j] = idx.pop();
+        }
+
+        return result;
+    }
+
+    /*******************************************************************/
+
+    // Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+    public double myPow(double x, int n) {
+        return binaryExp(x, n);
+    }
+
+    private double binaryExp(double x, long n) {
+        // Base case, to stop recursive calls.
+        if (n == 0) {
+            return 1;
+        }
+
+        // Handle case where, n < 0.
+        if (n < 0) {
+            return 1.0 / binaryExp(x, -1 * n);
+        }
+
+        // Perform Binary Exponentiation.
+        // If 'n' is odd we perform Binary Exponentiation on 'n - 1' and multiply result with 'x'.
+        if (n % 2 == 1) {
+            return x * binaryExp(x * x, (n - 1) / 2);
+        }
+        // Otherwise we calculate result by performing Binary Exponentiation on 'n'.
+        else {
+            return binaryExp(x * x, n / 2);
+        }
+    }
+
+    /*******************************************************************/
 
     public class TreeNode {
       int val;

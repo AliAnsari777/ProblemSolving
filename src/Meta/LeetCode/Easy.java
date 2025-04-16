@@ -39,9 +39,6 @@ public class Easy {
         return i == word.length() && j == abbr.length();
     }
 
-
-
-
     /*******************************************************************/
 
     // Given a string s, return true if the s can be palindrome after deleting at most one character from it.
@@ -61,5 +58,98 @@ public class Easy {
             right--;
         }
         return true;
+    }
+
+    /*******************************************************************/
+
+    private int diameter;
+    public int diameterOfBinaryTree(Medium.TreeNode root) {
+        diameter = 0;
+        longestPath(root);
+        return diameter;
+    }
+
+    private int longestPath(Medium.TreeNode node) {
+        if(node == null)
+            return 0;
+
+        int leftPath = longestPath(node.left);
+        int rightPath = longestPath(node.right);
+
+        diameter = Math.max(diameter, leftPath + rightPath);
+
+        return Math.max(leftPath, rightPath) + 1;
+    }
+
+    /*******************************************************************/
+
+    /*
+    A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing
+    all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+    * */
+
+    // my code
+    public boolean isPalindrome(String s) {
+
+        Math.pow(0, 0);
+//        if(s.isBlank())
+//            return true;
+
+        s = s.toLowerCase();
+        s = s.replaceAll("[^a-z0-9]", "");
+        int start = 0, end = s.length() - 1;
+
+        while(start < end) {
+            if(s.charAt(start) != s.charAt(end)){
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
+    // Leetcode solution
+    public boolean isPalindrome2(String s) {
+        StringBuilder builder = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+            if (Character.isLetterOrDigit(ch)) {
+                builder.append(Character.toLowerCase(ch));
+            }
+        }
+
+        String filteredString = builder.toString();
+        String reversedString = builder.reverse().toString();
+        return filteredString.equals(reversedString);
+
+        // or
+//        s.chars()
+//         .filter(c -> Character.isLetterOrDigit(c))
+//         .mapToObj(c -> Character.toLowerCase((char) c))
+//         .forEach(builder::append);
+//        return builder.toString().equals(builder.reverse().toString());
+
+    }
+
+    /*******************************************************************/
+
+//    Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int idx1 = 0, idx2 = 0;
+        int[] copy = new int[m];
+
+        for(int i = 0; i < m; i++) {
+            copy[i] = nums1[i];
+        }
+
+        for(int i = 0; i < m+n; i++) {
+            if(idx2 >= n || (idx1 < m && copy[idx1] < nums2[idx2])) {
+                nums1[i] = copy[idx1++];
+            } else {
+                nums1[i] = nums2[idx2++];
+            }
+        }
     }
 }
