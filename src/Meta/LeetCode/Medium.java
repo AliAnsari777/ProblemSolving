@@ -225,6 +225,111 @@ public class Medium {
 
     /*******************************************************************/
 
+
+    /*
+     Given two nodes of a binary tree p and q, return their lowest common ancestor (LCA).
+     Each node will have a reference to its parent node.
+    */
+    public Node lowestCommonAncestor(Node p, Node q) {
+        Map<Integer, Node> map = new HashMap<>();
+
+        do {
+            map.put(p.val, p);
+            p = p.parent;
+        } while(p != null);
+
+        do {
+            if(map.containsKey(q.val)){
+                return q;
+            }
+            q = q.parent;
+        } while(q != null);
+
+        return null;
+
+//        Node a = p, b = q;
+//        while (a != b) {
+//            a = a == null? q : a.parent;
+//            b = b == null? p : b.parent;
+//        }
+//        return a;
+    }
+
+    /*******************************************************************/
+
+    /*
+    * Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+    */
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null || root == p || root == q) {
+            return root;
+        }
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        if(left != null && right != null)
+            return root;
+
+        return left != null ? left : right;
+
+    }
+
+    /*******************************************************************/
+
+    /*
+    * The depth of an integer is the number of lists that it is inside of. For example, the nested list [1,[2,2],[[3],2],1]
+    * has each integer's value set to its depth.
+    * Return the sum of each integer in nestedList multiplied by its depth.
+    */
+    public int depthSum(List<NestedInteger> nestedList) {
+        return unpackAndSum(nestedList, 1);
+    }
+
+    private int unpackAndSum(List<NestedInteger>  list, int depth) {
+        int total = 0;
+        System.out.println("depth: " + depth);
+        for(NestedInteger val : list) {
+            if(val.isInteger()) {
+                total += val.getInteger() * depth;
+            } else {
+                total += unpackAndSum(val.getList(), depth +1);
+            }
+        }
+        System.out.println("total:" + total);
+        return total;
+    }
+
+    /*******************************************************************/
+
+    /*
+    Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals,
+    and return an array of the non-overlapping intervals that cover all the intervals in the input.
+    */
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
+        int start = intervals[0][0], end = intervals[0][1], idx = 0;
+        int[][] answers = new int[intervals.length][2];
+
+        for(int i = 0; i < intervals.length; i++) {
+            if(end >= intervals[i][0]) {
+                end = Math.max(end, intervals[i][1]);
+            } else {
+                answers[idx] = new int[] {start, end};
+                start = intervals[i][0];
+                end = intervals[i][1];
+                idx++;
+            }
+        }
+
+        answers[idx] = new int[] {start, end};
+        answers = Arrays.copyOfRange(answers, 0, idx + 1);
+
+        return answers;
+    }
+
+    /*******************************************************************/
+
     public class TreeNode {
       int val;
       TreeNode left;
@@ -236,5 +341,24 @@ public class Medium {
           this.left = left;
           this.right = right;
       }
-  }
+    }
+
+    class Node {
+        public int val;
+        public Node left;
+        public Node right;
+        public Node parent;
+    }
+
+    class NestedInteger {
+        public boolean isInteger() {
+            return false;
+        }
+        public int getInteger() {
+            return 0;
+        }
+        public List<NestedInteger> getList() {
+            return null;
+        }
+    }
 }
