@@ -21,11 +21,13 @@ public class Easy {
         while (i < word.length() && j < abbr.length()) {
             if (Character.isLetter(abbr.charAt(j))) {
                 // Match letter
-                if (word.charAt(i) != abbr.charAt(j)) return false;
+                if (word.charAt(i) != abbr.charAt(j))
+                    return false;
                 i++;
                 j++;
             } else {
-                if (abbr.charAt(j) == '0') return false; // leading zero not allowed
+                if (abbr.charAt(j) == '0')
+                    return false; // leading zero not allowed
 
                 int num = 0;
                 while (j < abbr.length() && Character.isDigit(abbr.charAt(j))) {
