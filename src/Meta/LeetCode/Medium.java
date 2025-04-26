@@ -9,6 +9,9 @@ public class Medium {
 
         //############################################################//
 
+        // expected output: [2, 1]
+        System.out.println("\nTop K Frequent Elements:");
+        Arrays.stream(Medium.topKFrequent(new int[]{1,1,1,2,2,3}, 2)).forEach(System.out::println);
 
     }
 
@@ -436,6 +439,197 @@ public class Medium {
 
     /*******************************************************************/
 
+    /*
+    * Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+    * */
+    public static int[] topKFrequent(int[] nums, int k) {
+        if(k == nums.length)
+            return nums;
+
+        int[] result = new int[k];
+        Map<Integer, Integer> map = new HashMap<>();
+        PriorityQueue<Integer> heap = new PriorityQueue<>( (n1, n2) -> map.get(n1) - map.get(n2));
+
+        for(int i = 0; i < nums.length; i++) {
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        }
+
+        for(int e : map.keySet()){
+            heap.offer(e);
+
+            if(heap.size() > k){
+                heap.poll();
+            }
+        }
+
+        for(int i = 0; i < k; i++) {
+            result[i] = heap.poll();
+        }
+
+        return result;
+    }
+
+    /*******************************************************************/
+
+    /*
+    Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+    Implement the LRUCache class:
+    LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+    int get(int key) Return the value of the key if the key exists, otherwise return -1.
+    void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair
+    to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
+    The functions get and put must each run in O(1) average time complexity.
+    */
+    class ListNode {
+        int key;
+        int val;
+        ListNode next;
+        ListNode prev;
+
+        public ListNode(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+    class LRUCache {
+        int capacity;
+        Map<Integer, ListNode> dic;
+        ListNode head;
+        ListNode tail;
+
+        public LRUCache(int capacity) {
+            this.capacity = capacity;
+            dic = new HashMap<>();
+            head = new ListNode(-1, -1);
+            tail = new ListNode(-1, -1);
+            head.next = tail;
+            tail.prev = head;
+        }
+
+        public int get(int key) {
+            if (!dic.containsKey(key)) {
+                return -1;
+            }
+
+            ListNode node = dic.get(key);
+            remove(node);
+            add(node);
+            return node.val;
+        }
+
+        public void put(int key, int value) {
+            if (dic.containsKey(key)) {
+                ListNode oldNode = dic.get(key);
+                remove(oldNode);
+            }
+
+            ListNode node = new ListNode(key, value);
+            dic.put(key, node);
+            add(node);
+
+            if (dic.size() > capacity) {
+                ListNode nodeToDelete = head.next;
+                remove(nodeToDelete);
+                dic.remove(nodeToDelete.key);
+            }
+        }
+
+        public void add(ListNode node) {
+            ListNode previousEnd = tail.prev;
+            previousEnd.next = node;
+            node.prev = previousEnd;
+            node.next = tail;
+            tail.prev = node;
+        }
+
+        public void remove(ListNode node) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+        }
+    }
+
+    /*******************************************************************/
+
+    /*
+    * Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+    If target is not found in the array, return [-1, -1].
+    You must write an algorithm with O(log n) runtime complexity.
+     */
+    public int[] searchRange(int[] nums, int target) {
+        int firstOccurrence = this.findBound(nums, target, true);
+
+        if (firstOccurrence == -1) {
+            return new int[] { -1, -1 };
+        }
+
+        int lastOccurrence = this.findBound(nums, target, false);
+
+        return new int[] { firstOccurrence, lastOccurrence };
+    }
+
+    private int findBound(int[] nums, int target, boolean isFirst) {
+        int N = nums.length;
+        int begin = 0, end = N - 1;
+
+        while (begin <= end) {
+            int mid = (begin + end) / 2;
+
+            if (nums[mid] == target) {
+                if (isFirst) {
+                    // This means we found our lower bound.
+                    if (mid == begin || nums[mid - 1] != target) {
+                        return mid;
+                    }
+
+                    // Search on the left side for the bound.
+                    end = mid - 1;
+                } else {
+                    // This means we found our upper bound.
+                    if (mid == end || nums[mid + 1] != target) {
+                        return mid;
+                    }
+
+                    // Search on the right side for the bound.
+                    begin = mid + 1;
+                }
+            } else if (nums[mid] > target) {
+                end = mid - 1;
+            } else {
+                begin = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
+    /*******************************************************************/
+
+    /*
+    You are given the root of a binary tree containing digits from 0 to 9 only.
+    Each root-to-leaf path in the tree represents a number.
+    For example, the root-to-leaf path 1 -> 2 -> 3 represents the number 123.
+    Return the total sum of all root-to-leaf numbers. Test cases are generated so that the answer will fit in a 32-bit integer.
+    */
+    int totalSum = 0;
+    public int sumNumbers(TreeNode root) {
+        getNumber(root, 0);
+        return totalSum;
+    }
+
+    private void getNumber(TreeNode node, int number) {
+        if(node != null) {
+            number = number * 10 + (node.val);
+
+            if(node.left == null && node.right == null)
+                totalSum += number;
+
+            getNumber(node.left, number);
+            getNumber(node.right, number);
+        }
+    }
+
+    /*******************************************************************/
 
     public class TreeNode {
       int val;

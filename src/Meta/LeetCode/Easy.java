@@ -1,6 +1,9 @@
 package Meta.LeetCode;
 
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Easy {
 
@@ -11,6 +14,14 @@ public class Easy {
         //############################################################//
 
         System.out.println(Easy.validPalindrome("abca"));
+
+        //############################################################//
+        int[] array = new int[] {1,1,2,2,2,5,5,5,5,7,8,9,9};
+        Arrays.sort(array);
+        int length = array.length;
+
+        System.out.println(Arrays.binarySearch(array, 5));
+
     }
 
 
@@ -152,6 +163,35 @@ public class Easy {
             } else {
                 nums1[i] = nums2[idx2++];
             }
+        }
+    }
+
+    /*******************************************************************/
+
+    /*
+    Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+    Implement the MovingAverage class:
+    MovingAverage(int size) Initializes the object with the size of the window size.
+    double next(int val) Returns the moving average of the last size values of the stream.
+    */
+    class MovingAverage {
+        int size;
+        double total = 0.0;
+        Queue<Integer> queue = new LinkedList<>();
+
+        public MovingAverage(int size) {
+            this.size = size;
+        }
+
+        public double next(int val) {
+            if(queue.size() >= this.size){
+                int removed = queue.remove();
+                total -= removed;
+            }
+
+            total += val;
+            queue.add(val);
+            return total / queue.size();
         }
     }
 }
